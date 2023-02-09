@@ -16,3 +16,5 @@ describe('Check sign out button (sign in is mocked)', () => {
 		cy.wait('@post');
 	});
 });
+
+export {};
