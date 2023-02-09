@@ -7,8 +7,11 @@ import { ButtonLink } from '@/components/ButtonLink';
 import Modal from '@/components/Modal';
 import { SigninForm } from '@/components/Form';
 import SignupCounter from '@/components/SignupCounter';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Landing() {
+  const router = useRouter();
   const [mounted, setMounted] = useState(false);
   const { data: session, status } = useSession();
   const [signinModalOpen, setSigninModalOpen] = useState(false);
@@ -39,16 +42,19 @@ export default function Landing() {
           <span className="flex justify-center w-full mb-6">
             <SignupCounter />
           </span>
-          {/* { status === 'authenticated' 
-            && !session.user.uid &&
-            <span className='flex justify-center w-full z-[200]'>
-              <ButtonLink
-                primary
-                label='Apply Now'
-                link='/apply'
-              />
-            </span>
-          } */}
+          {status === 'authenticated' &&
+            !session.user.uid &&
+            router.pathname !== '/apply' && (
+              <Link passHref href="/apply">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.995 }}
+                  className="flex justify-center items-center self-center w-full md:max-w-[16rem] h-11 px-4 font-semibold text-lg rounded-md bg-highlight shadow cursor-pointer"
+                >
+                  Apply Now!
+                </motion.button>
+              </Link>
+            )}
           {!session && (
             <span className="flex justify-center w-full z-[200]">
               <motion.button

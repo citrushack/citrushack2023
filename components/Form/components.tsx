@@ -96,12 +96,22 @@ export const Select = ({
         (errors[variable] ? 'border-red-500' : 'border-highlight')
       }
     >
-      <option value="" disabled selected hidden>
+      <option
+        className="overflow-hidden truncate w-px"
+        value=""
+        disabled
+        selected
+        hidden
+      >
         Select {label.toLowerCase()}...
       </option>
       {options.map((option: string) => (
-        <option key={option} value={option}>
-          {option}
+        <option
+          key={option}
+          value={option}
+          className="whitespace-normal w-full"
+        >
+          {option.substring(0, 70)} {option.length > 70 && '...'}
         </option>
       ))}
     </select>

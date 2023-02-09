@@ -7,10 +7,10 @@ describe('Toggle theme button', () => {
 	it('check document data-theme and color-scheme style', () => {
 		cy.visit('/');
 
-		checkTheme('light');
-		cy.get('span.md\\:block > button:has(svg)').click();
-		checkTheme('dark');
-	});
+    checkTheme('light');
+    cy.get('span.md\\:block > button:has(svg)').click();
+    checkTheme('dark');
+  });
 });
 
 export {};

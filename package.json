@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "yarn prettier --config .prettierrc.json  --write \"components/**/*.{js,jsx,ts,tsx}\" \"pages/**/*.{js,jsx,ts,tsx}\"",
+    "format": "yarn prettier --config .prettierrc.json  --write \"components/**/*.{js,jsx,ts,tsx}\" \"pages/**/*.{js,jsx,ts,tsx}\" \"cypress/e2e/**/*.{js,jsx,ts,tsx}\"",
     "cypress": "cypress open",
     "cypress:headless": "cypress run --record --key 58b2b54d-f417-471c-85bc-5563436c257f"
   },

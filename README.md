@@ -1,4 +1,6 @@
 # Citrus Hack 2023
+[![CI](https://github.com/citrushack/citrushack2023/actions/workflows/main.yml/badge.svg)](https://github.com/citrushack/citrushack2023/actions/workflows/main.yml)
+[![Run Cypress tests](https://github.com/citrushack/citrushack2023/actions/workflows/cypress.yml/badge.svg)](https://github.com/citrushack/citrushack2023/actions/workflows/cypress.yml)
 
 > Author: Minsoo Kim
 
