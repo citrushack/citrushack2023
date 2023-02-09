@@ -53,6 +53,9 @@ Cypress.Commands.add("login", () => {
 		{ secure: true }
 	);
 });
+Cypress.Commands.add("mock", () => {
+	cy.intercept("/api/users/count", { fixture: "count-in-person.json" }).as("count");
+});
 
 declare global {
 	namespace Cypress {

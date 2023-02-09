@@ -1,5 +1,6 @@
 describe('Verify /apply is working', () => {
 	it('check fields exist', () => {
+		cy.mock();
 		cy.login();
 		cy.visit('/');
 		cy.wait("@session");
