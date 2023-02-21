@@ -18,7 +18,9 @@ module.exports = {
         baloo_semi_bold: ["BalooPaaji2Bold"],
         baloo_regular: ["BalooPaaji2Reg"],
         baloo_medium: ["BalooPaaji2Medium"],
-        baloo_bold: ["BalooPaaji2Bold"]
+        baloo_bold: ["BalooPaaji2Bold"],
+        times_normal: ["TimesNewRoman"],
+        times_bold: ["TimesNewRomanBold"],
       },
       colors: {
         judge: 'var(--judge)',
