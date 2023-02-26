@@ -28,10 +28,10 @@ export default function Support() {
   return (
     <section className="flex flex-col w-full h-full max-w-[60rem] my-12 lg:mt-0 justify-center items-center">
       <h1 className="text-center text-7xl font-black w-391 h-109 not-italic items-center mt-6">Support</h1>
-      <p className="leading-7 h-14 font-normal mb-10 text-center items-center pt-10">
+      <p className="w-1050 h-58 font-weight-400 text-2xl leading-7 text-center font-normal pt-10">
         Not interested in hacking but still want to participate? Great! We would
         love to have you on board. Fill out the forms below if you&apos;d like
-        to help hackers throughout the day.
+        to help hackers throughout the day!
       </p>
       <div className="flex flex-col md:flex-row flex-wrap lg:flex-nowrap justify-center gap-6 mb-12">
         {cards.map(({ title, description, buttonLabel, buttonLink }) => (
