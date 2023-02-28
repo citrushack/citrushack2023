@@ -1,60 +1,17 @@
-/* eslint-disable react/no-unescaped-entities */
-interface StatProps {
-  stat: string;
-  label: string;
-  idx: number;
-}
-
-const Stat = ({ stat, label, idx }: StatProps) => (
-  <div
-    className={
-      'flex flex-col items-center py-10 lg:py-0 lg:px-12 ' +
-      (idx <= 1 ? 'border-b-2 lg:border-b-0 lg:border-r-2 border-sub' : '')
-    }
-  >
-    <h1 className="text-7xl md:text-8xl font-bold">{stat}</h1>
-    <p className="m-0 leading-3 text-2xl md:text-4xl font-medium">{label}</p>
-  </div>
-);
+import Image from 'next/image';
+import Suitcases from '../../public/assets/suitcases.svg';
+import Postcard from '../../public/assets/postcard.svg';
 
 export default function About() {
-  const stats = [
-    {
-      stat: '24',
-      label: 'hours',
-    },
-    {
-      stat: '500+',
-      label: 'hackers',
-    },
-    {
-      stat: '$10k',
-      label: 'in prizes',
-    },
-  ];
-
   return (
-    <section className="flex flex-col w-full h-full my-12 lg:my-0 max-w-[60rem] justify-center items-center">
-      <h1>About Us</h1>
-      <p className="text-center">
-        Citrus Hack is{' '}
-        <span className="font-medium">
-          one of SoCal's largest 24-hour hackathons
-        </span>
-        , hosted by UC Riverside. At Citrus Hack, hundreds of students from all
-        over the world come together and collaborate in teams, challenging their
-        creativity as they aim to build a project from scratch in just 24 hours.
-      </p>
-      <p className="text-center lg:mb-20">
-        This year,{' '}
-        <span className="font-medium">
-          Citrus Hack 2023 will be an in-person event
-        </span>{' '}
-      </p>
-      <div className="flex flex-col lg:flex-row">
-        {stats.map(({ stat, label }, idx) => (
-          <Stat key={stat + label} stat={stat} label={label} idx={idx} />
-        ))}
+    <section className="flex flex-col w-full h-full my-12 max-h-[60rem] justify-center items-center">
+      <div className="flex justfify-end items-end translate-x-18 left-20 mb-10 lg:mb-20">
+        <div className="w-screen sm:translate-x-12 lg:translate-x-20 xl:translate-x-28 px-4">
+          <Image src={Postcard} alt="Postcard" />
+        </div>
+        <div className="w-4/12 -translate-x-12 hidden sm:block">
+          <Image src={Suitcases} alt="Suitcases" />
+        </div>
       </div>
     </section>
   );

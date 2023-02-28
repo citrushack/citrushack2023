@@ -24,16 +24,7 @@ export default function Home() {
           <Landing />
         </span>
       </Element>
-      <Element
-        name="Schedule"
-        className="relative flex justify-center px-4 w-full bg-citrus-sky bg-schedule bg-contain bg-repeat"
-      >
-        <Schedule />
-      </Element>
-      <Element
-        name="About"
-        className="relative flex justify-center w-full bg-gradient-to-b from-primary to-secondary"
-      >
+      <Element name="About" className="flex justify-center w-full">
         <span className="flex justify-center px-4 w-full 2xl:bg-cover">
           <About />
         </span>
@@ -45,6 +36,12 @@ export default function Home() {
         <span className="flex justify-center px-4 w-full 2xl:bg-cover">
           <Tracks />
         </span>
+      </Element>
+      <Element
+        name="Schedule"
+        className="relative flex justify-center px-4 w-full bg-citrus-sky bg-schedule bg-contain bg-repeat"
+      >
+        <Schedule />
       </Element>
       <Element
         name="Support"
