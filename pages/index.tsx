@@ -1,10 +1,19 @@
 import { CountdownWrapper } from '@/components/Countdown';
 import ExternalLink from '@/components/ExternalLink';
 import { Page } from '@/components/Page';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useState } from 'react';
 import globe from '../public/assets/globe.svg';
 
 export default function Home() {
+  const [isRotating, setIsRotating] = useState(false);
+
+  const rotateVariants = {
+    rotateLeft: { rotate: -1 },
+    rotateRight: { rotate: 1 },
+  };
+
   return (
     <Page>
       <div className="flex flex-col md:grid md:grid-cols-2 text-center h-screen justify-center items-center px-6 space-x-2">
@@ -25,14 +34,23 @@ export default function Home() {
             if you have any questions.
           </p>
         </div>
-        <div
-          className=" colsp
-    "
+        <motion.span
+          className="pr-6"
+          animate={{ y: [0, -20, 0] }}
+          transition={{
+            repeat: Infinity,
+            duration: 5,
+          }}
+
+          // key="rotate-div"
+          // initial="rotateLeft"
+          // animate="rotateRight"
+          // exit="rotateLeft"
+          // variants={rotateVariants}
+          // transition={{ duration: 0.5, repeat: Infinity, repeatType: 'mirror' }}
         >
-          <span className="pr-6">
-            <Image src={globe} alt="" />
-          </span>
-        </div>
+          <Image src={globe} alt="" />
+        </motion.span>
       </div>
     </Page>
   );
