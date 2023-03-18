@@ -11,32 +11,29 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Learn',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        As a developer on the CitrusHack team, you will have the opportunity to work on a wide range of projects and learn new skills from experienced mentors and fellow team members. Whether you are a beginner or an experienced developer, there is always something new to learn and challenges to overcome.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Contribute',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Contributing as a developer on the CitrusHack team can be a rewarding experience that allows you to make a meaningful impact on the tech community. As a contributor, you will have the opportunity to work on projects that can benefit students and professionals alike, and gain valuable experience working on a team with diverse backgrounds and skill sets.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Have Fun!',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Having fun as a developer on the CitrusHack team is a top priority for us. We believe that when you enjoy what you do, you're more likely to produce better work and achieve greater success. As a result, we strive to create a fun and engaging environment that encourages creativity, collaboration, and personal growth.
       </>
     ),
   },
