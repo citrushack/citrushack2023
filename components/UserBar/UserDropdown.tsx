@@ -11,7 +11,7 @@ import {
   BiGroup,
   BiLogOutCircle,
   BiHelpCircle,
-  BiCategory,
+  BiCategory
 } from 'react-icons/bi';
 import { FaDiscord } from 'react-icons/fa';
 
@@ -40,7 +40,7 @@ export function UserDropdown() {
       </div>,
       {
         id: 'appStatusInfo',
-        duration: 6000,
+        duration: 6000
       }
     );
   };
@@ -55,7 +55,7 @@ export function UserDropdown() {
       </div>,
       {
         id: 'checkinInfo',
-        duration: 4500,
+        duration: 4500
       }
     );
   };

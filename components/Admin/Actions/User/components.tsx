@@ -12,7 +12,7 @@ import {
   BiTask,
   BiTaskX,
   BiBot,
-  BiMobileVibration,
+  BiMobileVibration
 } from 'react-icons/bi';
 import Modal from '@/components/Modal';
 
@@ -22,7 +22,7 @@ export function UserActions({
   expandedUsers,
   toggleExpandAllUsers,
   selectedUsers,
-  selectedView,
+  selectedView
 }) {
   const router = useRouter();
   const [confirmApplyReminder, setConfirmApplyReminder] = useState(false);
@@ -39,12 +39,12 @@ export function UserActions({
       .post('/api/applications/remind-apply', { users })
       .then(() => {
         toast.success('Successfully sent reminders!', {
-          id: 'appReminderSuccess',
+          id: 'appReminderSuccess'
         });
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'appReminderError',
+          id: 'appReminderError'
         });
       });
   };
@@ -54,12 +54,12 @@ export function UserActions({
       .post('/api/applications/remind-inperson', { users })
       .then(() => {
         toast.success('Successfully sent reminders!', {
-          id: 'inPersonReminderSuccess',
+          id: 'inPersonReminderSuccess'
         });
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'inPersonReminderError',
+          id: 'inPersonReminderError'
         });
       });
   };
@@ -69,12 +69,12 @@ export function UserActions({
       .post('/api/applications/remind-discord', { users })
       .then(() => {
         toast.success('Successfully sent reminders!', {
-          id: 'discordReminderSuccess',
+          id: 'discordReminderSuccess'
         });
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'discordReminderError',
+          id: 'discordReminderError'
         });
       });
   };
@@ -84,12 +84,12 @@ export function UserActions({
       .post('/api/applications/remind-checkin', { users })
       .then(() => {
         toast.success('Successfully sent reminders!', {
-          id: 'checkinReminderSuccess',
+          id: 'checkinReminderSuccess'
         });
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'checkinReminderError',
+          id: 'checkinReminderError'
         });
       });
   };
@@ -99,13 +99,13 @@ export function UserActions({
       .post('/api/applications/auto-review', { users })
       .then(() => {
         toast.success('Auto-decided selected successfully!', {
-          id: 'autoReviewSuccess',
+          id: 'autoReviewSuccess'
         });
         router.reload();
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'autoReviewError',
+          id: 'autoReviewError'
         });
       });
   };
@@ -115,13 +115,13 @@ export function UserActions({
       .post('/api/applications/manual-review', { users, approved })
       .then(() => {
         toast.success('Approved selected successfully!', {
-          id: 'approvedSelectedSuccess',
+          id: 'approvedSelectedSuccess'
         });
         router.reload();
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'approvedSelectedError',
+          id: 'approvedSelectedError'
         });
       });
   };
@@ -131,13 +131,13 @@ export function UserActions({
       .post('/api/applications/manual-review', { users, approved })
       .then(() => {
         toast.success('Rejected selected successfully!', {
-          id: 'rejectedSelectedSuccess',
+          id: 'rejectedSelectedSuccess'
         });
         router.reload();
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'rejectedSelectedError',
+          id: 'rejectedSelectedError'
         });
       });
   };
@@ -147,13 +147,13 @@ export function UserActions({
       .post('/api/applications/re-review', { users })
       .then(() => {
         toast.success('Approved selected successfully!', {
-          id: 'redoApprovedSelectedSuccess',
+          id: 'redoApprovedSelectedSuccess'
         });
         router.reload();
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'redoApprovedSelectedError',
+          id: 'redoApprovedSelectedError'
         });
       });
   };

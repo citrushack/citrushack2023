@@ -13,7 +13,7 @@ export function QueriedUsers({
   expandedUsers,
   setExpandedUsers,
   filter,
-  searchQuery,
+  searchQuery
 }) {
   return (
     <>
@@ -43,7 +43,7 @@ export function QueriedUsers({
                     (user) =>
                       userViewDisplay(selectedView, user) &&
                       userMatch(searchQuery, user)
-                  ),
+                  )
                 ]
                   .sort((x, y) => userFilter(filter, x, y))
                   .map((user, idx) => (

@@ -5,7 +5,7 @@ export function Overviews({
   selectedView,
   selectView,
   setFilter,
-  setSorted,
+  setSorted
 }) {
   return (
     <div className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-4">

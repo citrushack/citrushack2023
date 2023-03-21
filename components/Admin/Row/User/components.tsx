@@ -4,7 +4,7 @@ import {
   BiCheckboxSquare,
   BiLoaderCircle,
   BiUserCheck,
-  BiUserX,
+  BiUserX
 } from 'react-icons/bi';
 
 export function UserBox({
@@ -13,7 +13,7 @@ export function UserBox({
   setSelectedUsers,
   expandedUsers,
   setExpandedUsers,
-  pending,
+  pending
 }) {
   return (
     <motion.div whileHover={{ y: -2 }} className="relative group">

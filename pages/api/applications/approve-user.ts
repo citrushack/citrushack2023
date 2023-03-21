@@ -21,7 +21,7 @@ export default async function manualReviewApplication(
         name: firstName,
         members: '',
         invite_code: '',
-        newcomer: '',
+        newcomer: ''
       });
       await db
         .collection('users')
@@ -34,7 +34,7 @@ export default async function manualReviewApplication(
         name: firstName,
         members: '',
         invite_code: '',
-        newcomer: '',
+        newcomer: ''
       });
       await db
         .collection('users')

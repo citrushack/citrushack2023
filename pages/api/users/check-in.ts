@@ -15,7 +15,7 @@ export default async function checkin(
       daily_wellness,
       photo_consent,
       MLH_code_of_conduct,
-      address,
+      address
     } = req.body;
 
     const participation = inperson === 'Yes' ? 'In-Person' : 'Online';
@@ -34,8 +34,8 @@ export default async function checkin(
           photoConsent,
           readMLHCodeOfConduct: Boolean(MLH_code_of_conduct),
           address: actualAddress,
-          checkedIn: true,
-        },
+          checkedIn: true
+        }
       }
     );
 

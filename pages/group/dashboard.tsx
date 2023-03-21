@@ -32,7 +32,7 @@ export default function GroupDashboard() {
 
       // Retry after 1.5 seconds.
       setTimeout(() => revalidate({ retryCount }), 1500);
-    },
+    }
   });
   const [modalOpen, setModalOpen] = useState(false);
   const [clickedCreateOnce, setClickedCreateOnce] = useState(false);
@@ -43,7 +43,7 @@ export default function GroupDashboard() {
       .post('/api/groups/join', { invite_code })
       .then(() => {
         toast.success('Successfully joined a group!', {
-          id: 'joinGroupSuccess',
+          id: 'joinGroupSuccess'
         });
         router.reload();
       })
@@ -55,7 +55,7 @@ export default function GroupDashboard() {
           );
         } else if (error.response.status === 400) {
           toast.error(error.response.data.message, {
-            id: 'joinGroupInvalidRequestError',
+            id: 'joinGroupInvalidRequestError'
           });
         }
       });
@@ -71,7 +71,7 @@ export default function GroupDashboard() {
       .post('/api/groups/create')
       .then(() => {
         toast.success('Successfully created a group!', {
-          id: 'createGroupSuccess',
+          id: 'createGroupSuccess'
         });
         router.reload();
       })
@@ -93,7 +93,7 @@ export default function GroupDashboard() {
       .post('/api/groups/leave')
       .then(() => {
         toast.success('Successfully left your group!', {
-          id: 'leaveGroupSuccess',
+          id: 'leaveGroupSuccess'
         });
         router.reload();
       })
@@ -108,7 +108,7 @@ export default function GroupDashboard() {
   const triggerErrorNotification = () => {
     if (Object.keys(errors).length > 0) {
       toast.error('Please input an invite code.', {
-        id: 'missingInviteCode',
+        id: 'missingInviteCode'
       });
     }
   };

@@ -78,7 +78,7 @@ export function Confirmation({ register, errors, watch }: Props) {
               }
               variable="photo_consent"
               options={[
-                'Yes, I give you permission to take pictures that may include me.',
+                'Yes, I give you permission to take pictures that may include me.'
               ]}
               register={register}
               errors={errors}

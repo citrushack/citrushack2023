@@ -15,8 +15,8 @@ export default async function checkin(
       { uid },
       {
         $set: {
-          pickedUpShirt: true,
-        },
+          pickedUpShirt: true
+        }
       }
     );
 

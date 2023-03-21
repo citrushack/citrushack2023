@@ -20,7 +20,7 @@ export default function Modal({
   handler,
   title,
   description,
-  children,
+  children
 }: Props) {
   const [targetElement, setTargetElement] = useState(null);
 

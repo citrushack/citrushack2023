@@ -24,7 +24,7 @@ export function ApplicationForm() {
 
       // Retry after 1.5 seconds.
       setTimeout(() => revalidate({ retryCount }), 1500);
-    },
+    }
   });
 
   const { data: session } = useSession();
@@ -78,7 +78,7 @@ export function ApplicationForm() {
         '.pdf';
       const fileRef = ref(storage, 'resumes/' + filename);
       const metadata = {
-        contentType: 'application/pdf',
+        contentType: 'application/pdf'
       };
       await uploadBytes(fileRef, file, metadata); // upload file
     }
@@ -98,7 +98,7 @@ export function ApplicationForm() {
     grad_date,
     resume,
     first_time,
-    participation,
+    participation
     // MLH_code_of_conduct,
     // MLH_privacy_policy,
     // MLH_communication,
@@ -138,11 +138,11 @@ export function ApplicationForm() {
         // MLH_code_of_conduct,
         // MLH_privacy_policy,
         // MLH_communication,
-        applied_after_limit,
+        applied_after_limit
       })
       .then(() => {
         toast.success('Successfully submitted your application!', {
-          id: 'submitApplicationSuccess',
+          id: 'submitApplicationSuccess'
         });
         router.reload();
       })
@@ -158,7 +158,7 @@ export function ApplicationForm() {
   const triggerErrorNotification = () => {
     if (Object.keys(errors).length > 0) {
       toast.error('Please fill out all required fields.', {
-        id: 'applicationNotFilledOut',
+        id: 'applicationNotFilledOut'
       });
     }
   };

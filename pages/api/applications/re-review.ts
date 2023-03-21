@@ -21,7 +21,7 @@ export default async function rereviewApplication(
         name: users[i].name.first,
         members: '',
         invite_code: '',
-        newcomer: '',
+        newcomer: ''
       });
       await db
         .collection('users')

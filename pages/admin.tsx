@@ -7,7 +7,7 @@ import {
   Overview,
   Statistics,
   Groups,
-  Resumes,
+  Resumes
 } from '@/components/Admin';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -24,7 +24,7 @@ export default function Admin() {
 
       // Retry after 1.5 seconds.
       setTimeout(() => revalidate({ retryCount }), 1500);
-    },
+    }
   });
 
   const cachedData = cache.get('/api/users/query-all');
@@ -49,7 +49,7 @@ export default function Admin() {
                   <BiIdCard key={'IdCard'} />,
                   <BiBarChartAlt2 key={'ChartAlt2'} />,
                   <BiGroup key={'Group'} />,
-                  <BiFile key={'File'} />,
+                  <BiFile key={'File'} />
                 ]}
                 selectedPage={selectedPage}
                 selectPage={setSelectedPage}
@@ -79,7 +79,7 @@ export default function Admin() {
                 <BiIdCard key={'IdCard_2'} />,
                 <BiBarChartAlt2 key={'ChartAlt2_2'} />,
                 <BiGroup key={'Group_2'} />,
-                <BiFile key={'File_2'} />,
+                <BiFile key={'File_2'} />
               ]}
               selectedPage={selectedPage}
               selectPage={setSelectedPage}

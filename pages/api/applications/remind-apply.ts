@@ -19,7 +19,7 @@ export default async function remindApply(
         name: '',
         members: '',
         invite_code: '',
-        newcomer: '',
+        newcomer: ''
       });
     }
 

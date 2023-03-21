@@ -6,7 +6,7 @@ export function UserFilter({
   selectedView,
   setFilter,
   currentFilter,
-  setSorted,
+  setSorted
 }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -23,13 +23,13 @@ export function UserFilter({
         'Sort A to Z by Name',
         'Sort Z to A by Name',
         'Sort A to Z by Email',
-        'Sort Z to A by Email',
+        'Sort Z to A by Email'
       ];
     } else if (selectedView === 'Not Applied') {
       filterOptions = [
         'Default',
         'Sort A to Z by Email',
-        'Sort Z to A by Email',
+        'Sort Z to A by Email'
       ];
     } else if (selectedView === 'Pending') {
       filterOptions = [
@@ -39,7 +39,7 @@ export function UserFilter({
         'Sort A to Z by Name',
         'Sort Z to A by Name',
         'Sort A to Z by Email',
-        'Sort Z to A by Email',
+        'Sort Z to A by Email'
       ];
     } else if (selectedView === 'Approved' || selectedView === 'Rejected') {
       filterOptions = [
@@ -47,7 +47,7 @@ export function UserFilter({
         'Sort A to Z by Name',
         'Sort Z to A by Name',
         'Sort A to Z by Email',
-        'Sort Z to A by Email',
+        'Sort Z to A by Email'
       ];
     }
     return filterOptions;

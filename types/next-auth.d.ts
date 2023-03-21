@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import NextAuth from 'next-auth' 
-// need this import although it isn't used for [...nextauth].ts
+import NextAuth from 'next-auth' // need this import although it isn't used for [...nextauth].ts; you need the above comment to bypass eslint rules
 
 declare module 'next-auth' {
   interface Session {

@@ -11,8 +11,8 @@ export const daily_wellness_completion = [
         link="http://visitorwellnesscheck.ucr.edu"
       />
       .
-    </>,
-  ],
+    </>
+  ]
 ];
 
 export const MLH = [
@@ -24,8 +24,8 @@ export const MLH = [
         link="https://github.com/MLH/mlh-policies/blob/master/code-of-conduct.md"
       />
       .
-    </>,
-  ],
+    </>
+  ]
 ];
 
 export const states = [
@@ -85,5 +85,5 @@ export const states = [
   'WA',
   'WV',
   'WI',
-  'WY',
+  'WY'
 ];

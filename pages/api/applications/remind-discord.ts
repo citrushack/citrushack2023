@@ -19,7 +19,7 @@ export default async function remindDiscord(
         name: '',
         members: '',
         invite_code: '',
-        newcomer: '',
+        newcomer: ''
       });
     }
 

@@ -3,7 +3,7 @@ import {
   BiCheckbox,
   BiCheckboxSquare,
   BiDownload,
-  BiLinkExternal,
+  BiLinkExternal
 } from 'react-icons/bi';
 import { downloadFile, openFile } from '../../Actions/Resume/methods';
 

@@ -1,4 +1,4 @@
-import CarouselSponsor from '@/components/Sponsors/carousel';
+import { CarouselSponsor } from '@/components/Sponsors';
 
 export default function Sponsors() {
   return (

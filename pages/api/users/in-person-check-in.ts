@@ -15,8 +15,8 @@ export default async function checkin(
       { uid },
       {
         $set: {
-          InPersonCheckIn: true,
-        },
+          InPersonCheckIn: true
+        }
       }
     );
 

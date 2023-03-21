@@ -3,7 +3,7 @@ import {
   OverviewStats,
   Overviews,
   UserActions,
-  UserFilter,
+  UserFilter
 } from '@/components/Admin';
 import { QueriedUsers } from './components';
 import { SearchBar } from '@/components/Admin';
@@ -26,7 +26,7 @@ export function Overview({ data }) {
     'All Users',
     'Rejected',
     'Not Applied',
-    'Pending',
+    'Pending'
   ];
 
   const selectView = (view: string) => {

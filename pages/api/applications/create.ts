@@ -29,7 +29,7 @@ export default async function createApplication(
       MLH_code_of_conduct,
       MLH_privacy_policy,
       MLH_communication,
-      applied_after_limit,
+      applied_after_limit
     } = req.body;
 
     // input validation
@@ -61,7 +61,7 @@ export default async function createApplication(
       'Female',
       'Nonbinary',
       'Other',
-      'Prefer not to say',
+      'Prefer not to say'
     ];
     if (!gender_options.includes(gender)) {
       return res.status(400).json({ errror: 'An error has occured.' });
@@ -82,12 +82,12 @@ export default async function createApplication(
       name: first_name,
       members: '',
       invite_code: '',
-      newcomer: '',
+      newcomer: ''
     });
 
     await db.collection('users').updateOne(
       {
-        email: session.user.email,
+        email: session.user.email
       },
       {
         $set: {
@@ -95,7 +95,7 @@ export default async function createApplication(
           gid: '',
           name: {
             first: first_name,
-            last: last_name,
+            last: last_name
           },
           gender,
           race: ethnicity,
@@ -116,8 +116,8 @@ export default async function createApplication(
           admin: false,
           appliedAt: new Date(),
           applied_after_limit: applied_after_limit,
-          pickedUpShirt: false, // initally false; set to true after picking up a shirt in person
-        },
+          pickedUpShirt: false // initally false; set to true after picking up a shirt in person
+        }
       }
     );
 

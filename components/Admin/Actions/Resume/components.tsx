@@ -2,7 +2,7 @@ import {
   BiCheckbox,
   BiCheckboxSquare,
   BiDownload,
-  BiRefresh,
+  BiRefresh
 } from 'react-icons/bi';
 import { loadFiles, downloadFiles } from './methods';
 
@@ -10,7 +10,7 @@ export function ResumeActions({
   allSelected,
   toggleSelectAllDocs,
   selectedDocs,
-  setDocs,
+  setDocs
 }) {
   return (
     <>

@@ -1,4 +1,4 @@
-import { FaqGrid } from '@/components/FaqAccordion';
+import { FaqGrid } from '@/components/FAQ';
 import ExternalLink from '@/components/ExternalLink';
 
 export default function Faq() {

@@ -28,7 +28,7 @@ export function SigninForm({ csrfToken = '' }) {
       axios
         .post('/api/auth/signin/email', {
           csrfToken: csrfToken,
-          email: email,
+          email: email
         })
         .then(() => {
           signIn('email', { csrfToken: csrfToken, email: email });
@@ -96,6 +96,6 @@ export function SigninForm({ csrfToken = '' }) {
 export async function getServerSideProps(context) {
   const csrfToken = await getCsrfToken(context);
   return {
-    props: { csrfToken },
+    props: { csrfToken }
   };
 }

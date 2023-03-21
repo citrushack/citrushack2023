@@ -7,22 +7,22 @@ export default function Support() {
       description:
         'Mentors are in charge of helping the hackers with new technologies and working through any bugs or obstacles they encounter. We recommend this position if you are well versed in a particular stack to offer the best guidance.',
       buttonLabel: 'Apply',
-      buttonLink: 'https://forms.gle/DDdaTdDrxVierqwi9',
+      buttonLink: 'https://forms.gle/DDdaTdDrxVierqwi9'
     },
     {
       title: 'Volunteers',
       description:
         'Volunteers help out with the majority of day-of event tasks including, but not limited to, matching hackers to mentors, helping hackers find teams, hosting activities, and answering general questions.',
       buttonLabel: 'Apply',
-      buttonLink: 'https://forms.gle/vwRa9wkwBdnBXFuFA',
+      buttonLink: 'https://forms.gle/vwRa9wkwBdnBXFuFA'
     },
     {
       title: 'Sponsors',
       description:
         "Sponsors are companies or individuals that want to help Cutie Hack and Citrus Hack come to life! If you are interested in contributing, please don't hesitate to contact us!",
       buttonLabel: 'Sponsor',
-      buttonLink: '/citrushack-2022-sponsorship-packet.pdf',
-    },
+      buttonLink: '/citrushack-2022-sponsorship-packet.pdf'
+    }
   ];
 
   return (

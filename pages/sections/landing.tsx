@@ -34,7 +34,7 @@ export default function Landing() {
 
   return (
     <>
-      <section className="relative flex flex-col-reverse w-full h-screen md:min-h-[60rem] lg:mb-20">
+      <section className="relative flex flex-col-reverse w-full h-screen md:min-h-[60rem]">
         <div className="absolute left-1/2 -translate-x-1/2 w-full top-[30%] md:top-[25%] lg:top-[16%] flex flex-col justify-center items-center z-10 px-4 text-textcolor">
           <div className="text-center text-6xl max-[375px]:text-5xl sm:text-7xl lg:text-8xl mb-2 lg:mb-4 font-black">
             CITRUS HACK 2023

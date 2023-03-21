@@ -17,7 +17,7 @@ export const loadFiles = (setDocs) => {
         ref: itemRef,
         name: itemRef
           .toString()
-          .replace('gs://citrus-hack-2022.appspot.com/resumes/', ''),
+          .replace('gs://citrus-hack-2022.appspot.com/resumes/', '')
       };
       currentDocs = [...currentDocs, doc];
     });

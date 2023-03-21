@@ -10,7 +10,7 @@ import {
   firstTimeHacker,
   foodPreference,
   shirtSize,
-  MLH,
+  MLH
 } from './options';
 
 interface Props {

@@ -1,5 +1,5 @@
 import { ProtectedPage } from '@/components/Page';
-import QR from '@/components/QR';
+import QR from '@/components/QRCode';
 import { getAllUserIds } from '@/lib/getAllUserIds';
 import { getUserData } from '@/lib/getUserData';
 import axios from 'axios';
@@ -19,7 +19,7 @@ export default function Info({ userData }) {
     name,
     MLHAcknowledgement,
     pickedUpShirt,
-    InPersonCheckIn,
+    InPersonCheckIn
     // ...other
   } = json_obj[0];
 
@@ -29,17 +29,17 @@ export default function Info({ userData }) {
         email,
         firstName,
         approved,
-        uid,
+        uid
       })
       .then(() => {
         toast.success('Approved selected successfully!', {
-          id: 'approvedSelectedSuccess',
+          id: 'approvedSelectedSuccess'
         });
         router.reload();
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'approvedSelectedError',
+          id: 'approvedSelectedError'
         });
       });
   };
@@ -49,13 +49,13 @@ export default function Info({ userData }) {
       .post('/api/users/in-person-check-in', { uid })
       .then(() => {
         toast.success('In-person check in successful!', {
-          id: 'approvedSelectedSuccess',
+          id: 'approvedSelectedSuccess'
         });
         router.reload();
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'checkInInpersonError',
+          id: 'checkInInpersonError'
         });
       });
   };
@@ -66,13 +66,13 @@ export default function Info({ userData }) {
       .then(() => {
         console.log('hello inside');
         toast.success('In-person check in successful!', {
-          id: 'markTshirtSuccess',
+          id: 'markTshirtSuccess'
         });
         router.reload();
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'markTshirtError',
+          id: 'markTshirtError'
         });
       });
   };
@@ -214,7 +214,7 @@ export async function getStaticPaths() {
   const paths = await getAllUserIds();
   return {
     paths,
-    fallback: false,
+    fallback: false
   };
 }
 
@@ -223,7 +223,7 @@ export async function getStaticProps({ params }) {
   const userData = JSON.parse(JSON.stringify(await getUserData(params.id)));
   return {
     props: {
-      userData,
-    },
+      userData
+    }
   };
 }

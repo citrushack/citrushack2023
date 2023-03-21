@@ -14,7 +14,7 @@ const Button = ({
   secondary,
   label,
   skinny,
-  minWidth,
+  minWidth
 }: ButtonProps) => (
   <motion.button
     whileHover={{ scale: 1.05 }}
@@ -38,7 +38,7 @@ Button.defaultProps = {
   primary: Boolean(false),
   secondary: Boolean(false),
   skinny: Boolean(false),
-  minWidth: Boolean(false),
+  minWidth: Boolean(false)
 };
 
 interface ButtonLinkProps {
@@ -65,7 +65,7 @@ export const ButtonLink = ({
   link,
   external,
   skinny,
-  minWidth,
+  minWidth
 }: ButtonLinkProps) => (
   <>
     {external ? (
@@ -103,5 +103,5 @@ ButtonLink.defaultProps = {
   primary: Boolean(false),
   external: Boolean(false),
   skinny: Boolean(false),
-  minWidth: Boolean(false),
+  minWidth: Boolean(false)
 };

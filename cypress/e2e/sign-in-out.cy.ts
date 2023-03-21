@@ -3,7 +3,7 @@ describe('Check sign out button (sign in is mocked)', () => {
     // setup spying before request happens
     cy.intercept({
       method: 'POST',
-      url: '/api/auth/signout',
+      url: '/api/auth/signout'
     }).as('post');
 
     cy.mockAPI();

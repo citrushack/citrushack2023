@@ -1,9 +1,5 @@
-// import { useState, useEffect } from 'react'
-// import Link from 'next/link'
-// import { motion } from 'framer-motion'
 import { Element } from 'react-scroll';
 import { Page } from '@/components/Page';
-// import Modal from '@/components/Modal'
 import Landing from '@/pages/sections/landing';
 import About from '@/pages/sections/about';
 import Tracks from '@/pages/sections/tracks';
@@ -12,6 +8,7 @@ import Sponsors from '@/pages/sections/sponsors';
 import Staff from '@/pages/sections/staff';
 import Faq from '@/pages/sections/faq';
 import Schedule from '@/pages/sections/schedule';
+import React from 'react';
 
 export default function Home() {
   return (
@@ -31,7 +28,7 @@ export default function Home() {
       </Element>
       <Element
         name="Tracks"
-        className="flex justify-center w-full bg-primary bg-clouds md:bg-contain"
+        className="flex justify-center w-full bg-primary md:bg-contain"
       >
         <span className="flex justify-center px-4 w-full 2xl:bg-cover">
           <Tracks />
@@ -39,7 +36,7 @@ export default function Home() {
       </Element>
       <Element
         name="Schedule"
-        className="relative flex justify-center px-4 w-full bg-citrus-sky bg-schedule bg-contain bg-repeat"
+        className="relative flex justify-center w-full bg-citrus-sky bg-contain"
       >
         <Schedule />
       </Element>

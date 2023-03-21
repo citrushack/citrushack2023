@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
 import { toast } from 'react-hot-toast';
@@ -21,18 +21,28 @@ export function ProtectedPage({ title, restrictions, uid, children }: Props) {
   const router = useRouter();
   const { data: session, status } = useSession();
 
+  const [targetDate, setTargetDate] = useState(new Date());
+  const [currDate, setCurrDate] = useState(new Date());
+  useEffect(() => {
+    // Get the current date
+    setCurrDate(new Date());
+
+    // Set the target date
+    setTargetDate(new Date('2023-04-29'));
+  }, []);
+
   useEffect(() => {
     if (status === 'unauthenticated') {
       if (restrictions.includes('signin')) {
         toast.error('Access denied. Please sign in first!', {
-          id: 'signinRestriction',
+          id: 'signinRestriction'
         });
         router.push('/');
       }
     } else if (status === 'authenticated') {
       if (restrictions.includes('admin') && !session.user.admin) {
         toast.error('Access denied. Unauthorized user.', {
-          id: 'adminRestriction',
+          id: 'adminRestriction'
         });
         router.push('/');
       }
@@ -45,7 +55,7 @@ export function ProtectedPage({ title, restrictions, uid, children }: Props) {
         session.user.qualified !== 'yeah'
       ) {
         toast.error('Access denied. Unauthorized user.', {
-          id: 'qualifiedRestriction',
+          id: 'qualifiedRestriction'
         });
         router.push('/');
       }
@@ -60,7 +70,18 @@ export function ProtectedPage({ title, restrictions, uid, children }: Props) {
         !session.user.admin
       ) {
         toast.error('Access denied. Unauthorized user.', {
-          id: 'selfRestriction',
+          id: 'selfRestriction'
+        });
+        router.push('/');
+      }
+      // only availble on the day of event for signed-in users only (except admins)
+      if (
+        restrictions.includes('live') &&
+        (uid != session.user.uid || currDate < targetDate) &&
+        !session.user.admin
+      ) {
+        toast.error('Access denied. Unauthorized user.', {
+          id: 'livePageRestriction'
         });
         router.push('/');
       }
@@ -84,7 +105,7 @@ export function ProtectedPage({ title, restrictions, uid, children }: Props) {
   return (
     <Layout>
       <Head>
-        <title>Cutie Hack 2022 {title && '| ' + title}</title>
+        <title>Citrus Hack 2023 {title && '| ' + title}</title>
       </Head>
       <section className="flex flex-col w-full px-4 justify-center items-center">
         {status === 'authenticated' &&

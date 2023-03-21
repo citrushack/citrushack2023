@@ -5,7 +5,7 @@ export const genders = [
   'Female',
   'Nonbinary',
   'Other',
-  'Prefer not to say',
+  'Prefer not to say'
 ];
 
 export const ethnicities = [
@@ -16,7 +16,7 @@ export const ethnicities = [
   'Native Hawaiian or Other Pacific Islander',
   'White',
   'Other',
-  'Prefer not to say',
+  'Prefer not to say'
 ];
 
 export const majors = [
@@ -32,7 +32,7 @@ export const majors = [
   'Mechanical Engineering',
   'Other STEM Major Not Listed',
   'Humanities Major',
-  'Other Major',
+  'Other Major'
 ];
 
 export const grades = [
@@ -43,7 +43,7 @@ export const grades = [
   '4th Year Undergraduate',
   '5th+ Year Undergraduate',
   'Graduate',
-  'International',
+  'International'
 ];
 
 export const firstTimeHacker = ['Yes', 'No'];
@@ -63,7 +63,7 @@ export const MLH = [
         link="https://github.com/MLH/mlh-policies/blob/master/code-of-conduct.md"
       />
       .
-    </>,
+    </>
   ],
   [
     <>
@@ -85,9 +85,9 @@ export const MLH = [
         link="https://github.com/MLH/mlh-policies/blob/master/privacy-policy.md"
       />
       .
-    </>,
+    </>
   ],
   [
-    'I authorize MLH to send me pre- and post-event informational emails, which contain free credit and opportunities from their partners.',
-  ],
+    'I authorize MLH to send me pre- and post-event informational emails, which contain free credit and opportunities from their partners.'
+  ]
 ];

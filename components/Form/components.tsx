@@ -40,7 +40,7 @@ export const Input = ({
   register,
   required,
   errors,
-  onChange,
+  onChange
 }: InputProps) => (
   <div>
     <label className="font-semibold">
@@ -85,7 +85,7 @@ export const Select = ({
   register,
   required,
   options,
-  errors,
+  errors
 }: SelectProps) => (
   <div>
     <label className="font-semibold text-highlight">{label}</label>
@@ -140,7 +140,7 @@ export const Radio = ({
   options,
   errors,
   direction,
-  subtext,
+  subtext
 }: RadioProps) => (
   <div>
     <legend className="font-semibold">{label}</legend>
@@ -180,7 +180,7 @@ export const Radio = ({
 
 Radio.defaultProps = {
   direction: 'row',
-  subtext: null,
+  subtext: null
 };
 
 interface CheckboxProps {
@@ -203,7 +203,7 @@ export const Checkbox = ({
   required,
   options,
   errors,
-  subtext,
+  subtext
 }: CheckboxProps) => (
   <div>
     <legend className="font-semibold">{label}</legend>

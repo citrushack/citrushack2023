@@ -1,42 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
 @layer base {
   :root {
     /* default light theme */
-    --sky: #A3DEFF;
-    --bubble: #B1E3FF;
-    --darkgreen: #2F5525;
-    --lightgreen: #69C063;
-    --brown: #71461F;
-    --gold: #EF9B1F;
-    --bluegray: #514F66;
-    --gray: #5F5F5F;
-    --white: #FFFFFF;
-    --darksky: #2C314F;
-    --darkbubble: #373A5E;
-    --red: #D56774;
-    --darkRed: #A81F2D;
+    --sky: #a3deff;
+    --bubble: #b1e3ff;
+    --darkgreen: #2f5525;
+    --lightgreen: #69c063;
+    --brown: #71461f;
+    --gold: #ef9b1f;
+    --bluegray: #514f66;
+    --gray: #5f5f5f;
+    --white: #ffffff;
+    --darksky: #2c314f;
+    --darkbubble: #373a5e;
+    --red: #d56774;
+    --darkRed: #a81f2d;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');
     --schedule: url('/assets/schedule.svg');
   }
 
   [data-theme='light'] {
-    --sky: #A3DEFF;
-    --bubble: #B1E3FF;
-    --darkgreen: #2F5525;
-    --lightgreen: #69C063;
-    --brown: #71461F;
-    --gold: #EF9B1F;
-    --bluegray: #514F66;
-    --gray: #5F5F5F;
-    --white: #FFFFFF;
-    --darksky: #2C314F;
-    --darkbubble: #373A5E;
-    --red: #D56774;
-    --darkRed: #A81F2D;
+    --sky: #a3deff;
+    --bubble: #b1e3ff;
+    --darkgreen: #2f5525;
+    --lightgreen: #69c063;
+    --brown: #71461f;
+    --gold: #ef9b1f;
+    --bluegray: #514f66;
+    --gray: #5f5f5f;
+    --white: #ffffff;
+    --darksky: #2c314f;
+    --darkbubble: #373a5e;
+    --red: #d56774;
+    --darkRed: #a81f2d;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');
     --schedule: url('/assets/schedule.svg');
@@ -44,25 +50,26 @@
 
   [data-theme='dark'] {
     /* TODO: NEED TO CHANGE COLORS FOR DARK MODE (it is currently same as light mode) */
-    --sky: #A3DEFF;
-    --bubble: #B1E3FF;
-    --darkgreen: #2F5525;
-    --lightgreen: #69C063;
-    --brown: #71461F;
-    --gold: #EF9B1F;
-    --bluegray: #514F66;
-    --gray: #5F5F5F;
-    --white: #FFFFFF;
-    --darksky: #2C314F;
-    --darkbubble: #373A5E;
-    --red: #D56774;
-    --darkRed: #A81F2D;
+    --sky: #a3deff;
+    --bubble: #b1e3ff;
+    --darkgreen: #2f5525;
+    --lightgreen: #69c063;
+    --brown: #71461f;
+    --gold: #ef9b1f;
+    --bluegray: #514f66;
+    --gray: #5f5f5f;
+    --white: #ffffff;
+    --darksky: #2c314f;
+    --darkbubble: #373a5e;
+    --red: #d56774;
+    --darkRed: #a81f2d;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');
     --schedule: url('/assets/schedule.svg');
   }
 }
 
+/* very useful for debugging */
 /* * {
   border: 2px solid greenyellow;
 } */

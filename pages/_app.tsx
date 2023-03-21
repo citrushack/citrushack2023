@@ -1,17 +1,19 @@
 import type { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
+import { Session } from 'next-auth';
+import { Toaster } from 'react-hot-toast';
+
+import { UserBar } from '@/components/UserBar';
+import { MLHBanner } from '@/components/MLHBanner';
+import Nav from '@/components/Nav';
 
 import 'tailwindcss/tailwind.css';
 import '../styles/globals.css';
-import { UserBar } from '@/components/UserBar';
-import { MLHBanner } from '@/components/MLHBanner';
-import { Session } from 'next-auth';
-import Nav from '@/components/Page/Nav';
 
 export default function App({
   Component,
-  pageProps,
+  pageProps
 }: AppProps<{
   session: Session;
 }>) {
@@ -22,6 +24,7 @@ export default function App({
         <Nav />
         <Component {...pageProps} />
         <UserBar />
+        <Toaster />
       </ThemeProvider>
     </SessionProvider>
   );

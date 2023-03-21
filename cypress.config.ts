@@ -4,7 +4,8 @@ import { defineConfig } from "cypress";
 export default defineConfig({
   projectId: 'krfkwu',
   e2e: {
-    baseUrl: 'http://localhost:3000/',
+    // baseUrl has its trailing slash trimmed in github actions, but not local (so leave it out)
+    baseUrl: 'http://localhost:3000',
     setupNodeEvents(on, config) {
       // implement node event listeners here
       // https://github.com/cypress-io/cypress-example-recipes/blob/master/examples/server-communication__env-variables/cypress.config.js

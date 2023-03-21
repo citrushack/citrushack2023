@@ -1,7 +1,7 @@
 import {
   ShirtStats,
   FoodStats,
-  ParticipationStats,
+  ParticipationStats
 } from '@/components/Admin/Statistics';
 
 export function Statistics({ data }) {

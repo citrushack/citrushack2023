@@ -16,7 +16,7 @@ export default function SignupCounter() {
 
       // Retry after 1.5 seconds.
       setTimeout(() => revalidate({ retryCount }), 1500);
-    },
+    }
   });
 
   const cachedCount = cache.get('/api/users/count');

@@ -24,7 +24,7 @@ export function CheckinForm() {
     address_line_2,
     city,
     state,
-    zipcode,
+    zipcode
   }) => {
     if (clickedSubmitOnce) {
       return;
@@ -48,7 +48,7 @@ export function CheckinForm() {
         daily_wellness,
         photo_consent,
         MLH_code_of_conduct,
-        address,
+        address
       })
       .then(() => {
         toast.success('Successfully checked in!', { id: 'checkinSuccess' });
@@ -66,7 +66,7 @@ export function CheckinForm() {
   const triggerErrorNotification = () => {
     if (Object.keys(errors).length > 0) {
       toast.error('Please fill out all required fields.', {
-        id: 'applicationNotFilledOut',
+        id: 'applicationNotFilledOut'
       });
     }
   };

@@ -8,7 +8,7 @@ export function SearchBar({
   setSearchFilter,
   setSearchQuery,
   validSearch,
-  setValidSearch,
+  setValidSearch
 }) {
   const regex = new RegExp('(' + searchAttributes + '):\\s*[a-zA-Z0-9._]+');
 

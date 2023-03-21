@@ -11,7 +11,7 @@ export function GroupBox({ group, expandedGroups, setExpandedGroups }) {
   const router = useRouter();
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [selectedUser, setSelectedUser] = useState({
-    name: { first: '', last: '' },
+    name: { first: '', last: '' }
   });
   const [currentGroup, setCurrentGroup] = useState({ gid: '' });
 
@@ -20,13 +20,13 @@ export function GroupBox({ group, expandedGroups, setExpandedGroups }) {
       .post('/api/groups/remove', { user, gid: currentGroup.gid })
       .then(() => {
         toast.success('Successfully removed user!', {
-          id: 'removeUserFromGroupSuccess',
+          id: 'removeUserFromGroupSuccess'
         });
         router.reload();
       })
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
-          id: 'removeUserFromGroupError',
+          id: 'removeUserFromGroupError'
         });
       });
   };

@@ -15,7 +15,7 @@ describe('Verify /apply is working', () => {
     Object.entries({
       'Food Preference': ['Meat', 'Vegetarian', 'Nut Allergy'],
       'T-Shirt Size': ['S', 'M', 'L', 'XL'],
-      'First time hacker?': ['Yes', 'No'],
+      'First time hacker?': ['Yes', 'No']
     }).forEach(([category, categoryValues]) =>
       categoryValues.forEach((categoryValue) => {
         cy.get(`[id="${category}"]`)
@@ -41,7 +41,7 @@ describe('Verify /apply is working', () => {
 
     cy.get('input[type=checkbox]').click({ multiple: true });
     cy.intercept('POST', '/api/applications/create', {
-      statusCode: 201,
+      statusCode: 201
     }).as('submit');
     cy.get('button[type=submit]:contains("Submit")').click();
     cy.wait('@submit');

@@ -25,11 +25,11 @@ export default async function createGroup(
           email: session.user.email,
           name: {
             first: session.user.name.first,
-            last: session.user.name.last,
-          },
-        },
+            last: session.user.name.last
+          }
+        }
       ],
-      createdAt: new Date(),
+      createdAt: new Date()
     });
 
     res.status(200).json({});

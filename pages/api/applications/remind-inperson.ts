@@ -18,7 +18,7 @@ export default async function remindInPerson(
         name: '',
         members: '',
         invite_code: '',
-        newcomer: '',
+        newcomer: ''
       });
     }
 

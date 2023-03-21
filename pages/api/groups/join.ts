@@ -50,7 +50,7 @@ export default async function joinGroup(
         name: session.user.name.first,
         members: groupMembers,
         invite_code: invite_code,
-        newcomer: '',
+        newcomer: ''
       });
 
       // send email notification to group that user joined
@@ -61,7 +61,7 @@ export default async function joinGroup(
           name: group[0].users[i].name.first,
           members: '',
           invite_code: invite_code,
-          newcomer: session.user.name.first,
+          newcomer: session.user.name.first
         });
       }
 
@@ -78,8 +78,8 @@ export default async function joinGroup(
         email: session.user.email,
         name: {
           first: session.user.name.first,
-          last: session.user.name.last,
-        },
+          last: session.user.name.last
+        }
       });
 
       await db
