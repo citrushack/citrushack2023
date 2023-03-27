@@ -22,8 +22,8 @@ body {
     --white: #ffffff;
     --darksky: #2c314f;
     --darkbubble: #373a5e;
-    --red: #d56774;
-    --darkRed: #a81f2d;
+    --red: #484F85;
+    --darkRed: #202760;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');
     --schedule: url('/assets/schedule.svg');
@@ -41,8 +41,8 @@ body {
     --white: #ffffff;
     --darksky: #2c314f;
     --darkbubble: #373a5e;
-    --red: #d56774;
-    --darkRed: #a81f2d;
+    --red: #484F85;
+    --darkRed: #202760;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');
     --schedule: url('/assets/schedule.svg');
@@ -50,7 +50,7 @@ body {
 
   [data-theme='dark'] {
     /* TODO: NEED TO CHANGE COLORS FOR DARK MODE (it is currently same as light mode) */
-    --sky: #a3deff;
+    --sky: #2C314F;
     --bubble: #b1e3ff;
     --darkgreen: #2f5525;
     --lightgreen: #69c063;
@@ -61,8 +61,8 @@ body {
     --white: #ffffff;
     --darksky: #2c314f;
     --darkbubble: #373a5e;
-    --red: #d56774;
-    --darkRed: #a81f2d;
+    --red: #484F85;
+    --darkRed: #202760;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');
     --schedule: url('/assets/schedule.svg');

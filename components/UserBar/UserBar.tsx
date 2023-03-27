@@ -20,7 +20,7 @@ export function UserBar() {
 
   return (
     <>
-      <div className="z-[1000] fixed top-3 right-3 flex gap-3">
+      <div className="z-[1000] fixed top-3 right-3 flex gap-3 text-white">
         {status === 'authenticated' &&
           !session.user.uid &&
           router.pathname !== '/apply' && (
@@ -28,7 +28,7 @@ export function UserBar() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.995 }}
-                className="flex justify-center items-center self-center w-24 h-11 px-4 font-semibold text-lg rounded-md bg-highlight shadow cursor-pointer"
+                className="flex justify-center items-center self-center w-24 h-11 px-4 font-semibold text-lg rounded-md bg-red shadow cursor-pointer text-white"
               >
                 Apply
               </motion.button>
@@ -40,7 +40,7 @@ export function UserBar() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.995 }}
-            className="flex justify-center items-center self-center w-24 h-11 px-4 font-semibold text-lg rounded-md bg-highlight shadow cursor-pointer"
+            className="flex justify-center items-center self-center w-24 h-11 px-4 font-semibold text-lg rounded-md bg-highlight shadow cursor-pointer text-white"
             onClick={() => toggleSigninModal()}
           >
             Sign In

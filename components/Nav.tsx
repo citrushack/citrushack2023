@@ -91,7 +91,7 @@ export default function Nav() {
         whileHover={{ width: 200 }}
         className="z-[1000] fixed top-1/2 left-3 transform -translate-y-1/2 hidden xl:flex flex-col gap-2.5 w-14 p-2 rounded-md text-sub-bright bg-red shadow"
       >
-        <div className="self-center p-2 text-2xl">
+        <div className="self-center p-2 text-2xl text-white">
           <BiMenu />
         </div>
         {router.pathname === '/' &&
@@ -102,12 +102,12 @@ export default function Nav() {
               whileTap={{ scale: 0.995 }}
             >
               <NavLink
-                activeClass="bg-buttons dark:bg-highlight-dark text-text"
+                activeClass="bg-buttons dark:bg-highlight-dark text-white"
                 to={title}
                 spy={true}
                 smooth={true}
                 duration={500}
-                className="flex gap-2.5 items-center p-2 font-semibold text-lg truncate rounded-md hover:bg-darkRed hover:text-text cursor-pointer"
+                className="flex gap-2.5 items-center p-2 font-semibold text-lg truncate rounded-md hover:bg-darkRed hover:text-white cursor-pointer text-white"
               >
                 <span className="text-2xl">{icon}</span>
                 <span>{title}</span>
@@ -122,12 +122,12 @@ export default function Nav() {
               whileTap={{ scale: 0.995 }}
             >
               <NavLink
-                activeClass="bg-highlight dark:bg-highlight-dark text-text"
+                activeClass="bg-highlight dark:bg-highlight-dark text-white"
                 to={title}
                 spy={true}
                 smooth={true}
                 duration={500}
-                className="flex gap-2.5 items-center p-2 font-semibold text-lg truncate rounded-md hover:bg-buttons hover:text-text cursor-pointer"
+                className="flex gap-2.5 items-center p-2 font-semibold text-lg truncate rounded-md hover:bg-buttons hover:text-white cursor-pointer text-white"
               >
                 <span className="text-2xl">{icon}</span>
                 <span>{title}</span>
@@ -141,7 +141,7 @@ export default function Nav() {
           >
             <Link passHref href="/">
               <span
-                className="flex gap-2.5 items-center p-2 font-semibold text-lg truncate rounded-md hover:bg-buttons hover:text-text cursor-pointer"
+                className="flex gap-2.5 items-center p-2 font-semibold text-lg truncate rounded-md hover:bg-buttons hover:text-white cursor-pointer"
                 onClick={() => setNavOpen(false)}
               >
                 <span className="text-2xl">
@@ -157,7 +157,7 @@ export default function Nav() {
       <div className="z-[1000] fixed top-3 -left-1 xl:hidden px-4">
         <div
           className={
-            'flex flex-col gap-1.5 rounded-md bg-secondary shadow overflow-hidden transform-gpu transition-size duration-200 ' +
+            'flex flex-col gap-1.5 rounded-md bg-red shadow overflow-hidden transform-gpu transition-size duration-200 ' +
             (navOpen ? 'p-2 ' : 'w-11 h-11 ') +
             (navOpen &&
               (router.pathname === '/'
@@ -173,9 +173,9 @@ export default function Nav() {
               onClick={() => setNavOpen(!navOpen)}
             >
               {navOpen ? (
-                <BiX className="text-2xl" />
+                <BiX className="text-2xl text-white" />
               ) : (
-                <BiMenu className="text-2xl" />
+                <BiMenu className="text-2xl text-white" />
               )}
             </span>
           </div>
@@ -183,13 +183,13 @@ export default function Nav() {
             hometabs.map(({ icon, title }) => (
               <NavLink
                 key={'mobile' + title}
-                activeClass="bg-highlight text-text"
+                activeClass="bg-highlight text-white"
                 to={title}
                 spy={true}
                 smooth={true}
                 offset={-50}
                 duration={500}
-                className="flex gap-2.5 items-center p-2 font-semibold text-lg rounded-md hover:bg-buttons hover:text-text cursor-pointer"
+                className="flex gap-2.5 items-center p-2 font-semibold text-lg rounded-md hover:bg-buttons hover:text-white cursor-pointer text-white"
                 onClick={() => setNavOpen(false)}
               >
                 <span className="text-2xl">{icon}</span>
@@ -200,13 +200,13 @@ export default function Nav() {
             livetabs.map(({ icon, title }) => (
               <NavLink
                 key={'mobile' + title}
-                activeClass="bg-highlight text-text"
+                activeClass="bg-highlight text-white"
                 to={title}
                 spy={true}
                 smooth={true}
                 offset={-50}
                 duration={500}
-                className="flex gap-2.5 items-center p-2 font-semibold text-lg rounded-md hover:bg-buttons hover:text-text cursor-pointer"
+                className="flex gap-2.5 items-center p-2 font-semibold text-lg rounded-md hover:bg-buttons hover:text-white cursor-pointer"
                 onClick={() => setNavOpen(false)}
               >
                 <span className="text-2xl">{icon}</span>
@@ -216,7 +216,7 @@ export default function Nav() {
           {router.pathname !== '/' && router.pathname !== '/live' && (
             <Link passHref href="/">
               <span
-                className="flex gap-2.5 items-center p-2 font-semibold text-lg truncate rounded-md hover:bg-buttons hover:text-text cursor-pointer"
+                className="flex gap-2.5 items-center p-2 font-semibold text-lg truncate rounded-md hover:bg-buttons hover:text-white cursor-pointer"
                 onClick={() => setNavOpen(false)}
               >
                 <span className="text-2xl">
