@@ -14,6 +14,7 @@ export default function Home() {
             <div className="pb-4 text-2xl md:text-6xl font-Nunito font-bold text-white">
               Citrus Hack 2023<br></br>Registration Countdown
             </div>
+            <p className="font-Nunito font-bold pb-4">April 3, 2023</p>
             <CountdownWrapper date="2023-04-03T01:00:00" />
           </div>
 
@@ -27,7 +28,7 @@ export default function Home() {
           </p>
         </div>
         <motion.span
-          className="pr-6"
+          className="md:pr-6"
           animate={{ y: [0, -20, 0] }}
           transition={{
             repeat: Infinity,
