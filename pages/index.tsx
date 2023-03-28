@@ -28,7 +28,7 @@ export default function Home() {
           </p>
         </div>
         <motion.span
-          className="md:pr-6"
+          className="md:pr-6 pt-14 md:pt-0"
           animate={{ y: [0, -20, 0] }}
           transition={{
             repeat: Infinity,
