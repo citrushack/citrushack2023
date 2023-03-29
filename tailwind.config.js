@@ -28,7 +28,9 @@ module.exports = {
         purple: 'var(--purple)',
         lightPurple: 'var(--lightPurple)',
         text: 'var(--text)',
-        hoverPrimary: 'var(--hoverPrimary)'
+        hoverPrimary: 'var(--hoverPrimary)',
+        primary: 'var(--primary)',
+        secondary: 'var(--secondary)'
       },
       backgroundImage: {
         clouds: 'var(--clouds)',

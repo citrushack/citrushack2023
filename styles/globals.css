@@ -26,6 +26,8 @@ body {
     --lightPurple: #5C6084;
     --hoverPrimary: #5C6084;
     --text: #373A5E;
+    --primary: #FFD5C3;
+    --secondary: #DFDFDF;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');
     --schedule: url('/assets/schedule.svg');
@@ -47,6 +49,8 @@ body {
     --hoverPrimary: #5C6084;
     --lightPurple: #5C6084;
     --text: #373A5E;
+    --primary: #FFD5C3;
+    --secondary: #DFDFDF;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');
     --schedule: url('/assets/schedule.svg');
@@ -69,6 +73,8 @@ body {
     --lightPurple: #5C6084;
     --hoverPrimary: #5C6084;
     --text: #FFFF;
+    --primary: #110A36;
+    --secondary: #353535;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');
     --schedule: url('/assets/schedule.svg');
