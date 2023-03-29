@@ -31,14 +31,14 @@ export function FaqAccordion({ question, answer }: Props) {
       </div>
       <div
         className={
-          'transition-size overflow-hidden duration-250 h-full ' +
+          'transition-size overflow-hidden duration-250 h-full' +
           (open ? 'max-h-[30rem]' : 'max-h-0')
         }
       >
         {typeof answer === 'string' ? (
-          <p className="m-0 mb-8 text-lightPurple">{answer}</p>
+          <p className="m-0 mb-8 text-text">{answer}</p>
         ) : (
-          <div className="m-0 mb-8 text-lightPurple">{answer}</div>
+          <div className="m-0 mb-8 text-text">{answer}</div>
         )}
       </div>
     </div>
