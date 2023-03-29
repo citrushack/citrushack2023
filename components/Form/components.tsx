@@ -59,7 +59,7 @@ export const Input = ({
       className={
         'w-full rounded focus:border-highlight focus:outline-none focus:ring-highlight file:px-4 file:py-1.5 file:rounded-full file:border-0 file:bg-highlight file:text-sm file:font-semibold file:cursor-pointer hover:cursor-pointer' +
         (type === 'date' ? 'py-1.5 ' : 'py-1 ') +
-        (type === 'file' ? '' : 'bg-white px-2 border-2 ') +
+        (type === 'file' ? '' : 'bg-secondary px-2 border-2 ') +
         (errors[variable] ? 'border-red-500' : 'border-highlight')
       }
       onChange={onChange}
