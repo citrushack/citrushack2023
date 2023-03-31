@@ -160,7 +160,15 @@ export function UserBox({
                       (user.qualified === 'yeah' ? 'Approved' : 'Rejected')}
                   </li>
                   <li className="text-sm md:text-base">
-                    <b>Participation:</b> {user.participation}
+                    <b>Resume:</b>{' '}
+                    <a
+                      href={user.resume}
+                      className="text-blue-500"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      view in broswer
+                    </a>
                   </li>
                   {user.checkedIn && (
                     <li className="text-sm md:text-base">

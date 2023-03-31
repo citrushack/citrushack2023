@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { loadFiles } from '@/components/Admin/Actions/Resume/methods';
 
 export function Pages({ pageOptions, icons, selectedPage, selectPage }) {
-  const [, setDocs] = useState(
-    localStorage.getItem('docs') ? JSON.parse(localStorage.getItem('docs')) : []
-  );
-
   return (
     <div className="flex gap-10 my-8 mb-4 flex-wrap">
       {pageOptions.map((option, idx) => (
@@ -20,9 +15,6 @@ export function Pages({ pageOptions, icons, selectedPage, selectPage }) {
           }
           onClick={() => {
             selectPage(option);
-            if (option === 'Resumes') {
-              loadFiles(setDocs);
-            }
           }}
         >
           <motion.div

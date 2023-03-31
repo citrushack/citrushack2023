@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 import useSWR, { useSWRConfig } from 'swr';
 import { BiIdCard, BiBarChartAlt2, BiGroup, BiFile } from 'react-icons/bi';
 import { ProtectedPage } from '@/components/Page';
-import {
-  Pages,
-  Overview,
-  Statistics,
-  Groups,
-  Resumes
-} from '@/components/Admin';
+import { Pages, Overview, Statistics, Groups } from '@/components/Admin';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -30,7 +24,7 @@ export default function Admin() {
   const cachedData = cache.get('/api/users/query-all');
   const [selectedPage, setSelectedPage] = useState('Overview');
 
-  const pageOptions = ['Overview', 'Statistics', 'Groups', 'Resumes'];
+  const pageOptions = ['Overview', 'Statistics', 'Groups'];
 
   if (error || !data) {
     return (
@@ -59,7 +53,6 @@ export default function Admin() {
                 <Statistics data={cachedData} />
               )}
               {selectedPage === 'Groups' && <Groups data={cachedData} />}
-              {selectedPage === 'Resumes' && <Resumes />}
             </div>
           ) : (
             <span className="w-full text-center">Loading...</span>
@@ -87,7 +80,6 @@ export default function Admin() {
             {selectedPage === 'Overview' && <Overview data={data} />}
             {selectedPage === 'Statistics' && <Statistics data={data} />}
             {selectedPage === 'Groups' && <Groups data={data} />}
-            {selectedPage === 'Resumes' && <Resumes />}
           </div>
         </section>
       </ProtectedPage>

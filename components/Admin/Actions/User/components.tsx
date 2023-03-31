@@ -165,7 +165,7 @@ export function UserActions({
         selectedView == 'Approved' ||
         selectedView === 'Rejected' ||
         selectedView === 'Not Checked-In') && (
-        <p className="mt-3 font-normal text-sm">
+        <p className="mt-3 font-normal text-sm text-text">
           <span className="font-medium">Tip:</span> Select a row to perform more
           actions.
         </p>
@@ -312,7 +312,7 @@ export function UserActions({
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.995 }}
-            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-amber-400 text-white cursor-pointer"
+            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-amber-400 text-text cursor-pointer"
             onClick={() => {
               remindToApply(selectedUsers);
               setConfirmApplyReminder(false);
@@ -332,7 +332,7 @@ export function UserActions({
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.995 }}
-            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-amber-400 text-white cursor-pointer"
+            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-amber-400 text-text cursor-pointer"
             onClick={() => {
               remindAboutInPerson(selectedUsers);
               setConfirmInPersonReminder(false);
@@ -352,7 +352,7 @@ export function UserActions({
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.995 }}
-            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-indigo-400 text-white cursor-pointer"
+            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-indigo-400 text-text cursor-pointer"
             onClick={() => {
               remindToJoinDiscord(selectedUsers);
               setConfirmDiscordReminder(false);
@@ -372,7 +372,7 @@ export function UserActions({
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.995 }}
-            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-amber-400 text-white cursor-pointer"
+            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-amber-400 text-text cursor-pointer"
             onClick={() => {
               remindToCheckIn(selectedUsers);
               setConfirmCheckInReminder(false);
@@ -392,7 +392,7 @@ export function UserActions({
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.995 }}
-            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-blue-400 text-white cursor-pointer"
+            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-blue-400 text-text cursor-pointer"
             onClick={() => {
               autoDecideSelected(selectedUsers);
               setConfirmAuto(false);
@@ -412,7 +412,7 @@ export function UserActions({
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.995 }}
-            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-green-400 text-white cursor-pointer"
+            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-green-400 text-text cursor-pointer"
             onClick={() => {
               approveSelected(selectedUsers, true);
               setConfirmApprove(false);
@@ -432,7 +432,7 @@ export function UserActions({
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.995 }}
-            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-red-400 text-white cursor-pointer"
+            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-red-400 text-text cursor-pointer"
             onClick={() => {
               rejectSelected(selectedUsers, false);
               setConfirmReject(false);
@@ -452,7 +452,7 @@ export function UserActions({
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.995 }}
-            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-green-400 text-white cursor-pointer"
+            className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-green-400 text-text cursor-pointer"
             onClick={() => {
               redoApproveSelected(selectedUsers);
               setConfirmRedoApprove(false);
