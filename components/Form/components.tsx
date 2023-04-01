@@ -11,8 +11,8 @@ interface GroupProps {
 
 /** Group of input fields. */
 export const Group = ({ title, subtitle, children }: GroupProps) => (
-  <div className="flex flex-col gap-3 sm:p-6 bg-secondary rounded-md p-4 sm:bg-secondary sm:rounded-md sm:shadow-md">
-    <h4 className="mt-0 font-semibold">{title}</h4>
+  <div className="flex flex-col gap-3 sm:p-6 bg-purple rounded-3xl p-4 sm:bg-secondary sm:rounded-xl sm:shadow-md">
+    <h4 className="mt-0 font-semibold text-white">{title}</h4>
     {subtitle && <p className="m-0 text-base">{subtitle}</p>}
     {children}
   </div>
@@ -43,12 +43,12 @@ export const Input = ({
   onChange
 }: InputProps) => (
   <div>
-    <label className="font-semibold">
+    <label className="font-semibold text-white">
       {label}
-      {!required && <span className="text-highlight"> (optional)</span>}
+      {!required && <span className="text-lightPurple"> (optional)</span>}
     </label>
     {type === 'file' && (
-      <p className="m-0 mb-1 text-sm italic">
+      <p className="m-0 mb-1 text-sm italic text-lightPurple">
         Will be used for recruiting purposes.
       </p>
     )}
@@ -57,9 +57,9 @@ export const Input = ({
       defaultValue={defaultValue}
       {...register(variable, { required })}
       className={
-        'w-full rounded focus:border-highlight focus:outline-none focus:ring-highlight file:px-4 file:py-1.5 file:rounded-full file:border-0 file:bg-highlight file:text-sm file:font-semibold file:cursor-pointer hover:cursor-pointer' +
+        'w-full rounded-lg focus:border-highlight focus:outline-none focus:ring-highlight file:px-4 file:py-1.5 file:rounded-full file:border-0 file:bg-highlight file:text-sm file:font-semibold file:cursor-pointer hover:cursor-pointer' +
         (type === 'date' ? 'py-1.5 ' : 'py-1 ') +
-        (type === 'file' ? '' : 'bg-secondary px-2 border-2 ') +
+        (type === 'file' ? ' text-white ' : 'bg-secondary px-2 border-2 ') +
         (errors[variable] ? 'border-red-500' : 'border-highlight')
       }
       onChange={onChange}
@@ -88,11 +88,11 @@ export const Select = ({
   errors
 }: SelectProps) => (
   <div>
-    <label className="font-semibold text-highlight">{label}</label>
+    <label className="font-semibold text-highlight text-white">{label}</label>
     <select
       {...register(variable, { required })}
       className={
-        'w-full px-2 py-1.5 rounded border-2 focus:border-highlight focus:outline-none focus:ring-highlight bg-secondary overflow-ellipsis ' +
+        'w-full px-2 py-1.5 rounded-xl border-2 focus:border-highlight focus:outline-none focus:ring-highlight bg-secondary overflow-ellipsis ' +
         (errors[variable] ? 'border-red-500' : 'border-highlight')
       }
     >
@@ -143,7 +143,7 @@ export const Radio = ({
   subtext
 }: RadioProps) => (
   <div>
-    <legend className="font-semibold">{label}</legend>
+    <legend className="font-semibold text-white">{label}</legend>
     {subtext && <p className="m-0 mb-1 text-sm italic">{subtext}</p>}
     <div
       className={
@@ -167,7 +167,8 @@ export const Radio = ({
           <label
             htmlFor={variable.toString() + option.toString()}
             className={
-              'cursor-pointer ' + (errors[variable] ? 'text-red-500' : '')
+              'text-white cursor-pointer ' +
+              (errors[variable] ? 'text-red-500' : '')
             }
           >
             {option}
@@ -206,7 +207,7 @@ export const Checkbox = ({
   subtext
 }: CheckboxProps) => (
   <div>
-    <legend className="font-semibold">{label}</legend>
+    <legend className="font-semibold text-white">{label}</legend>
     {subtext && <p className="m-0 mb-1 text-sm italic">{subtext}</p>}
     <div className="flex flex-col gap-2 pl-2">
       {options.map((option: string) => (
@@ -223,7 +224,7 @@ export const Checkbox = ({
           />
           <label
             htmlFor={variable.toString() + option.toString()}
-            className="cursor-pointer"
+            className="cursor-pointer text-white"
           >
             {option}
           </label>

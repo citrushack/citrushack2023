@@ -8,7 +8,7 @@ export const MLH = [
       I have read and agree to the{' '}
       <ExternalLink
         name="MLH Code of Conduct"
-        link="https://github.com/MLH/mlh-policies/blob/master/code-of-conduct.md"
+        link="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
       />
       .
     </>

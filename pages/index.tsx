@@ -13,8 +13,13 @@ import Team from '@/pages/sections/team';
 import Footer from '@/components/Footer';
 import FooterWaveLight from '@/public/assets/waves/footer_wave.svg';
 import FooterWaveDark from '@/public/assets/waves/footer_wave_dark.svg';
-// import FaqBalloons from '@/public/assets/faq_balloons.svg';
 import { useTheme } from 'next-themes';
+import sponsorBGDarkDesktop from '@/public/assets/waves/sponsorBGDarkDesktop.svg';
+import sponsorBGLightDesktop from '@/public/assets/waves/sponsorBGLightDesktop.svg';
+import sponsorBGDarkTablet from '@/public/assets/waves/sponsorBGDarkTablet.svg';
+import sponsorBGLightTablet from '@/public/assets/waves/sponsorBGLightTablet.svg';
+import sponsorBGDarkMobile from '@/public/assets/waves/sponsorBGDarkMobile.svg';
+import sponsorBGLightMobile from '@/public/assets/waves/sponsorBGLightMobile.svg';
 
 export default function Home() {
   const { theme } = useTheme();
@@ -53,12 +58,77 @@ export default function Home() {
           <Support />
         </span>
       </Element>
-      <Element
-        name="Sponsors"
-        className="flex justify-center px-4 w-full bg-gradient-to-b from-accent-secondary to-accent pb-20"
-      >
-        <Sponsors />
-      </Element>
+      <div className="relative w-full">
+        <div className="absolute w-full h-full -z-0 top-0 right-0">
+          {theme === 'light' ? (
+            <>
+              <div className="max-xl:hidden opacity-80">
+                <Image
+                  src={sponsorBGLightDesktop}
+                  alt="Wave Dark"
+                  layout="responsive"
+                  objectFit="contain"
+                  draggable={false}
+                />
+              </div>
+              <div className="max-sm:hidden sm:block xl:hidden opacity-80">
+                <Image
+                  src={sponsorBGLightTablet}
+                  alt="Wave Dark"
+                  layout="responsive"
+                  objectFit="contain"
+                  draggable={false}
+                />
+              </div>
+              <div className="block sm:hidden opacity-60">
+                <Image
+                  src={sponsorBGLightMobile}
+                  alt="Wave Dark"
+                  layout="responsive"
+                  objectFit="contain"
+                  draggable={false}
+                />
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="max-xl:hidden opacity-90">
+                <Image
+                  src={sponsorBGDarkDesktop}
+                  alt="Wave Dark"
+                  layout="responsive"
+                  objectFit="contain"
+                  draggable={false}
+                />
+              </div>
+              <div className="max-sm:hidden sm:block xl:hidden opacity-90">
+                <Image
+                  src={sponsorBGDarkTablet}
+                  alt="Wave Dark"
+                  layout="responsive"
+                  objectFit="contain"
+                  draggable={false}
+                />
+              </div>
+              <div className="block sm:hidden">
+                <Image
+                  src={sponsorBGDarkMobile}
+                  alt="Wave Dark"
+                  layout="responsive"
+                  objectFit="contain"
+                  draggable={false}
+                />
+              </div>
+            </>
+          )}
+        </div>
+        <Element
+          name="Sponsors"
+          className="flex justify-center px-4 w-full bg-gradient-to-b from-accent-secondary to-accent pb-20"
+        >
+          <Sponsors />
+        </Element>
+      </div>
       <Element name="Staff" className="flex justify-center w-full bg-sky pt-20">
         <span className="flex justify-center px-4 w-full">
           <Team />
@@ -72,6 +142,7 @@ export default function Home() {
               alt="Wave Light"
               layout="responsive"
               objectFit="contain"
+              draggable={false}
             />
           ) : (
             <Image
@@ -79,6 +150,7 @@ export default function Home() {
               alt="Wave Dark"
               layout="responsive"
               objectFit="contain"
+              draggable={false}
             />
           )}
         </div>

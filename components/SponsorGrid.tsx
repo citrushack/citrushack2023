@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
-import { useTheme } from 'next-themes';
+// import { useTheme } from 'next-themes';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 import orangeFlag from '@/public/assets/sponsors/orange_flag.svg';
 import tangerineFlag from '@/public/assets/sponsors/tangerine_flag.svg';
 import cutieFlag from '@/public/assets/sponsors/cutie_flag.svg';
-// import tiersFlag from '@/public/assets/tiersFlag.svg';
+
+import orange from '@/public/assets/sponsors/orange_sponsor_orange.svg';
+import tangerine from '@/public/assets/sponsors/tangerine_sponsor_orange.svg';
+import cutie from '@/public/assets/sponsors/cutie_sponsor_orange.svg';
 
 interface SponsorProps {
   /** Sponsor tier (e.g. 'cutie'). */
   type: string;
   /** Path to sponsor logo (e.g. /assets/sponsors/google-cloud.svg). */
   image: string;
+  /** Path to sponsor logo in dark mode */
+  imageDark?: string;
   /** Width of sponsor logo. */
   width: number;
   /** Height of sponsor logo. */
@@ -23,6 +28,8 @@ interface SponsorProps {
   shrink?: boolean;
   /** Decides whether to shrink the sponsor logo even more if it still appears larger than others in the same tier. */
   tall?: boolean;
+  /** what tailwindcss class to add for border */
+  border?: string;
 }
 
 /** Individual sponsor logo linked to sponsor website. */
@@ -33,30 +40,32 @@ export const Sponsor = ({
   height,
   link,
   shrink,
-  tall
+  tall,
+  border
 }: SponsorProps) => (
-  <div
-    className={
-      'flex items-center min-h-[10rem] ' +
-      (type === 'cutie'
-        ? 'w-20 md:w-24 ' +
-          (shrink ? 'w-16 md:w-24' : '') +
-          (tall ? 'w-12 md:w-20' : '')
-        : type === 'tangerine'
-        ? 'w-28 md:w-32 ' +
-          (shrink ? 'w-24 md:w-28' : '') +
-          (tall ? 'w-18 md:w-24' : '')
-        : type === 'orange'
-        ? 'w-32 md:w-36 ' +
-          (shrink ? 'w-24 md:w-28' : '') +
-          (tall ? 'w-18 md:w-24' : '')
-        : '')
-    }
-  >
+  // bg white is up here for a default bg color (also needs to be rounded haha)
+  <div className={'flex items-center bg-white rounded-full '}>
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.995 }}
-      className="w-full transform-gpu"
+      className={
+        'transform-gpu rounded-full border-6 grid content-center ' +
+        (shrink ? 'p-[2rem] ' : 'p-[0.6rem] ') +
+        ((border || '') + ' ') +
+        (type === 'cutie'
+          ? 'w-24 h-24 md:w-28 md:h-28 ' +
+            (false && shrink ? 'w-16 md:w-24' : '') +
+            (false && tall ? 'w-12 md:w-20' : '')
+          : type === 'tangerine'
+          ? 'w-28 h-28 md:w-36 md:h-36 ' +
+            (false && shrink ? 'w-24 md:w-28' : '') +
+            (false && tall ? 'w-18 md:w-24' : '')
+          : type === 'orange'
+          ? 'w-32 h-32 md:w-44 md:h-44 ' +
+            (false && shrink ? 'w-24 md:w-28' : '') +
+            (false && tall ? 'w-18 md:w-24' : '')
+          : '')
+      }
     >
       <a target="_blank" rel="noreferrer noopener" href={link}>
         <Image
@@ -68,6 +77,7 @@ export const Sponsor = ({
           priority={Boolean(true)}
           layout="responsive"
           objectFit="contain"
+          draggable={false}
         />
       </a>
     </motion.div>
@@ -78,34 +88,30 @@ const tiers = [
   {
     type: 'orange',
     flag: orangeFlag,
-    wide: Boolean(true),
+    wide: true,
+    orange: orange,
     sponsors: [
       {
-        image: '/assets/sponsors/spaceforce.svg',
-        imageDark: '/assets/sponsors/spaceforce.svg',
-        width: 2505,
-        height: 3757,
-        link: 'https://www.spaceforce.mil/',
-        shrink: Boolean(true),
-        tall: null
+        image: '/assets/sponsors/aspb.png',
+        width: 1080,
+        height: 1080,
+        link: 'https://aspb.ucr.edu/',
+        border: 'border-[#003DA5]'
       },
       {
-        image: '/assets/sponsors/spaceforce.svg',
-        imageDark: '/assets/sponsors/spaceforce.svg',
-        width: 2505,
-        height: 3757,
-        link: 'https://www.spaceforce.mil/',
-        shrink: Boolean(true),
-        tall: null
+        image: '/assets/sponsors/gcap.png',
+        width: 2500,
+        height: 1330,
+        link: 'https://www.gcapucr.com/aboutgcap',
+        border: 'border-[#74B053]'
       },
       {
-        image: '/assets/sponsors/spaceforce.svg',
-        imageDark: '/assets/sponsors/spaceforce.svg',
-        width: 2505,
-        height: 3757,
-        link: 'https://www.spaceforce.mil/',
-        shrink: Boolean(true),
-        tall: null
+        image: '/assets/sponsors/coolerMaster.png',
+        width: 300,
+        height: 237,
+        link: 'https://www.coolermaster.com/',
+        shrink: true,
+        border: 'border-[#1D252C]'
       }
     ]
   },
@@ -113,33 +119,27 @@ const tiers = [
     type: 'tangerine',
     flag: tangerineFlag,
     wide: Boolean(true),
+    orange: tangerine,
     sponsors: [
       {
-        image: '/assets/sponsors/gcap-light.svg',
-        imageDark: '/assets/sponsors/gcap-dark.svg',
-        width: 727,
-        height: 728,
-        link: 'https://www.gcapucr.com/aboutgcap',
-        shrink: null,
-        tall: null
+        image: '/assets/sponsors/blackstone.png',
+        width: 690,
+        height: 150,
+        link: 'https://www.blackstonelaunchpad.org/'
       },
       {
-        image: '/assets/sponsors/amazon-light.svg',
-        imageDark: '/assets/sponsors/amazon-dark.svg',
-        width: 2380,
-        height: 2452,
-        link: 'https://www.amazon.com/',
-        shrink: Boolean(true),
-        tall: null
+        image: '/assets/sponsors/acm.webp',
+        width: 1080,
+        height: 1080,
+        link: 'https://acmucr.org/',
+        border: 'border-[#4185FC]'
       },
       {
-        image: '/assets/sponsors/amazon-light.svg',
-        imageDark: '/assets/sponsors/amazon-dark.svg',
-        width: 2380,
-        height: 2452,
-        link: 'https://www.amazon.com/',
-        shrink: Boolean(true),
-        tall: null
+        image: '/assets/sponsors/triad.png',
+        width: 371,
+        height: 85,
+        link: 'https://www.triadmagnetics.com/',
+        border: 'border-[#FFB624]'
       }
     ]
   },
@@ -147,114 +147,91 @@ const tiers = [
     type: 'cutie',
     flag: cutieFlag,
     wide: Boolean(true),
+    orange: cutie,
     sponsors: [
       {
-        image: '/assets/sponsors/wolfram-light.svg',
-        imageDark: '/assets/sponsors/wolfram-dark.svg',
-        width: 198,
-        height: 154.34,
+        image: '/assets/sponsors/redbull.png',
+        width: 580,
+        height: 335,
+        link: 'https://www.redbull.com/us-en/',
+        border: 'border-[#FF0000] bg-[#FCF1BF]'
+      },
+      {
+        image: '/assets/sponsors/wolfram.png',
+        width: 529,
+        height: 413,
         link: 'https://www.wolframalpha.com/',
-        shrink: null,
-        tall: null
+        border: 'border-[#DD1100] p-[1rem]'
       },
       {
-        image: '/assets/sponsors/sketch-light.svg',
-        imageDark: '/assets/sponsors/sketch-dark.svg',
-        width: 1407,
-        height: 1288,
-        link: 'https://sketch.com/',
-        shrink: Boolean(true),
-        tall: null
+        image: '/assets/sponsors/desmos.png',
+        width: 435,
+        height: 435,
+        link: 'https://desmos.com/',
+        border: 'border-[#138141] p-[1.4rem]'
       },
       {
-        image: '/assets/sponsors/triad-light.svg',
-        imageDark: '/assets/sponsors/triad-dark.svg',
-        width: 1089,
-        height: 1001,
-        link: 'https://www.triadmagnetics.com/',
-        shrink: Boolean(true),
-        tall: Boolean(true)
+        image: '/assets/sponsors/stickermule.png',
+        width: 442,
+        height: 259,
+        link: 'https://www.stickermule.com/',
+        border: 'border-[#4C2418] bg-[#E0BDAE]'
       },
       {
-        image: '/assets/sponsors/vercel-light.svg',
-        imageDark: '/assets/sponsors/vercel-dark.svg',
-        width: 1155,
-        height: 1000,
-        link: 'https://vercel.com/?utm_source=citrushack&utm_campaign=oss',
-        shrink: Boolean(true),
-        tall: null
+        image: '/assets/sponsors/echo3d.png',
+        width: 536,
+        height: 362,
+        link: 'https://www.echo3d.com/',
+        border: 'border-[#28C1FD] bg-[#002D64]'
       },
       {
-        image: '/assets/sponsors/snapchat.svg',
-        imageDark: '/assets/sponsors/snapchat.svg',
-        width: 391.39,
-        height: 385.49,
-        link: 'https://www.snapchat.com/',
-        shrink: Boolean(true),
-        tall: null
+        image: '/assets/sponsors/tensorflow.png',
+        width: 636,
+        height: 409,
+        link: 'https://www.tensorflow.org/',
+        border: 'border-[#F59121] bg-[#FFDCBC]'
       },
       {
-        image: '/assets/sponsors/interview-cake-light.svg',
-        imageDark: '/assets/sponsors/interview-cake-dark.svg',
-        width: 1754,
-        height: 1850,
-        link: 'https://www.interviewcake.com/',
-        shrink: Boolean(true),
-        tall: null
+        image: '/assets/sponsors/ucrBotanic.png',
+        width: 469,
+        height: 490,
+        link: 'https://gardens.ucr.edu/',
+        border: 'border-[#708652] p-[1rem]'
       },
       {
-        image: '/assets/sponsors/google-cloud.svg',
-        imageDark: '/assets/sponsors/google-cloud.svg',
-        width: 2278,
-        height: 1833,
+        image: '/assets/sponsors/balsamiq.png',
+        width: 1024,
+        height: 327,
+        link: 'https://balsamiq.com/',
+        border: 'border-[#CC0100] bg-[#FFD6D6]'
+      },
+      {
+        image: '/assets/sponsors/googleCloud.svg',
+        width: 1200,
+        height: 600,
         link: 'https://cloud.google.com/',
-        shrink: Boolean(true),
-        tall: null
+        border: 'border-rainbow bg-[#424242]'
       },
       {
-        image: '/assets/sponsors/digital-ocean-light.svg',
-        imageDark: '/assets/sponsors/digital-ocean-dark.svg',
-        width: 176.4,
-        height: 176.5,
-        link: 'https://www.digitalocean.com/',
-        shrink: Boolean(true),
-        tall: null
+        image: '/assets/sponsors/glico.png',
+        width: 300,
+        height: 117,
+        link: 'https://www.glico.com/global/',
+        border: 'border-[#E70012] p-[1rem]'
       },
       {
-        image: '/assets/sponsors/acm-light.svg',
-        imageDark: '/assets/sponsors/acm-dark.svg',
-        width: 910,
-        height: 910,
-        link: 'https://acmucr.org/',
-        shrink: Boolean(true),
-        tall: null
+        image: '/assets/sponsors/sketch.png',
+        width: 512,
+        height: 460,
+        link: 'https://sketch.com/',
+        border: 'border-[#FDAD00] p-[1rem]'
       },
       {
-        image: '/assets/sponsors/ieee-light.svg',
-        imageDark: '/assets/sponsors/ieee-dark.svg',
+        image: '/assets/sponsors/ieee-dark.svg',
         width: 745,
         height: 959,
         link: 'https://ieee.ucr.edu/',
-        shrink: Boolean(true),
-        tall: null
-      },
-      {
-        image: '/assets/sponsors/ieee-light.svg',
-        imageDark: '/assets/sponsors/ieee-dark.svg',
-        width: 745,
-        height: 959,
-        link: 'https://ieee.ucr.edu/',
-        shrink: Boolean(true),
-        tall: null
-      },
-      {
-        image: '/assets/sponsors/ieee-light.svg',
-        imageDark: '/assets/sponsors/ieee-dark.svg',
-        width: 745,
-        height: 959,
-        link: 'https://ieee.ucr.edu/',
-        shrink: Boolean(true),
-        tall: null
+        border: 'border-[#0085FF] bg-[#271D50] p-[1.5rem]'
       }
     ]
   }
@@ -263,7 +240,7 @@ const tiers = [
 /** Grid of sponsors of all specified tiers. */
 export function SponsorsGrid() {
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
 
   useEffect(() => setMounted(true), []);
 
@@ -271,14 +248,12 @@ export function SponsorsGrid() {
 
   return (
     <div className="relative grid grid-cols-2 gap-6 mt-10  px-3">
-      <span className="absolute top-10 left-[1.6rem] flex w-1/2 transform h-full z-100 border-l-4 border-gold z-50 px-0"></span>
       {/* <span className="absolute top-0 left-[1.6rem] z-[1000]  w-36 md:w-52">
         <Image src={tiersFlag} alt="flag" />
       </span> */}
-
       {tiers
         .filter(({ sponsors }) => sponsors.length > 0) // only map tiers with sponsors
-        .map(({ type, sponsors, wide }) => (
+        .map(({ type, sponsors, wide, orange }) => (
           <div
             key={type}
             className={
@@ -286,26 +261,52 @@ export function SponsorsGrid() {
               (wide ? 'col-span-2' : 'col-span-2 sm:col-span-1')
             }
           >
-            <span className="mr-1 rounded-full border-4 border-gold w-5 h-5 absolute left-1.5 z-[1000] bg-sky px-0"></span>
-            {/* <span className="absolute top-0 -left-0.5 z-[1000] w-36 md:w-52">
-              <Image src={flag} alt="flag" />
-            </span> */}
+            <span className="flex lg:hidden absolute left-[1.1rem] top-[5rem] w-1/2 transform h-full z-100 border-l-4 border-gradient-t-green z-50 px-0 pointer-events-none"></span>
+            <span className="block lg:hidden mr-1 w-10 left-0 absolute z-[9999] bg-transparent px-0">
+              <Image
+                src={orange}
+                alt="orange"
+                draggable={false}
+                width={200}
+                height={200}
+                layout="responsive"
+              />
+            </span>
 
-            {/* CIRCLE */}
-            {/* <span className="mr-1 rounded-full border-4 border-[#E7AA36] w-8 h-8 flex justify-center items-center absolute top-2 -left-3.5 z-50"></span> */}
-
-            {/* <span className="absolute top-10 left-0 flex w-1/2 transform h-full z-100 border-l-4 border-gold z-50"></span> */}
+            <span className="hidden lg:flex absolute left-[2.4rem] top-[7.5rem] w-1/2 transform h-full z-100 border-l-4 border-gradient-t-green z-50 px-0 pointer-events-none"></span>
+            <span className="hidden lg:block mr-1 w-20 left-0 absolute z-[9999] bg-transparent px-0">
+              <Image
+                src={orange}
+                alt="orange"
+                draggable={false}
+                width={200}
+                height={200}
+                layout="responsive"
+              />
+            </span>
             {sponsors.map(
-              ({ image, imageDark, width, height, link, shrink, tall }) => (
+              ({
+                image,
+                imageDark,
+                width,
+                height,
+                link,
+                shrink,
+                tall,
+                border
+              }) => (
                 <Sponsor
                   key={link}
                   type={type}
-                  image={theme === 'light' ? image : imageDark}
+                  image={
+                    image || imageDark /*theme === 'light' ? image : imageDark*/
+                  } // imageDark sitting there so typescript doesnt explode (idk why but imageDark HAS to be there and you HAVE to use it or eslint explodes instead)
                   width={width}
                   height={height}
                   link={link}
                   shrink={shrink}
                   tall={tall}
+                  border={border}
                 />
               )
             )}

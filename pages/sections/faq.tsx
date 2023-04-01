@@ -23,7 +23,7 @@ export const Assets = () => {
         }}
         className="absolute z-20 max-[1182px]:hidden -right-28 xl:-right-40 top-[35%] w-16 xl:w-20"
       >
-        <Image src={balloonBlue} alt="balloon" />
+        <Image src={balloonBlue} alt="balloon" draggable={false} />
       </motion.div>
       {/* balloon left */}
       <motion.div
@@ -34,7 +34,7 @@ export const Assets = () => {
         }}
         className="absolute z-20 max-lg:hidden  -left-24 xl:-left-40 bottom-0 w-16 xl:w-20"
       >
-        <Image src={balloonYellow} alt="balloon" />
+        <Image src={balloonYellow} alt="balloon" draggable={false} />
       </motion.div>
       {/* bird */}
       <motion.div
@@ -46,9 +46,9 @@ export const Assets = () => {
         className="absolute z-20 max-lg:hidden  -left-24 xl:-left-40 top-96 w-16 xl:w-20"
       >
         {theme === 'light' ? (
-          <Image src={bird1} alt="bird" />
+          <Image src={bird1} alt="bird" draggable={false} />
         ) : (
-          <Image src={star} alt="star" />
+          <Image src={star} alt="star" draggable={false} />
         )}
       </motion.div>
       {/* bird */}
@@ -61,9 +61,9 @@ export const Assets = () => {
         className="absolute z-20 max-[1182px]:hidden -right-24 xl:-right-40 bottom-96 w-16 xl:w-20"
       >
         {theme === 'light' ? (
-          <Image src={bird3} alt="bird" />
+          <Image src={bird3} alt="bird" draggable={false} />
         ) : (
-          <Image src={star} alt="star" />
+          <Image src={star} alt="star" draggable={false} />
         )}
       </motion.div>
     </>
@@ -85,9 +85,7 @@ export default function Faq() {
         />
         .
       </p>
-      {/* <div className="absolute w-screen h-screen -z-0 right-0"> */}
       <Assets />
-      {/* </div> */}
       <FaqGrid />
     </section>
   );

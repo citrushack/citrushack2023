@@ -1,48 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
 
 const ProfileWrapper = ({ name, position, link, image }) => {
+  const [isHover, setIsHover] = useState(false);
+  const { theme } = useTheme();
   return (
-    <>
-      <a target="_blank" rel="noopener noreferrer" href={link}>
-        <div className="w-40 h-40 bg-transparent group perspective cursor-pointer">
-          <div className="relative preserve-3d group-hover:my-rotate-y-180 w-full h-full duration-700">
-            <div
-              className={`absolute backface-hidden rounded-full w-full h-full bg-[#BFE4FF]`}
-            >
-              <div
-                className={`absolute backface-hidden w-full h-full rounded-full border-[#33719F]`}
-              >
-                <div className="text-center flex flex-col items-center justify-center h-full text-white">
-                  <Image
-                    src={image}
-                    width={170}
-                    height={170}
-                    objectFit="contain"
-                    priority={true}
-                    quality={100}
-                    className="rounded-full"
-                    alt="profile photo"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              className={`absolute my-rotate-y-180 backface-hidden w-full h-full bg-[#BFE4FF] border-[#33719F]
-          
-             rounded-full border-4 p-4`}
-            >
-              <div className="flex flex-col items-center justify-center h-full text-black">
-                <div className={`text-center font-black`}>{name}</div>
-                <div className={`text-black text-center text-sm`}>
-                  {position}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </a>
-    </>
+    <div className="relative flex flex-col w-full max-w-[8rem] md:max-w-[9rem] items-center">
+      <motion.div
+        className={
+          'hidden absolute z-0 cursor-pointer opacity-100 flex-col items-center justify-center w-full h-full pb-4 text-center transition-opacity duration-300 ease-in-out ' +
+          (isHover ? 'md:flex' : 'hidden ')
+        }
+      >
+        <p className="mb-0 w-max text-text font-bold">{name}</p>
+        <p
+          className={`mt-0 leading-4 text-center  ${
+            theme === 'light' ? `text-brown` : `text-gold`
+          }`}
+        >
+          {position}
+        </p>
+      </motion.div>
+      <motion.div
+        className="cursor-pointer z-10"
+        initial={{ opacity: 1 }}
+        whileHover={{ opacity: 0.1, y: -4 }}
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+      >
+        <a target="_blank" rel="noreferrer noopener" href={link}>
+          <Image
+            src={image}
+            width={170}
+            height={170}
+            objectFit="contain"
+            priority={true}
+            quality={100}
+            className="rounded-full mt-5"
+            alt="profile photo"
+          />
+        </a>
+      </motion.div>
+      <div className="flex flex-col items-center lg:hidden justify-center">
+        <p className="mb-0 w-max font-baloo_semi_bold text-text text-center">
+          {name}
+        </p>
+        <p
+          className={`mt-0 leading-4 text-center font-baloo_regular ${
+            theme === 'light' ? `text-brown` : `text-gold`
+          } w-max`}
+        >
+          {position}
+        </p>
+      </div>
+    </div>
   );
 };
 

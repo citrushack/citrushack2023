@@ -27,9 +27,9 @@ export const Assets = () => {
         className="absolute -top-10 left-28 md:left-96 w-16 xs:w-16 lg:w-20"
       >
         {theme === 'light' ? (
-          <Image src={cloud2} alt="cloud" />
+          <Image src={cloud2} alt="cloud" draggable="false" />
         ) : (
-          <Image src={cloudDark2} alt="cloud" />
+          <Image src={cloudDark2} alt="cloud" draggable="false" />
         )}
       </motion.div>
       {/*  cloud top right */}
@@ -42,9 +42,9 @@ export const Assets = () => {
         className="absolute right-0 top-[45%] md:top-0 w-14 xs:w-20 lg:w-28"
       >
         {theme === 'light' ? (
-          <Image src={cloud} alt="cloud" />
+          <Image src={cloud} alt="cloud" draggable="false" />
         ) : (
-          <Image src={cloudDark} alt="cloud" />
+          <Image src={cloudDark} alt="cloud" draggable="false" />
         )}
       </motion.div>
       {/* balloon red*/}
@@ -56,7 +56,7 @@ export const Assets = () => {
         }}
         className="absolute max-sm:block hidden left-0 top-0 w-14 xs:w-20 lg:w-24"
       >
-        <Image src={balloonRed} alt="cloud" />
+        <Image src={balloonRed} alt="cloud" draggable="false" />
       </motion.div>
       {/* balloon 5k */}
       <motion.div
@@ -67,7 +67,7 @@ export const Assets = () => {
         }}
         className="absolute z-20 hidden sm:block left-10 -top-12 md:-top-3 w-8 xs:w-12 lg:w-24"
       >
-        <Image src={balloon5k} alt="cloud" />
+        <Image src={balloon5k} alt="cloud" draggable="false" />
       </motion.div>
       {/* cloud bottom left */}
       <motion.div
@@ -79,9 +79,9 @@ export const Assets = () => {
         className="absolute left-0 lg:-left-48 bottom-10 md:-bottom-32 lg:bottom-10 w-16 xs:w-20 lg:w-28"
       >
         {theme === 'light' ? (
-          <Image src={cloud} alt="cloud" />
+          <Image src={cloud} alt="cloud" draggable="false" />
         ) : (
-          <Image src={cloudDark} alt="cloud" />
+          <Image src={cloudDark} alt="cloud" draggable="false" />
         )}
       </motion.div>
       {/* cloud bottom right */}
@@ -94,9 +94,9 @@ export const Assets = () => {
         className="absolute right-0 xl:-right-16 bottom-20 xs:-bottom-14  w-16 xs:w-20 lg:w-28"
       >
         {theme === 'light' ? (
-          <Image src={cloud2} alt="cloud" />
+          <Image src={cloud2} alt="cloud" draggable="false" />
         ) : (
-          <Image src={cloudDark2} alt="cloud" />
+          <Image src={cloudDark2} alt="cloud" draggable="false" />
         )}
       </motion.div>
     </>
@@ -106,12 +106,10 @@ export const Assets = () => {
 export default function Tracks() {
   return (
     <section className="relative flex flex-col w-full h-full my-5 lg:my-3 max-w-[72rem] justify-center items-center px-4 pb-12 lg:pb-5">
-      {/* <div className="relative flex w-full my-10 px-10 flex-col items-center"> */}
       <h1 className="text-5xl md:text-7xl font-black mb-4 md:mb-8 text-text">
         Tracks
       </h1>
       <div className="flex flex-col gap-y-7 md:grid md:grid-cols-3 gap-36 lg:gap-56 items-start mb-0 lg:mb-20">
-        {/* <div className="flex justify-start items-start bg-blue-500"> */}
         <div className="flex flex-col items-center justify-end gap-y-2 lg:gap-y-4">
           <Image
             className="scale-90"
@@ -119,6 +117,7 @@ export default function Tracks() {
             alt=""
             width={170}
             height={170}
+            draggable="false"
           />
           <p className="text-lg lg:text-2xl font-black text-center text-text">
             New Frontiers
@@ -131,6 +130,7 @@ export default function Tracks() {
             alt=""
             width={170}
             height={170}
+            draggable="false"
           />
           <p className="text-lg lg:text-2xl font-black text-center w-fit text-text">
             Global Community
@@ -143,7 +143,7 @@ export default function Tracks() {
             alt=""
             width={180}
             height={180}
-            // objectFit="cover"
+            draggable="false"
           />
           <p className="text-lg lg:text-2xl font-black text-center w-fit text-text">
             Sustainabiility
@@ -151,7 +151,6 @@ export default function Tracks() {
         </div>
       </div>
       <Assets />
-      {/* </div> */}
     </section>
   );
 }

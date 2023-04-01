@@ -9,8 +9,6 @@ export default function Support() {
   return (
     <section className="relative z-0 flex flex-col w-full my-10 lg:mt-6 md:pb-0 px-4">
       <div className="relative z-20 flex flex-col justify-center items-center mb-10 md:mb-0">
-        {/* <section className="flex flex-col w-full md:my-12 lg:mt-0 pb-12 md:pb-0">
-      <div className="z-20 flex flex-col justify-center items-center md:pb-12"> */}
         <h1 className="text-center font-black text-5xl md:text-7xl text-text">
           Get Involved
         </h1>
@@ -28,6 +26,7 @@ export default function Support() {
             alt="Wave Light"
             layout="responsive"
             objectFit="contain"
+            draggable="false"
           />
         ) : (
           <Image
@@ -35,6 +34,7 @@ export default function Support() {
             alt="Wave Dark"
             layout="responsive"
             objectFit="contain"
+            draggable="false"
           />
         )}
       </div>

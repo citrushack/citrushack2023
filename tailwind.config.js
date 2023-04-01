@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const plugin = require('tailwindcss/plugin');
 const MyClass = plugin(function ({ addUtilities }) {
@@ -13,6 +14,14 @@ const MyClass = plugin(function ({ addUtilities }) {
     },
     '.backface-hidden': {
       backfaceVisibility: 'hidden'
+    },
+    '.border-rainbow': {
+      // https://stackoverflow.com/a/53037637 PAIN
+      border: 'double transparent',
+      borderRadius: '9999px',
+      backgroundImage: 'linear-gradient(white, white), linear-gradient(to bottom right, #FBBC05 0%, #EA4335 33%, #34A853 80%, #4285F4 100%)',
+      backgroundOrigin: 'border-box',
+      backgroundClip: 'padding-box, border-box',
     }
   });
 });
@@ -24,6 +33,14 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
+    colors: {
+      'green': '#2BAD21',
+      'blue': '#00f',
+    },
+    linearBorderGradients: theme => ({
+      colors: theme('colors'),
+    }),
+
     borderWidth: {
       11: '11px'
     },
@@ -67,5 +84,5 @@ module.exports = {
       }
     }
   },
-  plugins: [MyClass]
+  plugins: [MyClass, require('tailwindcss-border-gradients')(),]
 };

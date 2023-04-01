@@ -60,7 +60,7 @@ export const MLH = [
       I have read and agree to the{' '}
       <ExternalLink
         name="MLH Code of Conduct"
-        link="https://github.com/MLH/mlh-policies/blob/master/code-of-conduct.md"
+        link="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
       />
       .
     </>
@@ -70,24 +70,17 @@ export const MLH = [
       I authorize you to share my application/registration information with
       Major League Hacking for event administration, ranking, and MLH
       administration in-line with the{' '}
-      <ExternalLink
-        name="MLH Privacy Policy"
-        link="https://github.com/MLH/mlh-policies/blob/master/privacy-policy.md"
-      />
-      . I further agree to the terms of both the{' '}
+      <ExternalLink name="MLH Privacy Policy" link="https://mlh.io/privacy" />.
+      I further agree to the terms of both the{' '}
       <ExternalLink
         name="MLH Contest Terms and Conditions"
-        link="https://github.com/MLH/mlh-policies/blob/master/prize-terms-and-conditions/contest-terms.md"
+        link="https://github.com/MLH/mlh-policies/blob/main/contest-terms.md"
       />
       &nbsp;and the{' '}
-      <ExternalLink
-        name="MLH Privacy Policy"
-        link="https://github.com/MLH/mlh-policies/blob/master/privacy-policy.md"
-      />
-      .
+      <ExternalLink name="MLH Privacy Policy" link="https://mlh.io/privacy" />.
     </>
   ],
   [
-    'I authorize MLH to send me pre- and post-event informational emails, which contain free credit and opportunities from their partners.'
+    'I authorize MLH to send me an email where I can further opt into the MLH Hacker, Events, or Organizer Newsletters and other communications from MLH.'
   ]
 ];

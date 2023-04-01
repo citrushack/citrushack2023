@@ -273,6 +273,8 @@ const eventsMobileDay1 = [
 ];
 
 export const EventMobile = ({ time, description, color, place }) => {
+  const { theme } = useTheme();
+
   return (
     <>
       <span
@@ -286,10 +288,18 @@ export const EventMobile = ({ time, description, color, place }) => {
               {description}
             </p>
             <div className="flex flex-col w-full">
-              <p className="text-base text-center font-semibold w-full text-text">
+              <p
+                className={`text-base text-center font-semibold w-full ${
+                  theme === 'dark' ? `text-gold` : `text-brown`
+                }`}
+              >
                 {time}
               </p>
-              <p className="text-base text-center font-medium w-full text-text">
+              <p
+                className={`text-base text-center font-medium w-full ${
+                  theme === 'dark' ? `text-gold` : `text-brown`
+                }`}
+              >
                 {place}
               </p>
             </div>
@@ -297,7 +307,11 @@ export const EventMobile = ({ time, description, color, place }) => {
         </div>
         <div className="xs:hidden relative bottom-[55%] pl-10 py-6 h-[90px] flex flex-col items-start">
           <p className="text-xl text-left font-semibold">{description}</p>
-          <p className="text-md text-left text-text">
+          <p
+            className={`text-md text-left ${
+              theme === 'dark' ? `text-gold` : `text-brown`
+            }`}
+          >
             {time} @ {place}
           </p>
         </div>
@@ -313,7 +327,7 @@ export const Mobile = () => {
         <div className="flex">
           <div className="border-r-4 border-gold"></div>
           <div className="w-56 relative pb-5 bottom-4">
-            <Image src={reverseDayOneFlag} alt="flag" />
+            <Image src={reverseDayOneFlag} alt="flag" draggable="false" />
           </div>
         </div>
         {/* Mobile Day 1 */}
@@ -330,7 +344,7 @@ export const Mobile = () => {
         <div className="flex">
           <div className="border-r-4 border-gold"></div>
           <div className="w-56 relative pb-5 bottom-4">
-            <Image src={reverseDayTwoFlag} alt="flag" />
+            <Image src={reverseDayTwoFlag} alt="flag" draggable="false" />
           </div>
         </div>
         {/* Mobile Day 2 */}
@@ -358,6 +372,7 @@ export const EventDesktop = ({
   rightPlace,
   borderColor
 }) => {
+  const { theme } = useTheme();
   return (
     <>
       <span
@@ -376,7 +391,11 @@ export const EventDesktop = ({
               <p className="text-xl text-right font-semibold w-full text-text">
                 {leftDescription}
               </p>
-              <p className="text-base text-right text-text w-full">
+              <p
+                className={`text-base text-right w-full ${
+                  theme === 'dark' ? `text-gold` : `text-brown`
+                }`}
+              >
                 {leftTime} @ {leftPlace}
               </p>
             </div>
@@ -392,7 +411,11 @@ export const EventDesktop = ({
               <p className="text-xl text-left font-semibold w-full text-text">
                 {rightDescription}
               </p>
-              <p className="text-base text-left text-text w-full">
+              <p
+                className={`text-base text-left w-full ${
+                  theme === 'dark' ? `text-gold` : `text-brown`
+                }`}
+              >
                 {rightTime} @ {rightPlace}
               </p>
             </div>
@@ -411,7 +434,7 @@ export const DesktopShedule = ({ image, borderColor, fromColor, day }) => {
           className={`relative w-1/2 mb-0 flex flex-col items-start justify-end border-r-4 ${borderColor}`}
         >
           <div className="relative pb-5 bottom-4">
-            <Image src={image} alt="flag" />
+            <Image src={image} alt="flag" draggable="false" />
           </div>
         </div>
       </div>
@@ -481,9 +504,9 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 3
         }}
-        className="absolute  -z-1 w-1/12 left-0 sm:left-10 md:-left-0 xl:-left-48 top-96 sm:top-28"
+        className="absolute  z-10 w-1/12 left-0 sm:left-10 md:-left-0 xl:-left-48 top-96 sm:top-28"
       >
-        <Image src={balloonYellow} alt="balloon" />
+        <Image src={balloonYellow} alt="balloon" draggable="false" />
       </motion.div>
       {/* red balloon bottom left */}
       <motion.div
@@ -492,9 +515,9 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 3
         }}
-        className="absolute -z-1 w-1/12 right-0 xs:right-14 sm:left-10 md:-left-0 xl:-left-28 bottom-[25.5%] sm:bottom-24"
+        className="absolute z-10 w-1/12 right-0 xs:right-14 sm:left-10 md:-left-0 xl:-left-28 bottom-[25.5%] sm:bottom-24"
       >
-        <Image src={balloonRed} alt="balloon" />
+        <Image src={balloonRed} alt="balloon" draggable="false" />
       </motion.div>
       {/* blue balloon middle */}
       <motion.div
@@ -503,12 +526,12 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 3
         }}
-        className="absolute -z-1 w-1/12 left-0 xs:left-28 sm:left-10 lg:left-[45%] top-[49%]"
+        className="absolute z-10 w-1/12 left-0 xs:left-28 sm:left-10 lg:left-[45%] top-[49%]"
       >
         {theme === 'light' ? (
-          <Image src={bird1} alt="bird" />
+          <Image src={bird1} alt="bird" draggable="false" />
         ) : (
-          <Image src={star} alt="cloud" />
+          <Image src={star} alt="star" draggable="false" />
         )}
       </motion.div>
       {/* orange balloon top right */}
@@ -518,12 +541,12 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 3
         }}
-        className="absolute -z-1 w-1/12 right-0 sm:right-10 lg:right-0 top-0"
+        className="absolute z-10 w-1/12 right-0 sm:right-10 lg:right-0 top-0"
       >
         {theme === 'light' ? (
-          <Image src={bird1} alt="bird" />
+          <Image src={bird1} alt="bird" draggable="false" />
         ) : (
-          <Image src={star} alt="cloud" />
+          <Image src={star} alt="star" draggable="false" />
         )}
       </motion.div>
       {/* blue balloon bottom right */}
@@ -533,9 +556,9 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 3
         }}
-        className="absolute -z-1 w-12 right-0 sm:right-10 lg:right-0 bottom-0"
+        className="absolute z-10 w-12 right-0 sm:right-10 lg:right-0 bottom-0"
       >
-        <Image src={balloonBlue} alt="balloon" />
+        <Image src={balloonBlue} alt="balloon" draggable="false" />
       </motion.div>
       {/* Yellow balloon middle right */}
       <motion.div
@@ -544,9 +567,9 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 3
         }}
-        className="absolute -z-1 w-[5%] right-0 sm:right-0 md:right-10 xl:-right-16 top-[35%] lg:top-[40%]"
+        className="absolute z-10 w-[5%] right-0 sm:right-0 md:right-10 xl:-right-16 top-[35%] lg:top-[40%]"
       >
-        <Image src={balloonOrange} alt="balloon" />
+        <Image src={balloonOrange} alt="balloon" draggable="false" />
       </motion.div>
       {/* cloud top right -----*/}
       <motion.div
@@ -555,12 +578,12 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 5
         }}
-        className="absolute -z-12 w-20 xs:w-36 right-10 sm:right-0 md:right-10 xl:-right-16 top-[49%] lg:top-[17%] max-xs:hidden"
+        className="absolute z-10 w-20 xs:w-36 right-10 sm:right-0 md:right-10 xl:-right-16 top-[49%] lg:top-[17%] max-xs:hidden"
       >
         {theme === 'light' ? (
-          <Image src={cloud} alt="cloud" />
+          <Image src={cloud} alt="cloud" draggable="false" />
         ) : (
-          <Image src={cloudDark} alt="cloud" />
+          <Image src={cloudDark} alt="cloud" draggable="false" />
         )}
       </motion.div>
       {/* cloud middle*/}
@@ -570,12 +593,12 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 5
         }}
-        className="absolute -z-12 w-12 xs:w-16 md:w-32 right-0 md:right-10 xl:-right-16 top-[23.5%] md:top-[20%] lg:top-[68.5%]"
+        className="absolute z-10 w-12 xs:w-16 md:w-32 right-0 md:right-10 xl:-right-16 top-[23.5%] md:top-[20%] lg:top-[68.5%]"
       >
         {theme === 'light' ? (
-          <Image src={bird1} alt="bird" />
+          <Image src={bird1} alt="bird" draggable="false" />
         ) : (
-          <Image src={star} alt="cloud" />
+          <Image src={star} alt="star" draggable="false" />
         )}
       </motion.div>
       {/* cloud bottom right */}
@@ -585,12 +608,12 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 5
         }}
-        className="absolute -z-12 w-8 xs:w-20 right-0 sm:right-0 md:right-10 xl:-right-16 bottom-[21%] xs:bottom-[16.5%] lg:bottom-36 max-xs:hidden"
+        className="absolute z-10 w-8 xs:w-20 right-0 sm:right-0 md:right-10 xl:-right-16 bottom-[21%] xs:bottom-[16.5%] lg:bottom-36 max-xs:hidden"
       >
         {theme === 'light' ? (
-          <Image src={cloud} alt="cloud" />
+          <Image src={cloud} alt="cloud" draggable="false" />
         ) : (
-          <Image src={cloudDark} alt="cloud" />
+          <Image src={cloudDark} alt="cloud" draggable="false" />
         )}
       </motion.div>
       {/* cloud top left */}
@@ -600,12 +623,12 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 5
         }}
-        className="absolute -z-12 w-12 max-sm:hidden xs:w-1/12 right-8 xs:left-0 xl:-left-28 top-40 sm:top-[24%]"
+        className="absolute z-10 w-12 max-sm:hidden xs:w-1/12 right-8 xs:left-0 xl:-left-28 top-40 sm:top-[24%]"
       >
         {theme === 'light' ? (
-          <Image src={bird1} alt="bird" />
+          <Image src={bird1} alt="bird" draggable="false" />
         ) : (
-          <Image src={star} alt="cloud" />
+          <Image src={star} alt="star" draggable="false" />
         )}
       </motion.div>
       {/* cloud bottom left */}
@@ -615,12 +638,12 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 5
         }}
-        className="absolute -z-12 w-12 xs:w-16 left-0 xs:left-10 xl:-left-36 top-[64.5%] sm:top-[61%] max-xs:hidden"
+        className="absolute z-10 w-12 xs:w-16 left-0 xs:left-10 xl:-left-36 top-[64.5%] sm:top-[61%] max-xs:hidden"
       >
         {theme === 'light' ? (
-          <Image src={cloud} alt="cloud" />
+          <Image src={cloud} alt="cloud" draggable="false" />
         ) : (
-          <Image src={cloudDark} alt="cloud" />
+          <Image src={cloudDark} alt="cloud" draggable="false" />
         )}
       </motion.div>
     </>
@@ -630,10 +653,10 @@ export const Assets = () => {
 export const MasterSchedule = () => {
   return (
     <div className="relative flex w-full my-10 px-10">
-      <div className="w-full flex lg:hidden justify-center">
+      <div className="relative z-30 w-full flex lg:hidden justify-center">
         <Mobile />
       </div>
-      <div className="hidden lg:inline w-full">
+      <div className="relative z-30 hidden lg:inline w-full">
         <Desktop />
       </div>
       <Assets />

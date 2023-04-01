@@ -125,7 +125,7 @@ export function UserDropdown() {
                       className={
                         'w-full py-1.5 text-center rounded-md font-semibold ' +
                         (session.user.qualified === ''
-                          ? 'bg-sub text-sub-bright'
+                          ? 'bg-red-200 text-white'
                           : session.user.qualified === 'yeah'
                           ? 'bg-[#9DC300] text-lime-800'
                           : 'bg-red-400 text-red-900')

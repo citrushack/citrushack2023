@@ -1,5 +1,5 @@
 import { Session } from 'next-auth';
-import { UseFormRegister, FieldValues } from 'react-hook-form';
+import { UseFormRegister, FieldValues, UseFormWatch } from 'react-hook-form';
 import { Group, Input, Select, Radio, Checkbox } from '../components';
 import { schools } from './schools';
 import {
@@ -21,6 +21,7 @@ interface Props {
     [x: string]: any;
   };
   setFileUploaded?: (arg0: boolean) => void;
+  watch?: UseFormWatch<FieldValues>;
 }
 
 export const PersonalInfo = ({ session, register, errors }: Props) => (
@@ -37,6 +38,7 @@ export const PersonalInfo = ({ session, register, errors }: Props) => (
         variable="first_name"
         register={register}
         errors={errors}
+        required
       />
       <Input
         type="text"
@@ -49,6 +51,7 @@ export const PersonalInfo = ({ session, register, errors }: Props) => (
         variable="last_name"
         register={register}
         errors={errors}
+        required
       />
     </div>
     <div className="grid sm:grid-cols-3 gap-3">
@@ -69,13 +72,22 @@ export const PersonalInfo = ({ session, register, errors }: Props) => (
         />
       </span>
     </div>
-    <div className="grid sm:grid-cols-2">
+    <div className="grid sm:grid-cols-2 gap-3">
       <Input
-        type="text"
+        type=""
         label="Phone Number"
         variable="phone_number"
         register={register}
         errors={errors}
+        required
+      />
+      <Input
+        type="number"
+        label="Age"
+        variable="age"
+        register={register}
+        errors={errors}
+        required
       />
     </div>
     <Radio
@@ -84,6 +96,7 @@ export const PersonalInfo = ({ session, register, errors }: Props) => (
       options={foodPreference}
       register={register}
       errors={errors}
+      required
     />
     <Radio
       label="T-Shirt Size"
@@ -91,44 +104,63 @@ export const PersonalInfo = ({ session, register, errors }: Props) => (
       options={shirtSize}
       register={register}
       errors={errors}
+      required
     />
   </Group>
 );
 
-export const Education = ({ register, errors }: Props) => (
-  <Group title="Education">
-    <Select
-      label="School"
-      variable="school"
-      register={register}
-      errors={errors}
-      options={schools}
-    />
-    <Select
-      label="Major"
-      variable="major"
-      register={register}
-      errors={errors}
-      options={majors}
-    />
-    <div className="grid sm:grid-cols-2 gap-3">
+export function Education({ register, errors, watch }: Props) {
+  const school = watch('school');
+  return (
+    <Group title="Education">
       <Select
-        label="Grade"
-        variable="grade"
+        label="School"
+        variable="school"
         register={register}
         errors={errors}
-        options={grades}
+        options={schools}
+        required
       />
-      <Input
-        type="date"
-        label="Graduation Date"
-        variable="grad_date"
+      {school === 'University of California, Riverside' && (
+        <Input
+          type="text"
+          label="UCR SID"
+          variable="ucr_sid"
+          register={register}
+          errors={errors}
+          required
+        />
+      )}
+      <Select
+        label="Major"
+        variable="major"
         register={register}
         errors={errors}
+        options={majors}
+        required
       />
-    </div>
-  </Group>
-);
+      {school === ''}
+      <div className="grid sm:grid-cols-2 gap-3">
+        <Select
+          label="Grade"
+          variable="grade"
+          register={register}
+          errors={errors}
+          options={grades}
+          required
+        />
+        <Input
+          type="date"
+          label="Graduation Date"
+          variable="grad_date"
+          register={register}
+          errors={errors}
+          required
+        />
+      </div>
+    </Group>
+  );
+}
 
 export const HackerApp = ({ register, errors, setFileUploaded }: Props) => (
   <Group title="Hacker App">
@@ -154,6 +186,7 @@ export const HackerApp = ({ register, errors, setFileUploaded }: Props) => (
         options={MLH[0]}
         register={register}
         errors={errors}
+        required
       />
       <Checkbox
         label=""
@@ -161,9 +194,10 @@ export const HackerApp = ({ register, errors, setFileUploaded }: Props) => (
         options={MLH[1]}
         register={register}
         errors={errors}
+        required
       />
       <Checkbox
-        label=""
+        label="Optional"
         variable="MLH_communication"
         options={MLH[2]}
         register={register}

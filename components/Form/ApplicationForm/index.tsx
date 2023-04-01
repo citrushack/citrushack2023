@@ -26,7 +26,7 @@ export function ApplicationForm() {
   });
 
   const { data: session } = useSession();
-  const { register, handleSubmit, control } = useForm();
+  const { register, handleSubmit, control, watch } = useForm();
   const { errors } = useFormState({ control });
   const router = useRouter();
   const [clickedSubmitOnce, setClickedSubmitOnce] = useState(false);
@@ -40,6 +40,7 @@ export function ApplicationForm() {
     // eslint-disable-next-line no-var
     var criteria_met = true;
 
+    // used by auto accept "bot" (/api/auto-review)
     // determine if criteria to participate is met
     // auto accept if
     // if undergrad && UCR
@@ -92,14 +93,17 @@ export function ApplicationForm() {
   };
 
   const onSubmit = async ({
+    // TODO: add ucr sid in db
     first_name,
     last_name,
     gender,
     ethnicity,
     phone_number,
+    age,
     food_preference,
     shirt_size,
     school,
+    ucr_sid,
     major,
     grade,
     grad_date,
@@ -133,9 +137,11 @@ export function ApplicationForm() {
         gender,
         ethnicity,
         phone_number,
+        age,
         food_preference,
         shirt_size,
         school,
+        ucr_sid,
         major,
         grade,
         grad_date,
@@ -171,12 +177,14 @@ export function ApplicationForm() {
   };
 
   return (
-    <main className="flex flex-col items-center my-24 px-4 w-full">
-      <h2 className="mb-6 text-3xl font-bold">Application Form</h2>
-      <p className="pb-4 w-full sm:max-w-2xl">
+    <main className="flex flex-col items-center my-24 px-4 w-full bg-clouds bg-contain bg-no-repeat">
+      <h2 className="text-5xl md:text-7xl font-black mb-4 md:mb-8 text-center text-text">
+        Application Form
+      </h2>
+      <p className="pb-4 w-full sm:max-w-2xl text-center text-text">
         Fill out this form to apply for Citrus Hack 2023!
       </p>
-      <p className="pb-4 w-full sm:max-w-2xl">
+      <p className="pb-4 w-full sm:max-w-2xl text-center text-text">
         Within 24 hours of submitting, you will be notified via email about your
         application status.
       </p>
@@ -185,7 +193,7 @@ export function ApplicationForm() {
         onSubmit={handleSubmit(onSubmit)}
       >
         <PersonalInfo session={session} register={register} errors={errors} />
-        <Education register={register} errors={errors} />
+        <Education register={register} errors={errors} watch={watch} />
         <HackerApp
           register={register}
           errors={errors}
@@ -195,7 +203,7 @@ export function ApplicationForm() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.995 }}
           type="submit"
-          className="w-full py-1.5 rounded bg-buttons font-semibold text-white bg-purple hover:bg-hoverPrimary"
+          className="w-full py-1.5 rounded-xl bg-buttons font-semibold text-white bg-purple hover:bg-hoverPrimary"
           onClick={() => triggerErrorNotification()}
         >
           {clickedSubmitOnce ? 'Submitting...' : 'Submit'}

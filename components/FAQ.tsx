@@ -19,7 +19,7 @@ export function FaqAccordion({ question, answer }: Props) {
         className="flex py-3 items-center hover:text-highlight cursor-pointer"
         onClick={() => setOpen(!open)}
       >
-        <h4 className="grow font-bold text-text">{question}</h4>
+        <h4 className="grow font-bold text-lg text-text">{question}</h4>
         <div>
           <BiX
             className={
@@ -36,9 +36,9 @@ export function FaqAccordion({ question, answer }: Props) {
         }
       >
         {typeof answer === 'string' ? (
-          <p className="m-0 mb-8 text-lightPurple">{answer}</p>
+          <p className="m-0 mb-8 text-base text-text">{answer}</p>
         ) : (
-          <div className="m-0 mb-8 text-lightPurple">{answer}</div>
+          <div className="m-0 mb-8 text-base text-text">{answer}</div>
         )}
       </div>
     </div>
@@ -123,7 +123,7 @@ const faq = [
           name="citrushack@gmail.com"
           link="mailto:citrushack@gmail.com"
         />{' '}
-        if you have any more questions.
+        or ask Mika Shanela in-person if you have any more questions.
       </p>
     )
   }

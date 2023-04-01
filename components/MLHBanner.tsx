@@ -20,7 +20,7 @@ export function MLHBanner() {
           ? 'right-[4.25rem] md:right-[7.5rem]'
           : 'right-[7.5rem] md:right-[10.75rem]')
       }
-      href="https://mlh.io/seasons/2022/events?utm_source=na-hackathon&utm_medium=TrustBadge&utm_campaign=2022-season&utm_content=black"
+      href="https://mlh.io/seasons/2023/events"
       target="_blank"
     >
       <img

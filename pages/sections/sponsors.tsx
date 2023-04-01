@@ -2,7 +2,7 @@ import { SponsorsGrid } from '@/components/SponsorGrid';
 
 export default function Sponsors() {
   return (
-    <section className="relative z-0 flex flex-col w-full h-full max-w-[60rem] lg:mt-6 justify-center items-center">
+    <section className="relative z-0 flex flex-col w-full h-full max-w-[60rem] md:mt-10 justify-center items-center">
       <h1 className="text-center text-5xl md:text-7xl font-black text-text">
         Our Sponsors
       </h1>
