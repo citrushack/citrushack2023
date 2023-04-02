@@ -60,6 +60,7 @@ export const Input = ({
         'w-full rounded-lg focus:border-highlight focus:outline-none focus:ring-highlight file:px-4 file:py-1.5 file:rounded-full file:border-0 file:bg-highlight file:text-sm file:font-semibold file:cursor-pointer hover:cursor-pointer' +
         (type === 'date' ? 'py-1.5 ' : 'py-1 ') +
         (type === 'file' ? ' text-white ' : 'bg-secondary px-2 border-2 ') +
+        (type === 'text' ? ' text-text ' : '') +
         (errors[variable] ? 'border-red-500' : 'border-highlight')
       }
       onChange={onChange}
@@ -144,7 +145,7 @@ export const Radio = ({
 }: RadioProps) => (
   <div>
     <legend className="font-semibold text-white">{label}</legend>
-    {subtext && <p className="m-0 mb-1 text-sm italic">{subtext}</p>}
+    {subtext && <p className="m-0 mb-1 text-sm italic text-gray">{subtext}</p>}
     <div
       className={
         direction === 'row'
@@ -208,7 +209,7 @@ export const Checkbox = ({
 }: CheckboxProps) => (
   <div>
     <legend className="font-semibold text-white">{label}</legend>
-    {subtext && <p className="m-0 mb-1 text-sm italic">{subtext}</p>}
+    {subtext && <p className="m-0 mb-1 text-sm italic text-gray">{subtext}</p>}
     <div className="flex flex-col gap-2 pl-2">
       {options.map((option: string) => (
         <div key={option} id={label} className="flex gap-2">

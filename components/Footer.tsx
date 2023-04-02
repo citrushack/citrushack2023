@@ -5,6 +5,8 @@ import bus_footer from '@/public/assets/bus_footer.svg';
 import bus_footer_dark from '@/public/assets/bus_footer_dark.svg';
 import { motion } from 'framer-motion';
 import { FiMail, FiInstagram, FiLinkedin } from 'react-icons/fi';
+import { BsBalloonHeartFill } from 'react-icons/bs';
+
 export default function Footer() {
   const { theme } = useTheme();
 
@@ -33,6 +35,7 @@ export default function Footer() {
             alt="footer"
             objectFit="contain"
             layout="responsive"
+            draggable={false}
           />
         ) : (
           <Image
@@ -41,6 +44,7 @@ export default function Footer() {
             objectFit="contain"
             layout="responsive"
             className=""
+            draggable={false}
           />
         )}
       </div>
@@ -50,7 +54,7 @@ export default function Footer() {
         } flex flex-col justify-center items-center w-full h-full`}
       >
         <footer className="flex justify-center w-full py-4 bg-primary">
-          <div className="flex flex-col gap-2 items-center w-full mx-4 text-md font-semibold">
+          <div className="flex flex-col gap-0 items-center w-full text-md font-semibold">
             <div className="flex gap-2.5 text-2xl relative z-30">
               {socials.map(({ icon, link }) => (
                 <a
@@ -61,7 +65,11 @@ export default function Footer() {
                 >
                   <motion.div
                     whileHover={{ y: -4 }}
-                    className="cursor-pointer hover:text-slate-300"
+                    className={`cursor-pointer  ${
+                      theme === 'dark'
+                        ? `hover:text-goldHover`
+                        : `hover:text-[#987a5e]`
+                    }`}
                   >
                     {icon}
                   </motion.div>
@@ -69,16 +77,30 @@ export default function Footer() {
               ))}
             </div>
             <a
-              className="text-text relative z-30 hover:text-slate-300"
+              className={`relative z-0  ${
+                theme === 'dark'
+                  ? `hover:text-goldHover`
+                  : `hover:text-[#987a5e]`
+              }`}
               target="_blank"
               rel="noferrer noopener noreferrer"
               href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf"
             >
               MLH Code Of Conduct
             </a>
-            <p className="text-center">
-              Made with {theme === 'dark' ? '🤍' : '🖤'} by the Citrus Hack Team
-            </p>
+            <span className="text-center flex space-x-1">
+              Made with
+              {theme === 'light' ? (
+                <span className="text-black">
+                  <BsBalloonHeartFill />
+                </span>
+              ) : (
+                <span className="text-goldHover">
+                  <BsBalloonHeartFill />
+                </span>
+              )}
+              by Citrus Hack Team
+            </span>
           </div>
         </footer>
       </div>

@@ -11,6 +11,11 @@ import orange from '@/public/assets/sponsors/orange_sponsor_orange.svg';
 import tangerine from '@/public/assets/sponsors/tangerine_sponsor_orange.svg';
 import cutie from '@/public/assets/sponsors/cutie_sponsor_orange.svg';
 
+import orangeDark from '@/public/assets/sponsors/orange_sponsor_orange_dark.svg';
+import tangerineDark from '@/public/assets/sponsors/tangerine_sponsor_orange_dark.svg';
+import cutieDark from '@/public/assets/sponsors/cutie_sponsor_orange_dark.svg';
+import { useTheme } from 'next-themes';
+
 interface SponsorProps {
   /** Sponsor tier (e.g. 'cutie'). */
   type: string;
@@ -90,6 +95,7 @@ const tiers = [
     flag: orangeFlag,
     wide: true,
     orange: orange,
+    orangeDark: orangeDark,
     sponsors: [
       {
         image: '/assets/sponsors/aspb.png',
@@ -120,6 +126,7 @@ const tiers = [
     flag: tangerineFlag,
     wide: Boolean(true),
     orange: tangerine,
+    orangeDark: tangerineDark,
     sponsors: [
       {
         image: '/assets/sponsors/blackstone.png',
@@ -131,7 +138,7 @@ const tiers = [
         image: '/assets/sponsors/acm.webp',
         width: 1080,
         height: 1080,
-        link: 'https://acmucr.org/',
+        link: 'https://acm.cs.ucr.edu/',
         border: 'border-[#4185FC]'
       },
       {
@@ -148,6 +155,7 @@ const tiers = [
     flag: cutieFlag,
     wide: Boolean(true),
     orange: cutie,
+    orangeDark: cutieDark,
     sponsors: [
       {
         image: '/assets/sponsors/redbull.png',
@@ -240,7 +248,7 @@ const tiers = [
 /** Grid of sponsors of all specified tiers. */
 export function SponsorsGrid() {
   const [mounted, setMounted] = useState(false);
-  // const { theme } = useTheme();
+  const { theme } = useTheme();
 
   useEffect(() => setMounted(true), []);
 
@@ -253,7 +261,7 @@ export function SponsorsGrid() {
       </span> */}
       {tiers
         .filter(({ sponsors }) => sponsors.length > 0) // only map tiers with sponsors
-        .map(({ type, sponsors, wide, orange }) => (
+        .map(({ type, sponsors, wide, orange, orangeDark }) => (
           <div
             key={type}
             className={
@@ -261,10 +269,10 @@ export function SponsorsGrid() {
               (wide ? 'col-span-2' : 'col-span-2 sm:col-span-1')
             }
           >
-            <span className="flex lg:hidden absolute left-[1.1rem] top-[5rem] w-1/2 transform h-full z-100 border-l-4 border-gradient-t-green z-50 px-0 pointer-events-none"></span>
+            <span className="flex lg:hidden absolute left-[1.1rem] top-[5rem] w-1/2 transform h-full z-100 border-l-4 border-lightgreen border-gradient-t-green z-50 px-0 pointer-events-none"></span>
             <span className="block lg:hidden mr-1 w-10 left-0 absolute z-[9999] bg-transparent px-0">
               <Image
-                src={orange}
+                src={theme === 'dark' ? orangeDark : orange}
                 alt="orange"
                 draggable={false}
                 width={200}
@@ -273,10 +281,10 @@ export function SponsorsGrid() {
               />
             </span>
 
-            <span className="hidden lg:flex absolute left-[2.4rem] top-[7.5rem] w-1/2 transform h-full z-100 border-l-4 border-gradient-t-green z-50 px-0 pointer-events-none"></span>
+            <span className="hidden lg:flex absolute left-[2.4rem] top-[7.5rem] w-1/2 transform h-full z-100 border-l-4 border-lightgreen border-gradient-t-green z-50 px-0 pointer-events-none"></span>
             <span className="hidden lg:block mr-1 w-20 left-0 absolute z-[9999] bg-transparent px-0">
               <Image
-                src={orange}
+                src={theme === 'dark' ? orangeDark : orange}
                 alt="orange"
                 draggable={false}
                 width={200}

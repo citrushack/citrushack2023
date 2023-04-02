@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { UseFormRegister, FieldValues, UseFormWatch } from 'react-hook-form';
 import { useSession } from 'next-auth/react';
 import { Group, Input, Select, Radio, Checkbox } from '../components';
@@ -22,43 +23,27 @@ export function Confirmation({ register, errors, watch }: Props) {
   return (
     <>
       <Group title="Confirm Details">
-        {session.user.participation === 'In-Person' && (
-          <>
-            <Radio
-              label="Are you still participating in-person?"
-              variable="inperson"
-              options={inperson}
-              register={register}
-              errors={errors}
-              required
-            />
-          </>
-        )}
-        {inperson_confirmation === 'Yes' && (
-          <>
-            <Checkbox
-              label="Do we have your permission to take pictures that may include you?"
-              subtext={
-                <>
-                  These photos will be posted on our Instagram and other social
-                  media. If you have a problem with this, please contact us at{' '}
-                  <ExternalLink
-                    name="citrushack@gmail.com"
-                    link="mailto:citrushack@gmail.com"
-                  />
-                  .
-                </>
-              }
-              variable="photo_consent"
-              options={[
-                'Yes, I give you permission to take pictures that may include me.'
-              ]}
-              register={register}
-              errors={errors}
-              required
-            />
-          </>
-        )}
+        <Checkbox
+          label="Do we have your permission to take pictures that may include you?"
+          subtext={
+            <>
+              These photos will be posted on our Instagram and other social
+              media. If you have a problem with this, please contact us at{' '}
+              <ExternalLink
+                name="citrushack@gmail.com"
+                link="mailto:citrushack@gmail.com"
+              />
+              .
+            </>
+          }
+          variable="photo_consent"
+          options={[
+            'Yes, I give you permission to take pictures that may include me.'
+          ]}
+          register={register}
+          errors={errors}
+          required
+        />
         <Checkbox
           label="Have you read the MLH Code of Conduct?"
           variable="MLH_code_of_conduct"

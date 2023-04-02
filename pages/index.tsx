@@ -8,7 +8,6 @@ import Tracks from '@/pages/sections/tracks';
 import Support from '@/pages/sections/support';
 import Sponsors from '@/pages/sections/sponsors';
 import Faq from '@/pages/sections/faq';
-import Schedule from '@/pages/sections/schedule';
 import Team from '@/pages/sections/team';
 import Footer from '@/components/Footer';
 import FooterWaveLight from '@/public/assets/waves/footer_wave.svg';
@@ -47,12 +46,6 @@ export default function Home() {
           <Tracks />
         </span>
       </Element>
-      <Element
-        name="Schedule"
-        className="relative flex justify-center w-full bg-citrus-sky bg-contain"
-      >
-        <Schedule />
-      </Element>
       <Element name="Support" className="flex justify-center w-full bg-sky">
         <span className="flex justify-center w-full 2xl:bg-cover">
           <Support />
@@ -62,7 +55,7 @@ export default function Home() {
         <div className="absolute w-full h-full -z-0 top-0 right-0">
           {theme === 'light' ? (
             <>
-              <div className="max-xl:hidden opacity-80">
+              <div className="max-xl:hidden ">
                 <Image
                   src={sponsorBGLightDesktop}
                   alt="Wave Dark"
@@ -80,7 +73,7 @@ export default function Home() {
                   draggable={false}
                 />
               </div>
-              <div className="block sm:hidden opacity-60">
+              <div className="block sm:hidden opacity-60 relative bottom-10 ">
                 <Image
                   src={sponsorBGLightMobile}
                   alt="Wave Dark"
@@ -110,7 +103,7 @@ export default function Home() {
                   draggable={false}
                 />
               </div>
-              <div className="block sm:hidden">
+              <div className="block sm:hidden relative bottom-10">
                 <Image
                   src={sponsorBGDarkMobile}
                   alt="Wave Dark"
@@ -135,7 +128,7 @@ export default function Home() {
         </span>
       </Element>
       <div className="relative w-full">
-        <div className="absolute w-full h-full -z-0 top-0 right-0">
+        <div className="absolute w-full h-full z-0 top-0 right-0">
           {theme === 'light' ? (
             <Image
               src={FooterWaveLight}

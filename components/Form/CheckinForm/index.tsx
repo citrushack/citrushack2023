@@ -73,9 +73,11 @@ export function CheckinForm() {
 
   return (
     <main className="flex flex-col items-center my-24 px-4 w-full">
-      <h2 className="mb-6">Check-In Form</h2>
-      <p className="pb-4 w-full sm:max-w-2xl">
-        Fill out this form to confirm your participation for Cutie Hack 2022!
+      <h2 className="text-5xl md:text-7xl font-black mb-4 md:mb-8 text-center text-text">
+        Check-In Form
+      </h2>
+      <p className="pb-4 w-full sm:max-w-2xl tex-text text-center">
+        Fill out this form to confirm your participation for Citrus Hack 2023!
       </p>
       <form
         className="flex flex-col gap-4 w-full sm:max-w-2xl self-center"
@@ -86,7 +88,7 @@ export function CheckinForm() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.995 }}
           type="submit"
-          className="w-full py-1.5 rounded bg-highlight hover:bg-highlight-dark font-semibold text-white"
+          className="w-full py-1.5 rounded bg-purple rounded-xl hover:bg-hoverPrimary font-semibold text-white"
           onClick={() => triggerErrorNotification()}
         >
           {clickedSubmitOnce ? 'Submitting...' : 'Submit'}

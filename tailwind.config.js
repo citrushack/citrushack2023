@@ -19,9 +19,10 @@ const MyClass = plugin(function ({ addUtilities }) {
       // https://stackoverflow.com/a/53037637 PAIN
       border: 'double transparent',
       borderRadius: '9999px',
-      backgroundImage: 'linear-gradient(white, white), linear-gradient(to bottom right, #FBBC05 0%, #EA4335 33%, #34A853 80%, #4285F4 100%)',
+      backgroundImage:
+        'linear-gradient(white, white), linear-gradient(to bottom right, #FBBC05 0%, #EA4335 33%, #34A853 80%, #4285F4 100%)',
       backgroundOrigin: 'border-box',
-      backgroundClip: 'padding-box, border-box',
+      backgroundClip: 'padding-box, border-box'
     }
   });
 });
@@ -33,13 +34,13 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    colors: {
-      'green': '#2BAD21',
-      'blue': '#00f',
-    },
-    linearBorderGradients: theme => ({
-      colors: theme('colors'),
-    }),
+    // colors: {
+    //   'green': '#2BAD21',
+    // },
+    // linearBorderGradients: {
+    //   'green': '#69c063',
+    //   'blue': '#00f',
+    // },
 
     borderWidth: {
       11: '11px'
@@ -67,7 +68,10 @@ module.exports = {
         purple: 'var(--purple)',
         lightPurple: 'var(--lightPurple)',
         text: 'var(--text)',
-        hoverPrimary: 'var(--hoverPrimary)'
+        hoverPrimary: 'var(--hoverPrimary)',
+        goldHover: 'var(--goldHover)',
+        brownHover: 'var(--brownHover)',
+        link: 'var(--link)'
       },
       backgroundImage: {
         clouds: 'var(--clouds)',
@@ -84,5 +88,6 @@ module.exports = {
       }
     }
   },
-  plugins: [MyClass, require('tailwindcss-border-gradients')(),]
+  // plugins: [MyClass, require('tailwindcss-border-gradients')(),]
+  plugins: [MyClass]
 };

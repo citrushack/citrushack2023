@@ -125,7 +125,7 @@ export default function Info({ userData }) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.995 }}
-              className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-blue-400 text-white cursor-pointer"
+              className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-purple text-white cursor-pointer"
               onClick={() => {
                 checkInInperson();
               }}
@@ -138,6 +138,7 @@ export default function Info({ userData }) {
             {name.first}, {name.last}
           </p>
           <p>{email}</p>
+          {/* TODO: only allow people who applied before `applied_after_limit` pick up tshirt; (display ingeligible to pickup tshirt or sum) */}
           <div className="flex flex-col py-4 items-center">
             {pickedUpShirt ? (
               <p className="text-green-400">picked up</p>
@@ -147,7 +148,7 @@ export default function Info({ userData }) {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.995 }}
-                  className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-slate-400 text-white cursor-pointer"
+                  className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-purple text-white cursor-pointer"
                   onClick={() => {
                     markTshirt();
                   }}
@@ -185,7 +186,7 @@ export default function Info({ userData }) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.995 }}
-              className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-green-400 text-white cursor-pointer"
+              className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-purple text-white cursor-pointer"
               onClick={() => {
                 approveRejectUser(email, name.first, true, uid);
               }}
@@ -195,7 +196,7 @@ export default function Info({ userData }) {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.995 }}
-              className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-red-400 text-white cursor-pointer"
+              className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-purple text-white cursor-pointer"
               onClick={() => {
                 approveRejectUser(email, name.first, false, uid);
               }}

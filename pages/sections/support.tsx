@@ -19,7 +19,7 @@ export default function Support() {
         </p>
         <SupportCards />
       </div>
-      <div className="absolute w-screen h-screen -z-0 right-0">
+      <div className="absolute w-screen h-screen -z-0 right-0 lg:-top-20 xl:-top-44 ">
         {theme === 'light' ? (
           <Image
             src={SupportWaveLight}

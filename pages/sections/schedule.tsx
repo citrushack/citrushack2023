@@ -1,7 +1,11 @@
 import { MasterSchedule } from '@/components/Schedule';
 import React from 'react';
 import scheduleWave from '@/public/assets/waves/scheduleWave.svg';
+import scheduleWave2 from '@/public/assets/waves/scheduleWave2.svg';
+import scheduleWave3 from '@/public/assets/waves/scheduleWave3.svg';
 import scheduleWaveDark from '@/public/assets/waves/scheduleWaveDark.svg';
+import scheduleWave2Dark from '@/public/assets/waves/scheduleWave2Dark.svg';
+import scheduleWave3Dark from '@/public/assets/waves/scheduleWave3Dark.svg';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
 
@@ -19,21 +23,69 @@ export default function Schedule() {
       <MasterSchedule />
       <div className="absolute w-screen h-screen z-0 right-0">
         {theme === 'light' ? (
-          <Image
-            src={scheduleWave}
-            alt="Wave Light"
-            draggable="false"
-            layout="responsive"
-            objectFit="contain"
-          />
+          <>
+            <div className="max-lg:hidden block">
+              <Image
+                src={scheduleWave}
+                alt="Wave Light"
+                layout="responsive"
+                objectFit="contain"
+                draggable={false}
+              />
+            </div>
+            <div className="block lg:hidden h-full">
+              <div className="relative bottom-[50%]">
+                <Image
+                  src={scheduleWave3}
+                  alt="Wave Light"
+                  layout="responsive"
+                  objectFit="contain"
+                  draggable={false}
+                />
+              </div>
+              <div className="relative -bottom-[100%]">
+                <Image
+                  src={scheduleWave2}
+                  alt="Wave Light"
+                  layout="responsive"
+                  objectFit="contain"
+                  draggable={false}
+                />
+              </div>
+            </div>
+          </>
         ) : (
-          <Image
-            src={scheduleWaveDark}
-            alt="Wave Dark"
-            draggable="false"
-            layout="responsive"
-            objectFit="contain"
-          />
+          <>
+            <div className="max-lg:hidden block">
+              <Image
+                src={scheduleWaveDark}
+                alt="Wave Light"
+                layout="responsive"
+                objectFit="contain"
+                draggable={false}
+              />
+            </div>
+            <div className="block lg:hidden h-full">
+              <div className="relative bottom-[50%]">
+                <Image
+                  src={scheduleWave3Dark}
+                  alt="Wave Light"
+                  layout="responsive"
+                  objectFit="contain"
+                  draggable={false}
+                />
+              </div>
+              <div className="relative -bottom-[100%]">
+                <Image
+                  src={scheduleWave2Dark}
+                  alt="Wave Light"
+                  layout="responsive"
+                  objectFit="contain"
+                  draggable={false}
+                />
+              </div>
+            </div>
+          </>
         )}
       </div>
     </section>

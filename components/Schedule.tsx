@@ -290,14 +290,14 @@ export const EventMobile = ({ time, description, color, place }) => {
             <div className="flex flex-col w-full">
               <p
                 className={`text-base text-center font-semibold w-full ${
-                  theme === 'dark' ? `text-gold` : `text-brown`
+                  theme === 'dark' ? `text-goldHover` : `text-brown`
                 }`}
               >
                 {time}
               </p>
               <p
                 className={`text-base text-center font-medium w-full ${
-                  theme === 'dark' ? `text-gold` : `text-brown`
+                  theme === 'dark' ? `text-goldHover` : `text-brown`
                 }`}
               >
                 {place}
@@ -309,7 +309,7 @@ export const EventMobile = ({ time, description, color, place }) => {
           <p className="text-xl text-left font-semibold">{description}</p>
           <p
             className={`text-md text-left ${
-              theme === 'dark' ? `text-gold` : `text-brown`
+              theme === 'dark' ? `text-goldHover` : `text-brown`
             }`}
           >
             {time} @ {place}
@@ -325,7 +325,7 @@ export const Mobile = () => {
     <div className="flex flex-col items-center justify-end w-full">
       <div className="flex flex-col">
         <div className="flex">
-          <div className="border-r-4 border-gold"></div>
+          <div className="border-r-4 border-[#D56774]"></div>
           <div className="w-56 relative pb-5 bottom-4">
             <Image src={reverseDayOneFlag} alt="flag" draggable="false" />
           </div>
@@ -337,10 +337,10 @@ export const Mobile = () => {
             time={time}
             description={description}
             place={place}
-            color="border-gold"
+            color="border-[#D56774]"
           />
         ))}
-        <span className="mr-1 self-start bg-gradient-to-b from-gold pb-14 to-gold pr-1 flex"></span>
+        <span className="mr-1 self-start bg-gradient-to-b from-[#D56774] pb-14 to-gold pr-1 flex"></span>
         <div className="flex">
           <div className="border-r-4 border-gold"></div>
           <div className="w-56 relative pb-5 bottom-4">
@@ -393,7 +393,7 @@ export const EventDesktop = ({
               </p>
               <p
                 className={`text-base text-right w-full ${
-                  theme === 'dark' ? `text-gold` : `text-brown`
+                  theme === 'dark' ? `text-goldHover` : `text-brown`
                 }`}
               >
                 {leftTime} @ {leftPlace}
@@ -413,7 +413,7 @@ export const EventDesktop = ({
               </p>
               <p
                 className={`text-base text-left w-full ${
-                  theme === 'dark' ? `text-gold` : `text-brown`
+                  theme === 'dark' ? `text-goldHover` : `text-brown`
                 }`}
               >
                 {rightTime} @ {rightPlace}
@@ -478,8 +478,8 @@ export const Desktop = () => {
         <DesktopShedule
           image={dayOneFlag}
           day={eventDesktopDay1}
-          borderColor="border-gold"
-          fromColor="from-gold"
+          borderColor="border-[#D56774]"
+          fromColor="from-[#D56774]"
         />
         <DesktopShedule
           image={dayTwoFlag}

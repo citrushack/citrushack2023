@@ -40,6 +40,7 @@ const ProfileWrapper = ({ name, position, link, image }) => {
             quality={100}
             className="rounded-full mt-5"
             alt="profile photo"
+            draggable={false}
           />
         </a>
       </motion.div>

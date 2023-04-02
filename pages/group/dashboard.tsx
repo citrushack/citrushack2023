@@ -117,13 +117,15 @@ export default function GroupDashboard() {
 
   return (
     <ProtectedPage title="My Group" restrictions={['signin', 'qualified']}>
-      <div className="flex flex-col gap-10 items-center">
+      <div className="flex flex-col gap-10 items-center bg-purple rounded-xl p-4">
         {status === 'authenticated' &&
           (session.user.gid === '' ? (
             <>
-              <div className="flex flex-col max-w-md">
-                <h2>Join a Group</h2>
-                <p>Have a group to join? Just enter the invite code below.</p>
+              <div className="flex flex-col max-w-md text-white">
+                <h2 className="font-bold text-gold">Join a Group</h2>
+                <p className="text-sm pb-2">
+                  Have a group to join? Just enter the invite code below.
+                </p>
                 <form
                   className="flex flex-col gap-3 w-full sm:max-w-md self-center"
                   onSubmit={handleSubmit(joinGroup)}
@@ -140,23 +142,23 @@ export default function GroupDashboard() {
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.995 }}
                     type="submit"
-                    className="w-full py-1.5 rounded bg-highlight hover:bg-highlight-dark font-semibold"
+                    className="w-full py-1.5 rounded bg-gold hover:bg-goldHover font-semibold"
                     onClick={() => triggerErrorNotification()}
                   >
                     Join Group
                   </motion.button>
                 </form>
               </div>
-              <div className="flex flex-col max-w-md">
-                <h2>Create a Group</h2>
-                <p>
+              <div className="flex flex-col max-w-md text-white">
+                <h2 className="font-bold text-gold">Create a Group</h2>
+                <p className="text-sm pb-2">
                   Want to make your own group? Click the button below to create
                   a group.
                 </p>
                 <motion.button
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.995 }}
-                  className="w-full py-1.5 rounded bg-highlight hover:bg-highlight-dark font-semibold"
+                  className="w-full py-1.5 rounded bg-gold hover:bg-goldHover font-semibold text-white"
                   onClick={() => createGroup()}
                 >
                   {clickedCreateOnce ? 'Creating Group...' : 'Create Group'}
@@ -165,8 +167,8 @@ export default function GroupDashboard() {
             </>
           ) : (
             <div className="flex flex-col max-w-md">
-              <h2>My Group</h2>
-              <p>
+              <h2 className="font-bold text-gold">My Group</h2>
+              <p className="text-white text-sm">
                 Join the{' '}
                 <ExternalLink
                   name="Discord server"
@@ -174,12 +176,16 @@ export default function GroupDashboard() {
                 />{' '}
                 to look for more teammates for important updates on the day of.
               </p>
-              <p>Note that groups can only contain a max total of 4 hackers.</p>
-              <p>Want others to join? Share the invite code below.</p>
-              <h3>Invite Code</h3>
+              <p className="text-white text-sm">
+                Note that groups can only contain a max total of 4 hackers.
+              </p>
+              <p className="text-white text-sm">
+                Want others to join? Share the invite code below.
+              </p>
+              <h3 className="font-bold text-gold pt-2">Invite Code</h3>
               <CopyToClipboard
                 text={session.user.gid}
-                className="flex justify-between items-center text-lg p-2 rounded-md bg-sub font-medium mb-4"
+                className="flex justify-between items-center text-lg p-2 rounded-md bg-sub font-medium mb-4 text-white"
               >
                 <motion.button
                   aria-label="Copy to Clipboard Button"
@@ -195,13 +201,15 @@ export default function GroupDashboard() {
                   <BiCopy className="text-2xl" />
                 </motion.button>
               </CopyToClipboard>
-              <h3>Members</h3>
+              <h3 className="font-bold text-gold">Members</h3>
               {(error || !data) &&
                 (cachedData ? (
-                  <ul className="ml-5 list-disc text-lg">
+                  <ul className="ml-5 list-disc text-lg text-white">
                     {cachedData.members.map(({ name }) => (
                       <li key={name}>
-                        {name.first} {name.last}
+                        <span className="text-white">
+                          {name.first} {name.last}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -209,10 +217,12 @@ export default function GroupDashboard() {
                   'Loading...'
                 ))}
               {!error && data && !isValidating ? (
-                <ul className="ml-5 list-disc text-lg">
+                <ul className="ml-5 list-disc text-lg text-white">
                   {data.members.map(({ name }) => (
                     <li key={name}>
-                      {name.first} {name.last}
+                      <span className="text-white">
+                        {name.first} {name.last}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -226,7 +236,7 @@ export default function GroupDashboard() {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.995 }}
-              className="w-full max-w-lg py-1.5 rounded bg-highlight hover:bg-highlight-dark font-semibold"
+              className="w-full max-w-lg py-1.5 rounded bg-gold hover:bg-goldHover font-semibold text-white"
               onClick={() => setModalOpen(true)}
             >
               Leave Group
@@ -236,7 +246,7 @@ export default function GroupDashboard() {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.995 }}
-              className="w-full max-w-lg py-1.5 rounded bg-sub hover:bg-highlight font-semibold"
+              className="w-full max-w-lg py-1.5 rounded bg-lightPurple hover:bg-hoverPrimary font-semibold text-white"
             >
               Go Back to Homepage
             </motion.button>
@@ -253,7 +263,7 @@ export default function GroupDashboard() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.995 }}
-            className="w-full max-w-lg py-1.5 rounded bg-red-500 hover:bg-red-600 font-semibold text-[#F2F3F4]"
+            className="w-full max-w-lg py-1.5 bg-lightPurple rounded-md hover:purple font-semibold text-[#F2F3F4]"
             onClick={() => leaveGroup()}
           >
             Confirm
@@ -261,7 +271,7 @@ export default function GroupDashboard() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.995 }}
-            className="w-full max-w-lg py-1.5 rounded bg-highlight hover:bg-highlight-dark font-semibold "
+            className="w-full max-w-lg py-1.5 rounded-md bg-lightPurple hover:bg-highlight-dark font-semibold text-[#F2F3F4] "
             onClick={() => setModalOpen(false)}
           >
             Cancel

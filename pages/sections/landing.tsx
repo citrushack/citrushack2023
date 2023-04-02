@@ -234,6 +234,13 @@ export default function Landing() {
           <div className="text-center text-2xl max-[375px]:text-xl sm:text-3xl lg:text-4xl mb-3 lg:mb-6 font-black z-1 text-text">
             April 29-30, 2023
           </div>
+          {status == 'authenticated' && session.user.applied_after_limit && (
+            <p className="text-center text-text pb-6 max-w-sm">
+              Based on the time of your application, we can no longer guarantee
+              swag due to our limited inventory.
+            </p>
+          )}
+
           {/* <p className='max-w-lg italic text-center font-medium'>
             In-person sign-ups will close today at 5:30 PM PST, as we are reaching maximum capacity
           </p> */}
@@ -281,36 +288,36 @@ export default function Landing() {
             </span>
           )} */}
           <div className="flex flex-col w-full gap-3">
-            {/* uncomment the day before */}
-            {status === 'authenticated' &&
+            {/* TODO: uncomment the day before */}
+            {/* {status === 'authenticated' &&
               session.user.uid &&
               session.user.qualified === 'yeah' &&
               !session.user.checkedIn && (
                 <span className="flex justify-center w-full z-[200]">
                   <ButtonLink primary label="Check-In Now!" link="/checkin" />
                 </span>
-              )}
+              )} */}
             {status === 'authenticated' &&
               session.user.uid &&
               session.user.qualified === 'yeah' && (
                 <>
                   <span className="flex justify-center w-full z-[200]">
                     <ButtonLink
-                      secondary
+                      primary
                       label="Join Our Discord"
-                      link={process.env.discord}
+                      link="https://discord.com/invite/j7vCRHQPSF"
                       external
                     />
                   </span>
                   <span className="flex justify-center w-full z-[200]">
                     <ButtonLink
-                      secondary
+                      primary
                       label="Group Dashboard"
                       link="/group/dashboard"
                     />
                   </span>
                   <span className="flex justify-center w-full z-[200]">
-                    <ButtonLink secondary label="QR Code" link={userDataLink} />
+                    <ButtonLink primary label="QR Code" link={userDataLink} />
                   </span>
                 </>
               )}
@@ -324,6 +331,7 @@ export default function Landing() {
               alt="skyline"
               layout="responsive"
               objectFit="contain"
+              draggable={false}
             />
           ) : (
             <Image
@@ -331,6 +339,7 @@ export default function Landing() {
               alt="Skyline Dark"
               layout="responsive"
               objectFit="contain"
+              draggable={false}
             />
           )}
         </span>
@@ -345,9 +354,19 @@ export default function Landing() {
           <span className="flex justify-center items-center">
             <div className="flex max-w-[375px] max-[375px]:w-3/4 xs:w-5/6 max-[375px]:mb-8 mb-16 xs:mb-24">
               {theme === 'light' ? (
-                <Image src={globeLight} alt="Globe" className="object-cover" />
+                <Image
+                  src={globeLight}
+                  alt="Globe"
+                  draggable={false}
+                  className="object-cover"
+                />
               ) : (
-                <Image src={globeDark} alt="Globe" className="object-cover" />
+                <Image
+                  src={globeDark}
+                  alt="Globe"
+                  className="object-cover"
+                  draggable={false}
+                />
               )}
             </div>
           </span>

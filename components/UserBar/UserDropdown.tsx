@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
@@ -77,7 +78,7 @@ export function UserDropdown() {
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.995 }}
-          className="z-[1000] flex justify-center items-center w-11 h-11 rounded-md bg-gold hover:bg-highlight-dark"
+          className="z-[1000] flex justify-center items-center w-11 h-11 rounded-md bg-gold hover:bg-goldHover"
           onClick={() => setOpen(!open)}
         >
           {open ? (
@@ -94,7 +95,7 @@ export function UserDropdown() {
         >
           <div className="flex flex-col gap-3 items-center w-full text-lg">
             <div className="flex flex-col gap-2 items-center w-full pb-3 border-b-[1px] border-sub">
-              <span className="flex text-center text-sub-highlight text-sm">
+              <span className="flex text-center text-sm">
                 Signed in as <br />
                 {session.user.email}
               </span>
@@ -105,7 +106,7 @@ export function UserDropdown() {
                     <motion.button
                       whileHover={{ scale: 1.05}} 
                       whileTap={{ scale: 0.995 }}
-                      className='w-full py-1.5 rounded-md bg-highlight hover:bg-highlight-dark font-semibold'
+                      className='w-full py-1.5 rounded-md bg-highlight hover:bg-goldHover font-semibold'
                       onClick={() => setOpen(!open)}
                     >
                       Apply Now!
@@ -114,7 +115,7 @@ export function UserDropdown() {
                   </>
                 ) : (
                   <>
-                    <span className="flex text-center font-semibold text-sub-bright text-sm">
+                    <span className="flex text-center font-semibold text-sm">
                       Your Application Status
                       <BiHelpCircle
                         className="text-sub-highlight hover:text-highlight cursor-pointer"
@@ -125,7 +126,7 @@ export function UserDropdown() {
                       className={
                         'w-full py-1.5 text-center rounded-md font-semibold ' +
                         (session.user.qualified === ''
-                          ? 'bg-red-200 text-white'
+                          ? 'bg-goldHover text-white'
                           : session.user.qualified === 'yeah'
                           ? 'bg-[#9DC300] text-lime-800'
                           : 'bg-red-400 text-red-900')
@@ -137,8 +138,8 @@ export function UserDropdown() {
                     </div>
                   </>
                 ))}
-              {/* uncomment the day before */}
-              {status === 'authenticated' &&
+              {/* TODO:uncomment the day before */}
+              {/* {status === 'authenticated' &&
                 session.user.uid &&
                 session.user.qualified === 'yeah' &&
                 (!session.user.checkedIn ? (
@@ -165,7 +166,7 @@ export function UserDropdown() {
                   <div className="w-full py-1.5 text-center rounded-md bg-sub font-semibold">
                     Checked-In
                   </div>
-                ))}
+                ))} */}
               {status === 'authenticated' &&
                 session.user.uid &&
                 session.user.qualified === 'yeah' && (
@@ -249,7 +250,7 @@ export function UserDropdown() {
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.995 }}
-              className="group flex items-center gap-1.5 w-full rounded-md text-sub-highlight font-semibold bg-transparent"
+              className="group flex items-center gap-1.5 w-full rounded-md text-sub-highlight font-semibold bg-goldHover"
               onClick={() => signOut()}
             >
               <div className="p-1.5 group-hover:bg-highlight group-hover:text-text rounded-md bg-sub text-sub-bright text-2xl">

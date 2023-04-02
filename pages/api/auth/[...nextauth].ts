@@ -38,6 +38,7 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
         session.user.participation = user.participation;
         session.user.InPersonCheckIn = user.InPersonCheckIn;
         session.user.pickedUpShirt = user.pickedUpShirt;
+        session.user.applied_after_limit = user.applied_after_limit;
         return session;
       }
     },

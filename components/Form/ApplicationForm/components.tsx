@@ -10,7 +10,8 @@ import {
   firstTimeHacker,
   foodPreference,
   shirtSize,
-  MLH
+  MLH,
+  awk
 } from './options';
 
 interface Props {
@@ -124,7 +125,7 @@ export function Education({ register, errors, watch }: Props) {
       {school === 'University of California, Riverside' && (
         <Input
           type="text"
-          label="UCR SID"
+          label="UCR SID (starts with 86...)"
           variable="ucr_sid"
           register={register}
           errors={errors}
@@ -180,6 +181,14 @@ export const HackerApp = ({ register, errors, setFileUploaded }: Props) => (
       errors={errors}
     />
     <span className="flex flex-col mt-4 gap-2">
+      <Checkbox
+        label=""
+        variable="in_person_awk"
+        options={awk[0]}
+        register={register}
+        errors={errors}
+        required
+      />
       <Checkbox
         label=""
         variable="MLH_code_of_conduct"

@@ -19,7 +19,7 @@ export function FaqAccordion({ question, answer }: Props) {
         className="flex py-3 items-center hover:text-highlight cursor-pointer"
         onClick={() => setOpen(!open)}
       >
-        <h4 className="grow font-bold text-lg text-text">{question}</h4>
+        <h4 className="grow font-semibold text-lg text-text">{question}</h4>
         <div>
           <BiX
             className={
@@ -117,14 +117,19 @@ const faq = [
   {
     question: "My question isn't listed?",
     answer: (
-      <p className="text-text">
+      <>
         Feel free to email us at{' '}
         <ExternalLink
           name="citrushack@gmail.com"
           link="mailto:citrushack@gmail.com"
         />{' '}
-        or ask Mika Shanela in-person if you have any more questions.
-      </p>
+        or ask{' '}
+        <ExternalLink
+          name="Mika Shanela"
+          link="https://www.linkedin.com/in/mika-shanela/"
+        />{' '}
+        in-person if you have any more questions.
+      </>
     )
   }
 ];

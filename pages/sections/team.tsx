@@ -111,28 +111,89 @@ const staff = [
 ];
 
 const swe_committee = [
-  'Thomas Li',
-  'Bobby Lerias',
-  'Andre Amante',
-  'Raidah Fairooz',
-  'Kirtana Venkat'
+  {
+    link: 'https://www.linkedin.com/in/thomasli9/',
+    name: 'Thomas Li'
+  },
+  {
+    link: 'https://www.linkedin.com/in/robertlerias/',
+    name: 'Bobby Lerias'
+  },
+  {
+    link: 'https://www.linkedin.com/in/andreamantee/',
+    name: 'Andre Amante'
+  },
+  {
+    link: 'https://www.linkedin.com/in/raidah-fairooz-78b1a8146/',
+    name: 'Raidah Fairooz'
+  },
+  {
+    link: null,
+    name: 'Kirtana Venkat'
+  }
 ];
 
-const sponsorship_committee = [
-  'Jasmita Yechuri',
-  'Javier Herrera Jr.',
-  'Freddy Song',
-  'Joseph Hoang',
-  'Javier Vargas',
-  'Brian Uong',
-  'Adreyan Distor',
-  'Minnoli Nori',
-  'Isabelle Celo',
-  'Felix Maass',
-  'Suhani Chaudhary'
+const operations_committee = [
+  {
+    link: null,
+    name: 'Ronit Bhushan'
+  },
+  {
+    link: null,
+    name: 'Sneha Panda'
+  },
+  {
+    link: null,
+    name: 'Ethan Quach'
+  }
 ];
 
-const operations_committee = ['Ronit Bhushan', 'Sneha Panda', 'Ethan Quach'];
+const sponsorhip_committee = [
+  {
+    link: 'https://www.linkedin.com/in/jasmita-yechuri-0b7a871bb/',
+    name: 'Jasmita Yechuri'
+  },
+  {
+    link: 'https://www.linkedin.com/in/javier-herrera-jr-832717264/',
+    name: 'Javier Herrera Jr.'
+  },
+  {
+    link: null,
+    name: 'Freddy Song'
+  },
+  {
+    link: null,
+    name: 'Joseph Hoang'
+  },
+  {
+    link: null,
+    name: 'Javier Vargas'
+  },
+  {
+    link: null,
+    name: 'Brian Uong'
+  },
+  {
+    link: null,
+    name: 'Adreyan Distor'
+  },
+  {
+    link: null,
+    name: 'Minnoli Nori'
+  },
+  {
+    link: null,
+    name: 'Isabelle Celo'
+  },
+  {
+    link: null,
+    name: 'Felix Maass'
+  },
+  {
+    link: 'https://www.linkedin.com/in/suhani-chaudhary-25a476244',
+    name: 'Suhani Chaudhary'
+  }
+];
 
 export const Assets = () => {
   const { theme } = useTheme();
@@ -172,7 +233,7 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 5
         }}
-        className="absolute z-10 max-md:hidden right-10 top-52 w-20  xl:w-24"
+        className="absolute z-10 max-md:hidden right-10 top-52 w-20  xl:w-24 "
       >
         {theme === 'light' ? (
           <Image src={bird1} alt="bird" draggable={false} />
@@ -187,7 +248,7 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 5
         }}
-        className="absolute z-30 max-md:hidden left-0 md:left-10 bottom-10 md:-bottom-52 w-16 sm:w-24 xl:w-32"
+        className="absolute z-30 max-md:hidden left-0 md:left-10 bottom-10 md:-bottom-24 w-16 sm:w-24 xl:w-32"
       >
         {theme === 'light' ? (
           <Image src={cloud} alt="cloud" draggable={false} />
@@ -202,24 +263,9 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 5
         }}
-        className="absolute z-30 max-md:hidden left-0 lg:left-0 xl:left-32 -bottom-96 lg:-bottom-96 xl:-bottom-96 w-12 xl:w-24"
+        className="absolute max-md:hidden left-0 lg:left-0 xl:left-32 -bottom-48 md:-bottom-40 lg:-bottom-56 xl:-bottom-64 w-12 xl:w-24 z-[1000]"
       >
-        <Image src={balloonOrange} alt="cloud" draggable={false} />
-      </motion.div>
-      {/* cloud bottom right */}
-      <motion.div
-        animate={{ y: [0, -5, 0] }}
-        transition={{
-          repeat: Infinity,
-          duration: 5
-        }}
-        className="absolute z-20 right-10 max-md:hidden -bottom-[150%] xs:-bottom-[45%] sm:-bottom-[35%] md:-bottom-12 xl:bottom-56 w-16 sm:w-24 xl:w-32"
-      >
-        {theme === 'light' ? (
-          <Image src={cloud2} alt="cloud" draggable={false} />
-        ) : (
-          <Image src={cloudDark2} alt="cloud" draggable={false} />
-        )}
+        <Image src={balloonOrange} alt="balloon" draggable={false} />
       </motion.div>
       {/* bird */}
       <motion.div
@@ -228,7 +274,7 @@ export const Assets = () => {
           repeat: Infinity,
           duration: 3
         }}
-        className="absolute z-40 right-6 -bottom-[150%] max-md:hidden xs:-bottom-[45%] sm:-bottom-[35%] md:-bottom-52 xl:bottom-0 w-10 xs:w-20 xl:w-32"
+        className="absolute z-40 right-6 -bottom-[150%] max-md:hidden xs:-bottom-[45%] sm:-bottom-[35%] md:-bottom-52 bg xl:bottom-0 w-10 xs:w-20 xl:w-32"
       >
         {theme === 'light' ? (
           <Image src={bird1} alt="bird" draggable={false} />
@@ -265,7 +311,7 @@ export const Assets = () => {
           <Image src={star} alt="star" draggable={false} />
         )}
       </motion.div>
-      {/* cloud top left */}
+      {/* bird top left */}
       <motion.div
         animate={{ y: [0, -5, 0] }}
         transition={{
@@ -380,11 +426,31 @@ const team = () => {
               >
                 Operations
               </p>
-              {operations_committee.map((member, index) => (
-                <p key={index} className="text-text">
-                  {member}
-                </p>
-              ))}
+              {operations_committee.map(({ link, name }) =>
+                link ? (
+                  <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href={link === null ? '' : link}
+                    key={name}
+                  >
+                    <p
+                      key={name}
+                      className={`text-text  ${
+                        link !== null && theme === 'dark'
+                          ? `hover:text-goldHover`
+                          : `hover:text-[#987a5e]`
+                      }`}
+                    >
+                      {name}
+                    </p>
+                  </a>
+                ) : (
+                  <p key={name} className="text-text">
+                    {name}
+                  </p>
+                )
+              )}
             </div>
             <div>
               <p
@@ -394,11 +460,31 @@ const team = () => {
               >
                 Sponsorship
               </p>
-              {sponsorship_committee.map((member, index) => (
-                <p key={index} className="text-text">
-                  {member}
-                </p>
-              ))}
+              {sponsorhip_committee.map(({ link, name }) =>
+                link ? (
+                  <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href={link === null ? '' : link}
+                    key={name}
+                  >
+                    <p
+                      key={name}
+                      className={`text-text  ${
+                        theme === 'dark'
+                          ? `hover:text-goldHover`
+                          : `hover:text-[#987a5e]`
+                      }`}
+                    >
+                      {name}
+                    </p>
+                  </a>
+                ) : (
+                  <p key={name} className="text-text">
+                    {name}
+                  </p>
+                )
+              )}
             </div>
             <div>
               <p
@@ -408,11 +494,31 @@ const team = () => {
               >
                 Software Engineers
               </p>
-              {swe_committee.map((member, index) => (
-                <p key={index} className="text-text">
-                  {member}
-                </p>
-              ))}
+              {swe_committee.map(({ link, name }) =>
+                link ? (
+                  <a
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href={link === null ? '' : link}
+                    key={name}
+                  >
+                    <p
+                      key={name}
+                      className={`text-text  ${
+                        theme === 'dark'
+                          ? `hover:text-goldHover`
+                          : `hover:text-[#987a5e]`
+                      }`}
+                    >
+                      {name}
+                    </p>
+                  </a>
+                ) : (
+                  <p key={name} className="text-text">
+                    {name}
+                  </p>
+                )
+              )}
             </div>
           </div>
         </div>

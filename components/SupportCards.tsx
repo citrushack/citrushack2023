@@ -67,6 +67,7 @@ function SupportCardMobile({ back, button, link }: SupportCardMobileProps) {
         quality={1}
         className="rounded-md"
         alt=""
+        draggable={false}
       />
       <motion.span
         whileHover={{ scale: 1.05 }}
@@ -76,7 +77,7 @@ function SupportCardMobile({ back, button, link }: SupportCardMobileProps) {
         animate={bounce ? 'animate' : 'initial'}
       >
         {/* <a href={link}> */}
-        <Image src={button} width={140} height={120} alt="" />
+        <Image src={button} width={140} height={120} alt="" draggable={false} />
         {/* </a> */}
       </motion.span>
     </a>

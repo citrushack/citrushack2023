@@ -19,7 +19,7 @@ export function UserBox({
     <motion.div whileHover={{ y: -2 }} className="relative group">
       <div
         className={
-          'h-full border-2 border-sub rounded-md bg-card shadow-md cursor-pointer transform-gpu transition-size duration-150 overflow-hidden ' +
+          'h-full border-2 border-sub rounded-md bg-lightPurple shadow-md cursor-pointer transform-gpu transition-size duration-150 overflow-hidden ' +
           (selectedUsers.includes(user) ? 'border-text ' : ' ') +
           (expandedUsers.includes(user)
             ? 'max-h-[40rem] '
@@ -36,7 +36,7 @@ export function UserBox({
               className={
                 'w-10 p-2 rounded-full text-2xl group-hover:text-text ' +
                 (!pending
-                  ? 'hover:bg-sub '
+                  ? 'hover:bg-lightPurple '
                   : user.criteriaMet
                   ? 'hover:bg-green-200 '
                   : 'hover:bg-red-200 ') +
@@ -112,7 +112,7 @@ export function UserBox({
                 </div>
               )}
             </div>
-            <span className="py-2 text-sm md:text-base">{user.email}</span>
+            <span className="py-2 text-sm md:text-white">{user.email}</span>
           </div>
         </div>
         <div

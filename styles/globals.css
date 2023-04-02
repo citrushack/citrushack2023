@@ -25,6 +25,9 @@ body {
     --purple: #373a5e;
     --lightPurple: #5c6084;
     --hoverPrimary: #5c6084;
+    --goldHover: #ffc753;
+    --brownHover: #987a5e;
+    --link: #71461f;
     --text: #373a5e;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');
@@ -45,7 +48,10 @@ body {
     --darkbubble: #373a5e;
     --purple: #373a5e;
     --hoverPrimary: #5c6084;
+    --goldHover: #ffc753;
+    --brownHover: #987a5e;
     --lightPurple: #5c6084;
+    --link: #71461f;
     --text: #373a5e;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');
@@ -53,7 +59,6 @@ body {
   }
 
   [data-theme='dark'] {
-    /* TODO: NEED TO CHANGE COLORS FOR DARK MODE (it is currently same as light mode) */
     --sky: #2c314f;
     --bubble: #b1e3ff;
     --darkgreen: #2f5525;
@@ -67,7 +72,10 @@ body {
     --darkbubble: #373a5e;
     --purple: #597daa;
     --lightPurple: #5c6084;
-    --hoverPrimary: #5c6084;
+    --hoverPrimary: #7495be;
+    --goldHover: #ffc753;
+    --brownHover: #987a5e;
+    --link: #ffac01;
     --text: #ffff;
     --clouds: url('/assets/clouds.svg');
     --clouds2: url('/assets/clouds_birds.svg');

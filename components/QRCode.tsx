@@ -7,9 +7,8 @@ import { useSession } from 'next-auth/react';
 }
 export default function QR() {
   const { data: session } = useSession();
-  // TODO: make base url env var
   return session ? (
-    <QRCode value={'http://localhost:3000/users/' + session.user.uid} />
+    <QRCode value={process.env.APP_URL + 'users/' + session.user.uid} />
   ) : (
     <p>log in pls</p>
   );
