@@ -38,9 +38,12 @@ export default async function createApplication(
     if (first_name.length > 35 || last_name.length > 35) {
       return res.status(400).json({ error: 'An Error has occrured.' })
     }
-    // check for alphabets in phone
+    // check for alphabets in phone and age
     const expression = /[a-zA-Z]/g
     if (expression.test(phone_number) || phone_number.trim().length > 15) {
+      return res.status(400).json({ error: 'An error has occrured.' })
+    }
+    if (expression.test(age)) {
       return res.status(400).json({ error: 'An error has occrured.' })
     }
     const food_preference_options = ['Meat', 'Vegetarian', 'Nut Allergy']
