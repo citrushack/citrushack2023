@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import clientPromise from '@/lib/mongodb';
 import { sendEmail } from '@/lib/sendgrid';
 import { getSession } from 'next-auth/react';
-import { schools } from '@/components/Form/ApplicationForm/schools'
+import { schools } from '@/components/Form/ApplicationForm/schools';
 
 export default async function createApplication(
   req: NextApiRequest,
