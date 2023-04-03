@@ -65,6 +65,7 @@ export const Input = ({
       }
       onChange={onChange}
       maxLength={type === 'tel' ? 15 : undefined}
+      accept={type === 'file' ? ".pdf" : undefined}
     />
   </div>
 );
