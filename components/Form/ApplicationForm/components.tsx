@@ -75,7 +75,7 @@ export const PersonalInfo = ({ session, register, errors }: Props) => (
     </div>
     <div className="grid sm:grid-cols-2 gap-3">
       <Input
-        type=""
+        type="tel"
         label="Phone Number"
         variable="phone_number"
         register={register}

@@ -64,6 +64,7 @@ export const Input = ({
         (errors[variable] ? 'border-red-500' : 'border-highlight')
       }
       onChange={onChange}
+      maxLength={type === 'tel' ? 15 : undefined}
     />
   </div>
 );
