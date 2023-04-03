@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import clientPromise from '@/lib/mongodb';
 import { sendEmail } from '@/lib/sendgrid';
 import { getSession } from 'next-auth/react';
+import { schools } from '@/components/Form/ApplicationForm/schools'
 
 export default async function createApplication(
   req: NextApiRequest,
@@ -46,17 +47,21 @@ export default async function createApplication(
     if (expression.test(age)) {
       return res.status(400).json({ error: 'An error has occrured.' });
     }
+    // food preference
     const food_preference_options = ['Meat', 'Vegetarian', 'Nut Allergy'];
     if (!food_preference_options.includes(food_preference)) {
       return res.status(400).json({ error: 'An error has occured.' });
     }
+    // first time hacker option
     const first_time_hacker_options = ['Yes', 'No'];
     if (!first_time_hacker_options.includes(first_time)) {
       return res.status(400).json({ error: 'An error has occured.' });
     }
+    // ethnicity
     if (ethnicity.length > 64) {
       return res.status(400).json({ error: 'An error has occured.' });
     }
+    // gender
     const gender_options = [
       'Male',
       'Female',
@@ -67,11 +72,17 @@ export default async function createApplication(
     if (!gender_options.includes(gender)) {
       return res.status(400).json({ error: 'An error has occured.' });
     }
+    // shirt
     const shirt_size_options = ['S', 'M', 'L', 'XL'];
     if (!shirt_size_options.includes(shirt_size)) {
       return res.status(400).json({ error: 'An error has occured.' });
     }
+    // major
     if (major.length > 64) {
+      return res.status(400).json({ error: 'An error has occured.' });
+    }
+    // check if selected school is in the provided list of schools
+    if (schools.includes(school)) {
       return res.status(400).json({ error: 'An error has occured.' });
     }
 
