@@ -182,7 +182,7 @@ export function ApplicationForm() {
         })
         .catch(() => {
           toast.error(
-            'Uh oh. Something went wrong. If this issue persists, let us know.',
+            'Uh oh. Something went wrong. Please make sure all the fields required fields are filled out correctly! Please let us know if the error persists.',
             { id: 'submitApplicationError' }
           );
           setClickedSubmitOnce(Boolean(false));
