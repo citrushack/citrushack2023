@@ -34,6 +34,44 @@ export default async function createApplication(
       applied_after_limit
     } = req.body;
 
+    // input validation
+    if (first_name.length > 35 || last_name.length > 35) {
+      return res.status(400).json({ error: 'An Error has occrured.' })
+    }
+    // check for alphabets in phone
+    const expression = /[a-zA-Z]/g
+    if (expression.test(phone_number) || phone_number.trim().length > 15) {
+      return res.status(400).json({ error: 'An error has occrured.' })
+    }
+    const food_preference_options = ['Meat', 'Vegetarian', 'Nut Allergy']
+    if (!food_preference_options.includes(food_preference)) {
+      return res.status(400).json({ error: 'An error has occured.' })
+    }
+    const first_time_hacker_options = ['Yes', 'No']
+    if (!first_time_hacker_options.includes(first_time)) {
+      return res.status(400).json({ error: 'An error has occured.' })
+    }
+    if (ethnicity.length > 64) {
+      return res.status(400).json({ error: 'An error has occured.' })
+    }
+    const gender_options = [
+      'Male',
+      'Female',
+      'Nonbinary',
+      'Other',
+      'Prefer not to say',
+    ]
+    if (!gender_options.includes(gender)) {
+      return res.status(400).json({ error: 'An error has occured.' })
+    }
+    const shirt_size_options = ['S', 'M', 'L', 'XL']
+    if (!shirt_size_options.includes(shirt_size)) {
+      return res.status(400).json({ error: 'An error has occured.' })
+    }
+    if (major.length > 64) {
+      return res.status(400).json({ error: 'An error has occured.' })
+    }
+
     // send email notification to user applying
     await sendEmail({
       email: session.user.email,
