@@ -1,5 +1,9 @@
 import csv
+import os
 from pymongo import MongoClient
+from dotenv import load_dotenv
+
+load_dotenv()
 
 columns = ['First Name', 'Last Name', 'Age', 'Email', 'School', 'Phone Number', 'Country', 'Current Level of Study', 'Code of Conduct', 'Privacy Policy', 'Marketing Opt-In']
 
@@ -21,7 +25,7 @@ def get_mlh_data(client):
                 else:
                     file.write(',')
                 # age
-                file.write(user.get('age')+',')
+                file.write(str(user.get('age'))+',')
                 # email
                 file.write(user.get('email')+',')
                 # school
@@ -29,26 +33,22 @@ def get_mlh_data(client):
                     school = user.get('school_other')
                 else:
                     school = user.get('school')
-                file.write(school.replace(',','')+',') # some schools have commas so remove it
+                file.write(str(school).replace(',','')+',') # some schools have commas so remove it
                 # Phone
-                file.write(user.get('phoneNumber')+',')
+                file.write(str(user.get('phoneNumber'))+',')
                 # Country (filled out in checkin form)
                 if user.get('country'):
-                    file.write(user.get('country')+',')
+                    file.write(str(user.get('country'))+',')
                 else:
                     file.write('US,')
                 # study level
-                file.write(user.get('grade')+',')
+                file.write(str(user.get('grade'))+',')
                 # checkboxes
                 if user.get('MLHAcknowledgement') == True: # if true, then all 3 checked
                     for i in range(3): file.write('true,')
                 else: # only the 2 required boxes filled; (marketing opt in not checked)
                     for i in range(2): file.write('true,')
-                    file.write('false,')
-
-
-
-                
+                    file.write('false,')                
 
 def text_to_csv(input_file, output_file):
     # Read the input text file
@@ -63,7 +63,7 @@ def text_to_csv(input_file, output_file):
             csv_writer.writerow([cell.strip() for cell in row.split(',')])
 
 if __name__ == "__main__":   
-    CONNECTION_STRING = "mongodb+srv://minsooerickim:0aOvW6KR6Zy7HkIR@development.jek65.mongodb.net/?retryWrites=true&w=majority"
+    CONNECTION_STRING = os.environ.get("CONNECTION_STRING")
     client = MongoClient(CONNECTION_STRING)
 
     get_mlh_data(client)
