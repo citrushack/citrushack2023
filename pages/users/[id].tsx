@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import { useSession } from 'next-auth/react';
 import router from 'next/router';
 import toast from 'react-hot-toast';
+import { FaCheckCircle } from 'react-icons/fa';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 export default function Info({ userData }) {
   const { data: session, status } = useSession();
@@ -17,8 +19,10 @@ export default function Info({ userData }) {
     shirtSize,
     qualified,
     name,
-    MLHAcknowledgement,
+    applied_after_limit,
+    // MLHAcknowledgement,
     pickedUpShirt,
+    pickedUpCanes,
     InPersonCheckIn
     // ...other
   } = json_obj[0];
@@ -64,8 +68,7 @@ export default function Info({ userData }) {
     axios
       .post('/api/users/mark-tshirt-picked-up', { uid })
       .then(() => {
-        console.log('hello inside');
-        toast.success('In-person check in successful!', {
+        toast.success('T-shirt pickup successful!', {
           id: 'markTshirtSuccess'
         });
         router.reload();
@@ -73,6 +76,22 @@ export default function Info({ userData }) {
       .catch(() => {
         toast.error('Uh oh. Something went wrong...', {
           id: 'markTshirtError'
+        });
+      });
+  };
+
+  const markCanes = () => {
+    axios
+      .post('/api/users/mark-canes-picked-up', { uid })
+      .then(() => {
+        toast.success('Canes pickup successful!', {
+          id: 'markCanesSuccess'
+        });
+        router.reload();
+      })
+      .catch(() => {
+        toast.error('Uh oh. Something went wrong...', {
+          id: 'markCanesError'
         });
       });
   };
@@ -112,15 +131,21 @@ export default function Info({ userData }) {
       restrictions={['signin', 'self']}
       uid={uid}
     >
-      {/* user can only see the QR code */}
+      {/* user can only see the QR code and this text */}
       <QR />
-
+      {status === 'authenticated' && !session.user.admin && (
+        <>
+          <p className="pt-8 text-center text-lg text-text font-bold">
+            Show this QR Code at check-in and during food distribution!
+          </p>
+        </>
+      )}
       {/* goodies picked up */}
       {/* only admins can see actions and additional info */}
       {status === 'authenticated' && session.user.admin && (
         <div className="flex flex-col justify-center items-center py-4">
           {InPersonCheckIn ? (
-            <p className="text-green-400">Checked In!</p>
+            <p className="text-green-500">Checked In!</p>
           ) : (
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -135,16 +160,48 @@ export default function Info({ userData }) {
           )}
 
           <p>
-            {name.first}, {name.last}
+            {name.first} {name.last}
           </p>
           <p>{email}</p>
-          {/* TODO: only allow people who applied before `applied_after_limit` pick up tshirt; (display ingeligible to pickup tshirt or sum) */}
-          <div className="flex flex-col py-4 items-center">
-            {pickedUpShirt ? (
-              <p className="text-green-400">picked up</p>
+          <div>
+            {applied_after_limit ? (
+              <p className="flex">
+                First 200 Hacker:{' '}
+                <span className="text-red-500 pt-1 pl-1">
+                  <AiFillCloseCircle />
+                </span>
+              </p>
             ) : (
-              <div>
-                <p className="text-red-400">not picked up</p>
+              <p className="flex">
+                First 200 Hacker:{' '}
+                <span className="text-green-500 pt-1 pl-1">
+                  <FaCheckCircle />
+                </span>
+              </p>
+            )}
+          </div>
+          <div className="flex flex-col pb-4 items-center text-center">
+            {applied_after_limit ? (
+              <span className="text-lg font-semibold text-red-500">
+                Ineligible for Shirt Pick-up
+              </span>
+            ) : pickedUpShirt ? (
+              <div className="mt-4 mb-2">
+                <p className="flex">
+                  Shirt Size: {shirtSize}{' '}
+                  <span className="text-green-500 pt-1 pl-1">
+                    <FaCheckCircle />
+                  </span>
+                </p>
+              </div>
+            ) : (
+              <div className="mt-4 mb-2 flex flex-col justify-center items-center">
+                <p className="flex">
+                  T-Shirt Pickup:
+                  <span className="text-red-500 pt-1 pl-1">
+                    <AiFillCloseCircle />
+                  </span>
+                </p>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.995 }}
@@ -153,35 +210,65 @@ export default function Info({ userData }) {
                     markTshirt();
                   }}
                 >
-                  Mark as Picked Up
+                  Mark T-Shirt Picked Up
                 </motion.button>
               </div>
             )}
-            <p>shirt size: {shirtSize}</p>
-          </div>
-
-          <div className="pb-4">
-            {MLHAcknowledgement ? (
-              <p>
-                MLHAcknowledgement: <span className="text-green-400">True</span>
-              </p>
+            {pickedUpCanes ? (
+              <div className="mt-4 mb-2">
+                <p className="flex">
+                  Canes Pickup:{' '}
+                  <span className="text-green-500 pt-1 pl-1">
+                    <FaCheckCircle />
+                  </span>
+                </p>
+              </div>
             ) : (
-              <p>
-                MLHAcknowledgement: <span className="text-red-400">False</span>
-              </p>
+              <div className="mt-4 mb-2 flex flex-col justify-center items-center">
+                <p className="flex">
+                  Canes Pickup:
+                  <span className="text-red-500 pt-1 pl-1">
+                    <AiFillCloseCircle />
+                  </span>
+                </p>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.995 }}
+                  className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-purple text-white cursor-pointer"
+                  onClick={() => {
+                    markCanes();
+                  }}
+                >
+                  Mark Canes Picked Up
+                </motion.button>
+              </div>
             )}
           </div>
-          <p className="pb-4">
-            qualified:{' '}
+
+          <p className="flex pb-4">
+            Qualified:{' '}
             {qualified == '' ? (
-              <span className="text-red-400">pending</span>
+              <span className="text-red-500 pt-1 pl-1">
+                <AiFillCloseCircle />
+              </span>
             ) : (
-              <span className="text-green-400">qualified</span>
+              <span className="text-green-500 pt-1 pl-1">
+                <FaCheckCircle />
+              </span>
             )}
           </p>
-          {/* add button to check people in  */}
-
-          {/* approve or reject user */}
+          {/* <div className="pb-4 flex">
+            MLHAcknowledgement:{' '}
+            {MLHAcknowledgement ? (
+              <span className="text-green-500 pt-1 pl-1">
+                <FaCheckCircle />
+              </span>
+            ) : (
+              <span className="text-red-500 pt-1 pl-1">
+                <AiFillCloseCircle />
+              </span>
+            )}
+          </div> */}
           <div className="flex flex-row space-x-4">
             <motion.button
               whileHover={{ scale: 1.05 }}

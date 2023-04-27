@@ -22,257 +22,473 @@ const eventDesktopDay1 = [
     leftTime: '',
     leftDescription: '',
     leftPlace: '',
-    rightTime: '1pm - 2pm',
+    leftEventType: '',
+    rightTime: '7:00 AM',
     rightDescription: 'Check-In',
-    rightPlace: 'WCH 205/205'
+    rightPlace: '@ MSE 116',
+    rightEventType: ''
   },
   {
-    leftTime: '1pm - 2pm',
-    leftDescription: 'Teambuilding Activity',
-    leftPlace: 'WCH 205/205',
+    leftTime: '8:00 AM',
+    leftDescription: 'Opening Ceremony',
+    leftPlace: '@ MSE 116',
+    leftEventType: '',
     rightTime: '',
     rightDescription: '',
-    rightPlace: ''
+    rightPlace: '',
+    rightEventType: ''
   },
   {
-    leftTime: '',
-    leftDescription: '',
+    leftTime: '9:00 AM',
+    leftDescription: 'Hacking Begins',
     leftPlace: '',
-    rightTime: '1pm - 2pm',
-    rightDescription: 'Intro to Unity',
-    rightPlace: 'WCH 205/205'
+    leftEventType: '',
+    rightTime: '9:00 AM',
+    rightDescription: 'Team Building',
+    rightPlace: '@ MSE 116',
+    rightEventType: 'Workshop'
   },
   {
-    leftTime: '1pm - 2pm',
-    leftDescription: 'Intro to Discord Bot',
-    leftPlace: 'WCH 205/205',
+    leftTime: '10:00 AM',
+    leftDescription: 'Giddy Up w/ Git',
+    leftPlace: '@ WCH 205/206',
+    leftEventType: 'Workshop',
     rightTime: '',
     rightDescription: '',
-    rightPlace: ''
+    rightPlace: '',
+    rightEventType: ''
   },
   {
     leftTime: '',
     leftDescription: '',
     leftPlace: '',
-    rightTime: '1pm - 2pm',
-    rightDescription: 'Intro to Git/Github',
-    rightPlace: 'WCH 205/205'
+    leftEventType: '',
+    rightTime: '11:00 AM',
+    rightDescription: 'Rock your Web Portfolio w/ React',
+    rightPlace: '@ WCH 205/206',
+    rightEventType: 'Workshop'
   },
   {
-    leftTime: '1pm - 2pm',
-    leftDescription: 'Intro to GUI Programming',
-    leftPlace: 'WCH 205/205',
-    rightTime: '',
-    rightDescription: ' ',
-    rightPlace: ''
-  },
-  {
-    leftTime: '',
-    leftDescription: '',
-    leftPlace: '',
-    rightTime: '1pm - 2pm',
-    rightDescription: 'Resume Building',
-    rightPlace: 'WCH 205/205'
+    leftTime: '12:00 PM',
+    leftDescription: 'Understanding Unity',
+    leftPlace: '@ WCH 205/206',
+    leftEventType: 'Workshop',
+    rightTime: '12:00 PM',
+    rightDescription: 'Strongest Bridge',
+    rightPlace: '@ Bourns A265',
+    rightEventType: 'Activity'
   },
   {
     leftTime: '',
     leftDescription: '',
     leftPlace: '',
-    rightTime: '1pm - 2pm',
-    rightDescription: 'Intro to Git/Github',
-    rightPlace: 'WCH 205/205'
+    leftEventType: '',
+    rightTime: '1:00 PM',
+    rightDescription: 'Lunch',
+    rightPlace: '@ Outside Bytes',
+    rightEventType: ''
   },
   {
-    leftTime: '1pm - 2pm',
-    leftDescription: 'Intro to GUI Programming',
-    leftPlace: 'WCH 205/205',
-    rightTime: '',
-    rightDescription: ' ',
-    rightPlace: ''
-  },
-  {
-    leftTime: '',
-    leftDescription: '',
-    leftPlace: '',
-    rightTime: '1pm - 2pm',
-    rightDescription: 'Intro to Git/Github',
-    rightPlace: 'WCH 205/205'
-  },
-  {
-    leftTime: '1pm - 2pm',
-    leftDescription: 'Intro to GUI Programming',
-    leftPlace: 'WCH 205/205',
-    rightTime: '',
-    rightDescription: '',
-    rightPlace: ''
+    leftTime: '2:00 PM',
+    leftDescription: 'Level Up your LinkedIn',
+    leftPlace: '@ WCH 205/206',
+    leftEventType: 'Workshop',
+    rightTime: '2:00 PM',
+    rightDescription: 'Tallest Tower Stacking',
+    rightPlace: '@ Bourns A265',
+    rightEventType: 'Activity'
   },
   {
     leftTime: '',
     leftDescription: '',
     leftPlace: '',
-    rightTime: '1pm - 2pm',
-    rightDescription: 'Hacking Check-In',
-    rightPlace: 'WCH 205/205'
+    leftEventType: '',
+    rightTime: '3:00 PM',
+    rightDescription: `Prof. Allan's App Dev Masterclass`,
+    rightPlace: '@ WCH 205/206',
+    rightEventType: 'Workshop'
   },
   {
-    leftTime: '1pm - 2pm',
-    leftDescription: 'Teambuilding Activity',
-    leftPlace: 'WCH 205/205',
-    rightTime: '',
-    rightDescription: '',
-    rightPlace: ''
+    leftTime: '4:00 PM',
+    leftDescription: `Can't Spell UI/UX without U & I <3`,
+    leftPlace: '@ WCH 205/206',
+    leftEventType: 'Workshop',
+    rightTime: '4:00 PM',
+    rightDescription: 'Skribblio',
+    rightPlace: '@ Bourns A265',
+    rightEventType: 'Activity'
   },
   {
-    leftTime: '',
-    leftDescription: '',
-    leftPlace: '',
-    rightTime: '1pm - 2pm',
-    rightDescription: 'Intro to Unity',
-    rightPlace: 'WCH 205/205'
+    leftTime: '5:00 PM',
+    leftDescription: 'TypeRacer',
+    leftPlace: '@ Bourns A265',
+    leftEventType: 'Activity',
+    rightTime: '5:00 PM',
+    rightDescription: 'Arm Up your API: Security & Testing',
+    rightPlace: '@ WCH 205/206',
+    rightEventType: ''
   },
   {
-    leftTime: '1pm - 2pm',
-    leftDescription: 'Intro to Discord Bot',
-    leftPlace: 'WCH 205/205',
+    leftTime: '6:00 PM',
+    leftDescription: 'Revamp your Resume',
+    leftPlace: '@ WCH 205/206',
+    leftEventType: 'Workshop',
     rightTime: '',
     rightDescription: '',
-    rightPlace: ''
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '7:00 PM',
+    leftDescription: 'Digital Twin Performance',
+    leftPlace: '@ WCH Courtyard',
+    leftEventType: '',
+    rightTime: '7:00 PM',
+    rightDescription: 'Dinner',
+    rightPlace: '@ Outside Bytes',
+    rightEventType: ''
   },
   {
     leftTime: '',
     leftDescription: '',
     leftPlace: '',
-    rightTime: '1pm - 2pm',
-    rightDescription: 'Intro to Git/Github',
-    rightPlace: 'WCH 205/205'
+    leftEventType: 'Workshop',
+    rightTime: '7:30 PM',
+    rightDescription: 'Group Photo',
+    rightPlace: '@ WCH Courtyard',
+    rightEventType: ''
   },
   {
-    leftTime: '1pm - 2pm',
-    leftDescription: 'Intro to GUI Programming',
-    leftPlace: 'WCH 205/205',
+    leftTime: '8:00 PM',
+    leftDescription: 'MLH: Capture the Flag',
+    leftPlace: '@ WCH 205/206',
+    leftEventType: 'Workshop',
     rightTime: '',
     rightDescription: '',
-    rightPlace: ''
+    rightPlace: '',
+    rightEventType: ''
+  }
+];
+
+const eventDesktopDay2 = [
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '1:00 AM',
+    rightDescription: 'JackBox',
+    rightPlace: '@ Bourns A265',
+    rightEventType: 'Activity'
+  },
+  {
+    leftTime: '3:00 AM',
+    leftDescription: 'Movie Marathon',
+    leftPlace: '@ Bourns A265',
+    leftEventType: 'Activity',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
   },
   {
     leftTime: '',
     leftDescription: '',
     leftPlace: '',
-    rightTime: '1pm - 2pm',
-    rightDescription: 'Resume Building',
-    rightPlace: 'WCH 205/205'
+    leftEventType: '',
+    rightTime: '9:00 AM',
+    rightDescription: 'Hacking Ends',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '9:15 AM',
+    leftDescription: 'Breakfast',
+    leftPlace: '@ Outside Bytes',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '10:00 AM',
+    rightDescription: 'Judging Starts',
+    rightPlace: '@ WCH Courtyard',
+    rightEventType: ''
+  },
+  {
+    leftTime: '1:30 PM',
+    leftDescription: 'Closing Ceremony',
+    leftPlace: '@ MSE 116',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
   }
 ];
 
 const eventsMobileDay1 = [
   {
-    time: '1pm - 2pm',
+    time: '7:00 AM',
     description: 'Check-In',
-    place: 'WCH 205/205'
+    place: '@ MSE 116'
   },
   {
-    time: '1pm - 2pm',
-    description: 'Teambuilding Activity',
-    place: 'WCH 205/205'
+    time: '8:00 AM',
+    description: 'Opening Ceremony',
+    place: '@ MSE 116'
   },
   {
-    time: '1pm - 2pm',
-    description: 'Intro to Unity',
-    place: 'WCH 205/205'
+    time: '9:00 AM',
+    description: 'Hacking Begins',
+    place: '',
+    type: ''
   },
   {
-    time: '1pm - 2pm',
-    description: 'Intro to Discord Bot',
-    place: 'WCH 205/205'
+    time: '9:00 AM',
+    description: 'Team Building',
+    place: '@ MSE 116',
+    type: 'Workshop'
   },
   {
-    time: '3pm - 4pm',
-    description: 'Intro to Git/Github',
-    place: 'WCH 205/205'
+    time: '10:00 AM',
+    description: 'Giddy Up w/ Git',
+    place: '@ WCH 205/206',
+    type: 'Workshop'
   },
   {
-    time: '3pm - 4pm',
-    description: 'Intro to GUI Programming',
-    place: 'WCH 205/205'
+    time: '11:00 AM',
+    description: 'Rock Your Web Portfolio w/ React',
+    place: '@ WCH 205/206',
+    type: 'Workshop'
   },
   {
-    time: '3pm - 4pm',
-    description: 'Intro to UI/UX Design',
-    place: 'WCH 205/205'
+    time: '12:00 PM',
+    description: 'Understanding Unity',
+    place: '@ WCH 205/206',
+    type: 'Workshop'
   },
   {
-    time: '3pm - 4pm',
-    description: 'Resume Building',
-    place: 'WCH 205/205'
+    time: '12:00 PM',
+    description: 'Strongest Bridge',
+    place: '@ Bourns A265',
+    type: 'Activity'
   },
   {
-    time: '8pm - 9pm',
-    description: 'Intro to UI/UX Design',
-    place: 'WCH 205/205'
+    time: '1:00 PM',
+    description: 'Lunch',
+    place: '@ Outside Bytes',
+    type: ''
   },
   {
-    time: '8pm-9pm',
-    description: 'Lunch Distribution',
-    place: 'WCH 205/205'
+    time: '2:00 PM',
+    description: 'Level Up Your LinkedIn',
+    place: '@ WCH 205/206',
+    type: 'Workshop'
   },
   {
-    time: '8pm - 9pm',
-    description: 'Dinner Distribution',
-    place: 'WCH 205/205'
+    time: '2:00 PM',
+    description: 'Tallest Tower Stacking',
+    place: '@ Bourns A265',
+    type: 'Activity'
   },
   {
-    time: '1pm - 2pm',
-    description: 'Teambuilding Activity',
-    place: 'WCH 205/205'
+    time: '3:00 PM',
+    description: `Prof. Allan's App Dev Masterclass`,
+    place: '@ WCH 205/206',
+    type: 'Workshop'
   },
   {
-    time: '1pm - 2pm',
-    description: 'Intro to Unity',
-    place: 'WCH 205/205'
+    time: '4:00 PM',
+    description: `Can't Spell UI/UX without U & I <3`,
+    place: '@ WCH 205/206',
+    type: 'Workshop'
   },
   {
-    time: '1pm - 2pm',
-    description: 'Intro to Discord Bot',
-    place: 'WCH 205/205'
+    time: '4:00 PM',
+    description: 'Skribblio',
+    place: '@ Bourns A265',
+    type: 'Activity'
   },
   {
-    time: '3pm - 4pm',
-    description: 'Intro to Git/Github',
-    place: 'WCH 205/205'
+    time: '5:00 PM',
+    description: 'Arm Up your API: Security & Testing',
+    place: '@ WCH 205/206',
+    type: 'Workshop'
   },
   {
-    time: '3pm - 4pm',
-    description: 'Intro to GUI Programming',
-    place: 'WCH 205/205'
+    time: '5:00 PM',
+    description: 'TypeRacer',
+    place: '@ Bourns A265',
+    type: 'Activity'
   },
   {
-    time: '3pm - 4pm',
-    description: 'Intro to UI/UX Design',
-    place: 'WCH 205/205'
+    time: '6:00 PM',
+    description: 'Revamp Your Resume',
+    place: '@ WCH 205/206',
+    type: 'Workshop'
   },
   {
-    time: '3pm - 4pm',
-    description: 'Resume Building',
-    place: 'WCH 205/205'
+    time: '7:00 PM',
+    description: 'Dinner',
+    place: '@ Outside Bytes',
+    type: ''
   },
   {
-    time: '8pm - 9pm',
-    description: 'Intro to UI/UX Design',
-    place: 'WCH 205/205'
+    time: '7:00 PM',
+    description: 'Digital Twin Performance',
+    place: '@ WCH Courtyard',
+    type: ''
   },
   {
-    time: '8pm-9pm',
-    description: 'Lunch Distribution',
-    place: 'WCH 205/205'
+    time: '7:30 PM',
+    description: 'Group Photo',
+    place: '@ WCH Courtyard',
+    type: ''
   },
   {
-    time: '8pm - 9pm',
-    description: 'Dinner Distribution',
-    place: 'WCH 205/205'
+    time: '8:00 PM',
+    description: 'MLH: Capture the Flag',
+    place: '@ WCH 205/206',
+    type: 'Workshop'
+  }
+];
+const eventsMobileDay2 = [
+  {
+    time: '1:00 AM',
+    description: 'JackBox',
+    place: '@ Bourns A265',
+    type: 'Activity'
+  },
+  {
+    time: '3:00 AM',
+    description: 'Movie Marathon',
+    place: '@ Bourns A265',
+    type: 'Activity'
+  },
+  {
+    time: '9:00 AM',
+    description: 'Hacking Ends',
+    place: '',
+    type: ''
+  },
+  {
+    time: '9:15 AM',
+    description: 'Breakfast',
+    place: '@ Outside Bytes',
+    type: ''
+  },
+  {
+    time: '10:00 AM',
+    description: 'Judging Starts',
+    place: '@ WCH Courtyard',
+    type: ''
+  },
+  {
+    time: '1:30 PM',
+    description: 'Closing Ceremony',
+    place: '@ MSE 116',
+    type: ''
   }
 ];
 
-export const EventMobile = ({ time, description, color, place }) => {
+export const EventMobile = ({ time, description, color, place, type }) => {
   const { theme } = useTheme();
 
   return (
@@ -280,8 +496,8 @@ export const EventMobile = ({ time, description, color, place }) => {
       <span
         className={`rounded-full border-4 ${color} w-5 h-5 relative right-2`}
       ></span>
-      <div className="flex">
-        <div className={`border-r-4 ${color}`}></div>
+      <div className="flex py-1">
+        <div className={`border-r-4 ${color}  -my-1`}></div>
         <div className="hidden xs:inline w-full relative bottom-[55%] pl-10 py-6 h-[90px] items-center justify-evenly">
           <div className="flex">
             <p className="text-xl text-left font-semibold w-full">
@@ -302,17 +518,31 @@ export const EventMobile = ({ time, description, color, place }) => {
               >
                 {place}
               </p>
+              <p
+                className={`text-md text-center ${
+                  theme === 'dark' ? `text-goldHover` : `text-brown`
+                }`}
+              >
+                {type}
+              </p>
             </div>
           </div>
         </div>
-        <div className="xs:hidden relative bottom-[55%] pl-10 py-6 h-[90px] flex flex-col items-start">
+        <div className="xs:hidden relative bottom-[60%] pl-10 py-6 h-[90px] flex flex-col items-start">
           <p className="text-xl text-left font-semibold">{description}</p>
           <p
             className={`text-md text-left ${
               theme === 'dark' ? `text-goldHover` : `text-brown`
             }`}
           >
-            {time} @ {place}
+            {time} {place}
+          </p>
+          <p
+            className={`max-[375px]:hidden  text-md text-left ${
+              theme === 'dark' ? `text-goldHover` : `text-brown`
+            }`}
+          >
+            {type}
           </p>
         </div>
       </div>
@@ -331,12 +561,13 @@ export const Mobile = () => {
           </div>
         </div>
         {/* Mobile Day 1 */}
-        {eventsMobileDay1.map(({ time, description, place }) => (
+        {eventsMobileDay1.map(({ time, description, place, type }) => (
           <EventMobile
             key={time}
             time={time}
             description={description}
             place={place}
+            type={type}
             color="border-[#D56774]"
           />
         ))}
@@ -348,12 +579,13 @@ export const Mobile = () => {
           </div>
         </div>
         {/* Mobile Day 2 */}
-        {eventsMobileDay1.map(({ time, description, place }) => (
+        {eventsMobileDay2.map(({ time, description, place, type }) => (
           <EventMobile
             key={time}
             time={time}
             place={place}
             description={description}
+            type={type}
             color="border-gold"
           />
         ))}
@@ -367,9 +599,11 @@ export const EventDesktop = ({
   leftTime,
   leftDescription,
   leftPlace,
+  leftEventType,
   rightTime,
   rightDescription,
   rightPlace,
+  rightEventType,
   borderColor
 }) => {
   const { theme } = useTheme();
@@ -382,7 +616,7 @@ export const EventDesktop = ({
       {/* flag left side */}
       <div className="flex">
         <div
-          className={`w-56 h-24 border-r-4 ${borderColor} pr-8 flex flex-col items-end`}
+          className={`w-[238px] h-28 border-r-4 ${borderColor} pr-8 flex flex-col items-end`}
         >
           {leftTime === '' ? (
             ''
@@ -396,14 +630,21 @@ export const EventDesktop = ({
                   theme === 'dark' ? `text-goldHover` : `text-brown`
                 }`}
               >
-                {leftTime} @ {leftPlace}
+                {leftTime} {leftPlace}
+              </p>
+              <p
+                className={`text-base text-right w-full ${
+                  theme === 'dark' ? `text-goldHover` : `text-brown`
+                }`}
+              >
+                {leftEventType}
               </p>
             </div>
           )}
         </div>
 
         {/* flag right side */}
-        <div className="w-56 h-24 pl-8 flex flex-col items-start">
+        <div className="w-[238px] h-28 pl-8 flex flex-col items-start">
           {rightTime === '' ? (
             ''
           ) : (
@@ -416,7 +657,14 @@ export const EventDesktop = ({
                   theme === 'dark' ? `text-goldHover` : `text-brown`
                 }`}
               >
-                {rightTime} @ {rightPlace}
+                {rightTime} {rightPlace}
+              </p>
+              <p
+                className={`text-base text-left w-full ${
+                  theme === 'dark' ? `text-goldHover` : `text-brown`
+                }`}
+              >
+                {rightEventType}
               </p>
             </div>
           )}
@@ -444,19 +692,23 @@ export const DesktopShedule = ({ image, borderColor, fromColor, day }) => {
             leftTime,
             leftDescription,
             leftPlace,
+            leftEventType,
             rightTime,
             rightDescription,
-            rightPlace
+            rightPlace,
+            rightEventType
           }) => (
             <EventDesktop
               key={leftTime}
               leftTime={leftTime}
               leftDescription={leftDescription}
               leftPlace={leftPlace}
+              leftEventType={leftEventType}
               rightTime={rightTime}
               rightDescription={rightDescription}
               rightPlace={rightPlace}
               borderColor={borderColor}
+              rightEventType={rightEventType}
             />
           )
         )}
@@ -483,7 +735,7 @@ export const Desktop = () => {
         />
         <DesktopShedule
           image={dayTwoFlag}
-          day={eventDesktopDay1}
+          day={eventDesktopDay2}
           borderColor="border-gold"
           fromColor="from-gold"
         />

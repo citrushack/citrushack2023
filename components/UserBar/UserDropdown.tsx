@@ -144,7 +144,7 @@ export function UserDropdown() {
                 session.user.qualified === 'yeah' &&
                 (!session.user.checkedIn ? (
                   <>
-                    <span className="flex text-center font-semibold text-sub-bright text-sm bg-red-400">
+                    <span className="flex text-center font-semibold text-sub-bright text-sm">
                       You Haven&apos;t Checked-In
                       <BiHelpCircle
                         className="text-sub-highlight hover:text-highlight cursor-pointer"
