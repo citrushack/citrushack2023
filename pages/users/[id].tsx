@@ -1,6 +1,5 @@
 import { ProtectedPage } from '@/components/Page';
 import QR from '@/components/QRCode';
-import { getAllUserIds } from '@/lib/getAllUserIds';
 import { getUserData } from '@/lib/getUserData';
 import axios from 'axios';
 import { motion } from 'framer-motion';
@@ -297,21 +296,21 @@ export default function Info({ userData }) {
   );
 }
 
-export async function getStaticPaths() {
-  // Return a list of possible value for id
-  const paths = await getAllUserIds();
-  return {
-    paths,
-    fallback: false
-  };
-}
+// export async function getStaticPaths() {
+//   // Return a list of possible value for id
+//   const paths = await getAllUserIds();
+//   return {
+//     paths,
+//     fallback: false
+//   };
+// }
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params }) {
   // Fetch necessary data for the blog post using params.id
   const userData = JSON.parse(JSON.stringify(await getUserData(params.id)));
   return {
     props: {
       userData
-    }
+    },
   };
 }
