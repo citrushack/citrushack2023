@@ -19,6 +19,6 @@ def text_to_csv(input_file, output_file):
             csv_writer.writerow([cell.strip() for cell in row.split(',')])
 
 def get_mongo_client():
-    CONNECTION_STRING = os.environ.get("CONNECTION_STRING")
+    CONNECTION_STRING = os.environ.get("CONNECTION_STRING_DEV")
     client = MongoClient(CONNECTION_STRING)
     return client

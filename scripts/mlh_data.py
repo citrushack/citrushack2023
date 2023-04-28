@@ -7,7 +7,7 @@ load_dotenv()
 columns = ['First Name', 'Last Name', 'Age', 'Email', 'School', 'Phone Number', 'Country', 'Current Level of Study', 'Code of Conduct', 'Privacy Policy', 'Marketing Opt-In']
 
 def get_mlh_data(client):
-    db_name=os.environ.get('DB_NAME')
+    db_name=os.environ.get('DB_NAME_DEV')
     collection=os.environ.get('COLLECTION')
 
     db = client[db_name]  

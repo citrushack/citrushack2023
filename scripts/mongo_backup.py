@@ -41,7 +41,7 @@ def run_backup(dropbox_file_path: str) -> None:
     """
     client = get_mongo_client()
     
-    db_name=os.environ.get('DB_NAME')
+    db_name=os.environ.get('DB_NAME_DEV')
     db = client[db_name]
 
     collections = db.list_collection_names()
@@ -125,7 +125,16 @@ if __name__ == '__main__':
     """
     Driver function.
     """
+    DEV_CONN_STRING=os.environ.get('CONNECTION_STRING_DEV')
+    PROD_CONN_STRING=os.environ.get('CONNECTION_STRING_PROD')
+    DB_NAME_DEV=os.environ.get('DB_NAME_DEV')
+    DB_NAME_PROD=os.environ.get('DB_NAME_PROD')
+
     mode = int(input('\nbackup for\n1.dev\n2.prod\n'))
+
+    mongo_uri = DEV_CONN_STRING if mode == 1 else PROD_CONN_STRING
+    db_name = DB_NAME_DEV if mode == 1 else DB_NAME_PROD
+    dropbox_path = '/dev' if mode == 1 else '/prod'
 
     try:
         print('\n[-] starting backup')
