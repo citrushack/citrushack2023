@@ -1,10 +1,17 @@
+import os
 from utility import text_to_csv, get_mongo_client
+from dotenv import load_dotenv
+
+load_dotenv()
 
 columns = ['First Name', 'Last Name', 'Age', 'Email', 'School', 'Phone Number', 'Country', 'Current Level of Study', 'Code of Conduct', 'Privacy Policy', 'Marketing Opt-In']
 
 def get_mlh_data(client):
-    db = client['Development']  
-    users = db['users']
+    db_name=os.environ.get('DB_NAME')
+    collection=os.environ.get('COLLECTION')
+
+    db = client[db_name]  
+    users = db[collection]
 
     with open('mlh_data.txt', 'w') as file:
         file.write(','.join(columns))

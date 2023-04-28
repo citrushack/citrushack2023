@@ -18,6 +18,8 @@ from pydrive.drive import GoogleDrive
 import dropbox
 from dropbox.exceptions import AuthError
 
+from utility import get_mongo_client
+
 
 def create_folder_backup(db_name: str) -> None:
     """
@@ -31,15 +33,17 @@ def create_folder_backup(db_name: str) -> None:
         os.makedirs(directory)
     return directory
 
-def run_backup(mongo_uri: str, db_name: str, dropbox_file_path: str) -> None:
+def run_backup(dropbox_file_path: str) -> None:
     """
     Create backup of mongodb db.
 
-    :param mongo_uri: mongodb connection string
     :param db_name: mongodb db name
     """
-    client = MongoClient(mongo_uri)
+    client = get_mongo_client()
+    
+    db_name=os.environ.get('DB_NAME')
     db = client[db_name]
+
     collections = db.list_collection_names()
     files_to_compress = []
     directory = create_folder_backup(db_name)
@@ -89,7 +93,8 @@ def dropbox_connect() -> None:
     """Create a connection to Dropbox."""
 
     try:
-        # dbx = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
+        DROPBOX_ACCESS_TOKEN = os.environ.get('DROPBOX_ACCESS_TOKEN')
+        dbx = dropbox.Dropbox(DROPBOX_ACCESS_TOKEN)
     except AuthError as e:
         print('Error connecting to Dropbox with access token: ' + str(e))
     return dbx
@@ -124,7 +129,7 @@ if __name__ == '__main__':
 
     try:
         print('\n[-] starting backup')
-        run_backup(mongo_uri, db_name, dropbox_path)
+        run_backup(dropbox_path)
         print('[*] Successfully performed backup')
     except Exception as e:
         print('[-] An unexpected error has occurred')
