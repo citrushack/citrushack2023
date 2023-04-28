@@ -23,6 +23,7 @@ import globeLight from '@/public/assets/globeLight.svg';
 import globeDark from '@/public/assets/globeDark.svg';
 import { useTheme } from 'next-themes';
 import SignupCounter from '@/components/SignupCounter';
+// import { HackerCountdownWrapper } from '@/components/Countdown';
 
 export const Assets = () => {
   const { theme } = useTheme();
@@ -224,7 +225,11 @@ export default function Landing() {
 
   return (
     <>
-      <section className="relative flex flex-col-reverse w-screen h-screen md:min-h-[57rem]">
+      <section className="relative flex flex-col-reverse w-screen h-screen md:min-h-[57rem] mb-0 md:mb-14 lg:mb-24">
+        {/* UNCOMMENT DAY OF */}
+        {/* <div className="absolute left-1/2 -translate-x-1/2 w-full top-[20%] md:top-[25%] lg:top-[15%] flex flex-col justify-center items-center z-10 px-4 text-textcolor"> */}
+
+        {/* COMMENT DAY OF */}
         <div className="absolute left-1/2 -translate-x-1/2 w-full top-[25%] xs:top-[30%] md:top-[25%] lg:top-[25%] flex flex-col justify-center items-center z-10 px-4 text-textcolor">
           <div className="text-center text-5xl max-[375px]:text-4xl sm:text-7xl lg:text-8xl mb-2 lg:mb-4 font-black text-text">
             CITRUS HACK
@@ -232,10 +237,16 @@ export default function Landing() {
           <div className="text-center text-2xl max-[375px]:text-2xl md:text-3xl sm:text-4xl lg:text-5xl mb-2 lg:mb-4 font-semibold text-text">
             Reach your next destination
           </div>
-          <div className="text-center text-2xl max-[375px]:text-xl sm:text-3xl lg:text-4xl mb-3 lg:mb-6 font-black z-1 text-text">
+          <div className="text-center text-2xl max-[375px]:text-xl sm:text-3xl lg:text-4xl mb-3 font-black z-1 text-text">
             April 29-30, 2023
           </div>
+
+          {/* UNCOMMENT COUNTDOWN DAY OF*/}
+          {/* <HackerCountdownWrapper date="2023-04-30T16:00:00Z" /> */}
+
+          {/* COMMENT DAY OF */}
           {status != 'authenticated' && <SignupCounter />}
+
           {status == 'authenticated' && session.user.applied_after_limit && (
             <p className="text-center text-text pb-6 max-w-sm">
               Based on the time of your application, we can no longer guarantee
@@ -243,17 +254,16 @@ export default function Landing() {
             </p>
           )}
 
-          {/* <p className='max-w-lg italic text-center font-medium'>
-            In-person sign-ups will close today at 5:30 PM PST, as we are reaching maximum capacity
-          </p> */}
-          {/* {
-            (status === 'unauthenticated' || (status === 'authenticated' && !Boolean(session.user.qualified))) &&
-            <p className='max-w-lg italic text-center font-medium'>
-              Applications will close tonight at 12 AM PST, so be sure to apply while you still can!
+          {/* UNCOMMENT DAY BEFORE */}
+          {/* {(status === 'unauthenticated' ||
+            (status === 'authenticated' &&
+              !Boolean(session.user.qualified))) && (
+            <p className="max-w-lg italic text-center font-medium mt-5">
+              Applications will close tonight at 12 AM PST, so be sure to apply
+              while you still can!
             </p>
-          } */}
+          )} */}
 
-          {/* plane*/}
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{
@@ -289,7 +299,7 @@ export default function Landing() {
               </motion.button>
             </span>
           )} */}
-          <div className="flex flex-col w-full gap-3">
+          <div className="flex flex-col gap-3 w-2/3 md:w-full">
             {status === 'authenticated' &&
               session.user.uid &&
               session.user.qualified === 'yeah' &&
@@ -302,14 +312,14 @@ export default function Landing() {
               session.user.uid &&
               session.user.qualified === 'yeah' && (
                 <>
-                  <span className="flex justify-center w-full z-[200]">
+                  {/* <span className="flex justify-center w-full z-[200]">
                     <ButtonLink
                       primary
                       label="Join Our Discord"
                       link="https://discord.com/invite/j7vCRHQPSF"
                       external
                     />
-                  </span>
+                  </span> */}
                   <span className="flex justify-center w-full z-[200]">
                     <ButtonLink
                       primary

@@ -15,7 +15,8 @@ import {
   BiMenu,
   BiX,
   BiAlarm,
-  BiReceipt
+  BiReceipt,
+  BiStore
 } from 'react-icons/bi';
 import { ThemeButton } from '@/components/UserBar/ThemeButton';
 
@@ -29,6 +30,14 @@ export default function Nav() {
       title: 'Home'
     },
     {
+      icon: <BiCalendarEvent />,
+      title: 'Schedule'
+    },
+    {
+      icon: <BiStore />,
+      title: 'Resources'
+    },
+    {
       icon: <BiInfoCircle />,
       title: 'About'
     },
@@ -36,6 +45,10 @@ export default function Nav() {
       icon: <BiDirections />,
       title: 'Tracks'
     },
+    // {
+    //   icon: <BiReceipt />,
+    //   title: 'Judges'
+    // },
     {
       icon: <BiDonateHeart />,
       title: 'Support'
@@ -150,14 +163,14 @@ export default function Nav() {
         )}
       </motion.div>
       {/* mobile navbar */}
-      <div className="z-[1000] fixed top-3 -left-1 xl:hidden px-4">
+      <div className="z-[1000] fixed top-3 -left-1 xl:hidden px-4 e">
         <div
           className={
             'flex flex-col gap-1.5 rounded-md bg-purple shadow overflow-hidden transform-gpu transition-size duration-200 ' +
             (navOpen ? 'p-2 ' : 'w-11 h-11 ') +
             (navOpen &&
               (router.pathname === '/'
-                ? 'w-48 h-[29.5rem] md:h-[25.75rem]'
+                ? 'w-48 h-[35.5rem] md:h-[35.75rem]'
                 : router.pathname === '/live'
                 ? 'w-48 h-[29rem] md:h-[25.75rem]'
                 : 'w-48 h-[10.25rem] md:h-[7rem]'))
@@ -215,10 +228,10 @@ export default function Nav() {
                 className="flex gap-2.5 items-center p-2 font-semibold text-lg truncate rounded-md hover:bg-buttons hover:text-white cursor-pointer"
                 onClick={() => setNavOpen(false)}
               >
-                <span className="text-2xl">
+                <span className="text-2xl text-white">
                   <BiHomeAlt />
                 </span>
-                <span>Home</span>
+                <span className="text-white">Home</span>
               </span>
             </Link>
           )}

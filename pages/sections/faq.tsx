@@ -1,5 +1,5 @@
 import { FaqGrid } from '@/components/FAQ';
-import ExternalLink from '@/components/ExternalLink';
+// import ExternalLink from '@/components/ExternalLink';
 import { motion } from 'framer-motion';
 import { useTheme } from 'next-themes';
 import Image from 'next/image';
@@ -71,6 +71,7 @@ export const Assets = () => {
 };
 
 export default function Faq() {
+  const { theme } = useTheme();
   return (
     <section className="relative z-0 flex flex-col w-full h-full my-12 lg:mt-0 max-w-[60rem] items-center">
       <h1 className="text-center text-5xl md:text-7xl font-black w-391 h-109 not-italic items-center mt-6 text-text">
@@ -78,12 +79,21 @@ export default function Faq() {
       </h1>
       <p className="text-center text-text font-semibold mb-4 md:mb-8 xs:w-3/4">
         If you still can&apos;t find an answer to your question, feel free to
-        email us at{' '}
-        <ExternalLink
+        email us at <a href=""></a>
+        {/* <ExternalLink
           name="citrushack@gmail.com"
           link="mailto:citrushack@gmail.com"
-        />
-        .
+        /> */}
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          href={`mailto:citrushack@gmail.com`}
+          className={`font-bold hover:underline cursor-pointer ${
+            theme === 'dark' ? `text-gold` : `text-brown`
+          }`}
+        >
+          citrushack@gmail.com
+        </a>
       </p>
       <Assets />
       <FaqGrid />

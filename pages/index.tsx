@@ -5,6 +5,9 @@ import { Page } from '@/components/Page';
 import Landing from '@/pages/sections/landing';
 import About from '@/pages/sections/about';
 import Tracks from '@/pages/sections/tracks';
+import Resources from './sections/resources';
+import Schedule from '@/pages/sections/schedule';
+// import Judges from './sections/judges';
 import Support from '@/pages/sections/support';
 import Sponsors from '@/pages/sections/sponsors';
 import Faq from '@/pages/sections/faq';
@@ -33,6 +36,15 @@ export default function Home() {
           <Landing />
         </span>
       </Element>
+      <Element
+        name="Schedule"
+        className="relative flex justify-center px-4 w-full bg-gradient-to-b from-accent-secondary to-accent"
+      >
+        <Schedule />
+      </Element>
+      <Element name="Resources" className="flex justify-center px-4 w-full">
+        <Resources />
+      </Element>
       <Element name="About" className="flex justify-center w-full">
         <span className="flex justify-center w-full 2xl:bg-cover">
           <About />
@@ -46,6 +58,14 @@ export default function Home() {
           <Tracks />
         </span>
       </Element>
+      {/* <Element
+        name="Judges"
+        className="relative flex justify-center w-full bg-gradient-to-b from-primary to-secondary"
+      >
+        <span className="flex justify-center px-4 w-full bg-pattern bg-repeat bg-contain">
+          <Judges />
+        </span>
+      </Element> */}
       <Element name="Support" className="flex justify-center w-full bg-sky">
         <span className="flex justify-center w-full 2xl:bg-cover">
           <Support />

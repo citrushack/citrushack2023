@@ -23,19 +23,19 @@ function TimeBlock({ condition, num, label, separator }: TimeBlockProps) {
     condition && (
       <>
         <div className="relative flex flex-col col-span-2 items-center text-sub-bright">
-          <div className="flex gap-0.5 xs:gap-1 sm:gap-2 ">
+          <div className="flex gap-0.5 xs:gap-1 sm:gap-2">
             {Array.from(num).map((n, idx) => (
               <motion.div
                 key={label + String(idx)}
                 variants={buttonVariants}
                 whileHover="hover"
-                className="flex justify-center items-center w-8 xs:w-10 md:w-14 h-8 xs:h-10 md:h-14 rounded shadow-md cursor-default bg-sky  text-text"
+                className="flex justify-center items-center w-8 xs:w-10 md:w-14 h-8 xs:h-10 md:h-14 rounded shadow-md cursor-default  text-black bg-slate-200"
               >
                 {n}
               </motion.div>
             ))}
           </div>
-          <p className="absolute top-9 xs:top-10 md:top-[3.5rem] text-text xs:text-lg sm:text-xl leading-3 font-bold">
+          <p className="absolute top-9 xs:top-10 md:top-[3.5rem] text-text text-sm xs:text-lg sm:text-xl leading-3 font-bold">
             {label}
           </p>
         </div>
@@ -152,7 +152,7 @@ const hackingRenderer = ({ days, hours, minutes, seconds, completed }) => {
 
     return (
       <div className="mb-10 flex flex-col justify-center items-center">
-        <h3 className="text-center sm:text-center font-bold text-text pb-2">
+        <h3 className="text-center sm:text-center font-bold text-text pb-2 max-[375px]:text-sm xs:text-lg lg:text-2xl">
           Hacking ends in...
         </h3>
         <div

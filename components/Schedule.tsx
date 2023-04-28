@@ -90,7 +90,7 @@ const eventDesktopDay1 = [
   },
   {
     leftTime: '2:00 PM',
-    leftDescription: 'Level Up your LinkedIn',
+    leftDescription: 'Revamp your Resume',
     leftPlace: '@ WCH 205/206',
     leftEventType: 'Workshop',
     rightTime: '2:00 PM',
@@ -130,7 +130,7 @@ const eventDesktopDay1 = [
   },
   {
     leftTime: '6:00 PM',
-    leftDescription: 'Revamp your Resume',
+    leftDescription: 'Level Up your LinkedIn',
     leftPlace: '@ WCH 205/206',
     leftEventType: 'Workshop',
     rightTime: '',
@@ -145,7 +145,7 @@ const eventDesktopDay1 = [
     leftEventType: '',
     rightTime: '7:00 PM',
     rightDescription: 'Dinner',
-    rightPlace: '@ Outside Bytes',
+    rightPlace: '@ WCH Courtyard',
     rightEventType: ''
   },
   {
@@ -163,6 +163,26 @@ const eventDesktopDay1 = [
     leftDescription: 'MLH: Capture the Flag',
     leftPlace: '@ WCH 205/206',
     leftEventType: 'Workshop',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '9:00 PM',
+    rightDescription: 'Sturdiest Boat',
+    rightPlace: '@ Bourns A265',
+    rightEventType: 'Activity'
+  },
+  {
+    leftTime: '11:00 PM',
+    leftDescription: 'Smash Tourney',
+    leftPlace: '@ Bourns A265',
+    leftEventType: 'Activity',
     rightTime: '',
     rightDescription: '',
     rightPlace: '',
@@ -320,6 +340,26 @@ const eventDesktopDay2 = [
     rightDescription: '',
     rightPlace: '',
     rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
+  },
+  {
+    leftTime: '',
+    leftDescription: '',
+    leftPlace: '',
+    leftEventType: '',
+    rightTime: '',
+    rightDescription: '',
+    rightPlace: '',
+    rightEventType: ''
   }
 ];
 
@@ -378,7 +418,7 @@ const eventsMobileDay1 = [
   },
   {
     time: '2:00 PM',
-    description: 'Level Up Your LinkedIn',
+    description: 'Revamp your Resume',
     place: '@ WCH 205/206',
     type: 'Workshop'
   },
@@ -420,14 +460,14 @@ const eventsMobileDay1 = [
   },
   {
     time: '6:00 PM',
-    description: 'Revamp Your Resume',
+    description: 'Level Up Your LinkedIn',
     place: '@ WCH 205/206',
     type: 'Workshop'
   },
   {
     time: '7:00 PM',
     description: 'Dinner',
-    place: '@ Outside Bytes',
+    place: '@ WCH Courtyard',
     type: ''
   },
   {
@@ -447,6 +487,18 @@ const eventsMobileDay1 = [
     description: 'MLH: Capture the Flag',
     place: '@ WCH 205/206',
     type: 'Workshop'
+  },
+  {
+    time: '9:00 PM',
+    description: 'Sturdiest Boat',
+    place: '@ WCH Courtyard',
+    type: 'Activity'
+  },
+  {
+    time: '11:00 PM',
+    description: 'Smash Tourney',
+    place: '@ Bourns A265',
+    type: 'Activity'
   }
 ];
 const eventsMobileDay2 = [

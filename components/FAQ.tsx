@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BiX } from 'react-icons/bi';
-import ExternalLink from '@/components/ExternalLink';
+// import ExternalLink from '@/components/ExternalLink';
+import { useTheme } from 'next-themes';
 
 interface Props {
   /** Heading for accordion. */
@@ -44,6 +45,38 @@ export function FaqAccordion({ question, answer }: Props) {
     </div>
   );
 }
+
+const Links = () => {
+  const { theme } = useTheme();
+
+  return (
+    <>
+      Feel free to email us at{' '}
+      <a
+        target="_blank"
+        rel="noreferrer noopener"
+        href={`mailto:citrushack@gmail.com`}
+        className={`font-bold hover:underline cursor-pointer ${
+          theme === 'dark' ? `text-gold` : `text-brown`
+        }`}
+      >
+        citrushack@gmail.com
+      </a>{' '}
+      or ask{' '}
+      <a
+        target="_blank"
+        rel="noreferrer noopener"
+        href={`https://www.linkedin.com/in/mika-shanela/`}
+        className={`font-bold hover:underline cursor-pointer ${
+          theme === 'dark' ? `text-gold` : `text-brown`
+        }`}
+      >
+        Mika Shanela
+      </a>{' '}
+      in-person if you have any more questions.
+    </>
+  );
+};
 
 const faq = [
   {
@@ -118,17 +151,24 @@ const faq = [
     question: "My question isn't listed?",
     answer: (
       <>
-        Feel free to email us at{' '}
-        <ExternalLink
-          name="citrushack@gmail.com"
-          link="mailto:citrushack@gmail.com"
-        />{' '}
+        <Links />
+        {/* Feel free to email us at{' '}
+        <a
+          target="_blank"
+          rel="noreferrer noopener"
+          href={`mailto:citrushack@gmail.com`}
+          className={`font-bold hover:underline cursor-pointer ${
+            theme === 'dark' ? `text-gold` : `text-brown`
+          }`}
+        >
+          citrushack@gmail.com
+        </a>{' '}
         or ask{' '}
         <ExternalLink
           name="Mika Shanela"
           link="https://www.linkedin.com/in/mika-shanela/"
         />{' '}
-        in-person if you have any more questions.
+        in-person if you have any more questions. */}
       </>
     )
   }

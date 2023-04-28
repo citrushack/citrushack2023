@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
 
 interface ProfileProps {
   /** Profile picture of the judge. */
@@ -12,185 +13,179 @@ interface ProfileProps {
 }
 
 /** Individual profile for each team lead. */
-export const JudgeProfile = ({ image, name, role }: ProfileProps) => (
-  <div className="flex flex-col w-full max-w-[8rem] md:max-w-[9rem] items-center">
-    <motion.span whileHover={{ y: -4 }}>
-      <Image
-        src={image}
-        width={150}
-        height={150}
-        objectFit="contain"
-        priority={true}
-        quality={100}
-        className="rounded-full"
-      />
-    </motion.span>
-    <p className="mb-0 w-max font-semibold">{name}</p>
-    <p className="mt-0 leading-4 text-base text-center">{role}</p>
-  </div>
-);
+export const JudgeProfile = ({ image, name, role }: ProfileProps) => {
+  const { theme } = useTheme();
+  return (
+    <div className="flex flex-col w-full max-w-[8rem] md:max-w-[9rem] items-center relative z-[100]">
+      <motion.span whileHover={{ y: -4 }}>
+        <Image
+          src={image}
+          width={150}
+          height={150}
+          objectFit="contain"
+          priority={true}
+          quality={100}
+          className="rounded-full"
+        />
+      </motion.span>
+      <p className="mb-0 w-max font-semibold">{name}</p>
+      <p
+        className={`mt-0 leading-4 text-base text-center ${
+          theme === 'dark' ? `text-gold` : `text-brown`
+        }`}
+      >
+        {role}
+      </p>
+    </div>
+  );
+};
 
 const judges = [
   {
     image: '/assets/judges/elmer-thomas.jpg',
-    name: 'Elmer Thomas',
-    role: 'Developer Educator @ Twilio'
+    name: 'Allan Knight',
+    role: 'UCR Professor'
   },
   {
     image: '/assets/judges/paea-lependu.jpg',
-    name: 'Dr. Paea Le Pendu',
+    name: 'Walid Najar',
     role: 'UCR Professor'
   },
   {
     image: '/assets/judges/craig-schroeder.jpg',
-    name: 'Dr. Craig Schroeder',
+    name: 'Qian Zhang',
     role: 'UCR Professor'
   },
   {
     image: '/assets/judges/fuad-jamour.jpg',
-    name: 'Dr. Fuad Jamour',
+    name: 'Michail Falutsos',
     role: 'UCR Professor'
   },
   {
     image: '/assets/judges/jed-schwendiman.jpg',
-    name: 'Jed Schwendiman',
-    role: 'Assistant Dean for Development'
+    name: 'Ryan Rusich',
+    role: 'UCR Professor'
   },
   {
     image: '/assets/judges/jia-chen.jpg',
-    name: 'Jia Chen',
-    role: 'Assistant Teaching Professor @ UCR'
+    name: 'Ryan Quach',
+    role: 'PhD Student'
   },
   {
     image: '/assets/judges/allan-knight.jpg',
-    name: 'Allan Knight',
-    role: 'Assistant Teaching Professor @ UCR'
+    name: 'Danial Beg',
+    role: 'Software Engineer @ BAE Systems'
   },
   {
     image: '/assets/logo.svg',
-    name: 'Miguel Gutierrez',
-    role: 'PhD Candidate @ UCR'
+    name: 'Jonathan Trinh',
+    role: 'Embedded Software Engineer'
   },
   {
     image: '/assets/judges/cristina-lawson.jpg',
-    name: 'Cristina Lawson',
-    role: "CS Master's Student @ UCR"
+    name: 'Rajbir Johar',
+    role: 'UX/Frontend Engineer'
   },
   {
     image: '/assets/judges/diane-shan.jpg',
-    name: 'Diane Shan',
-    role: 'BCOE LC Treasurer'
+    name: 'Kimmy Lac',
+    role: 'Marketing @ Hashicorp'
   },
   {
     image: '/assets/judges/jonathan-trinh.jpg',
-    name: 'Jonathan Trinh',
-    role: 'Graduate @ UCI'
+    name: 'Justin Lee',
+    role: 'VP of Cyber'
   },
   {
     image: '/assets/judges/chloe-georgiou.jpg',
-    name: 'Chloe Georgiou',
-    role: 'IEEE Vice President'
+    name: 'Krystal Pothilat',
+    role: 'President of WinC@UCR'
   },
   {
     image: '/assets/judges/minsoo-kim.jpg',
-    name: 'Minsoo Kim',
-    role: 'Cyber@UCR Treasurer'
+    name: 'Sid Dutta',
+    role: 'Secretary of Cyber@UCR'
   },
   {
     image: '/assets/judges/siddharta-dutta.jpg',
-    name: 'Siddharta Dutta',
-    role: 'Cyber@UCR Outreach Director'
+    name: 'Ashley Kim',
+    role: 'Director of Rose Hack'
   },
   {
     image: '/assets/judges/charles-hong.jpg',
-    name: 'Charles Hong',
-    role: 'Competitive Programming Chair'
+    name: 'Vinz Madrigal',
+    role: 'Former President of ACM@UCR'
   },
   {
     image: '/assets/judges/elaine-lin.jpg',
-    name: 'Elaine Lin',
-    role: 'Design@UCR Communications Director'
+    name: 'Ashley Tsai',
+    role: 'Director of Design@UCR'
   },
   {
     image: '/assets/judges/mitha-senthilkumar.jpg',
-    name: 'Mitha Senthilkumar',
-    role: 'VEXU Lead at SWE@UCR'
+    name: 'Arlene Phimmasone',
+    role: 'Former Director of Design@UCR'
   },
   {
     image: '/assets/judges/tim-jenkins.jpg',
-    name: 'Tim Jenkins',
-    role: 'Founder @ Table Needs'
+    name: 'Bowen Lai',
+    role: 'Treasurer of Gamespawn'
   },
   {
     image: '/assets/judges/elise-lin.jpg',
-    name: 'Elise Lin',
-    role: 'Penetration Test @ Accenture'
+    name: 'Chloe Georgiou',
+    role: 'President of IEEE'
   },
   {
     image: '/assets/judges/katie-fukuda.jpg',
-    name: 'Katie Fukuda',
-    role: 'SDE @ Amazon'
+    name: 'Westin Montano',
+    role: 'Previous Citrus Hack Operations Lead'
   },
   {
     image: '/assets/judges/danial-beg.jpg',
-    name: 'Danial Beg',
-    role: 'SWE @ BAE Systems'
+    name: 'Prathmesh Jain',
+    role: 'Vice President of Gamespawn'
   },
   {
     image: '/assets/judges/kanin-liang.jpg',
-    name: 'Kanin Liang',
-    role: 'Incoming SWE Intern @ Disney Streaming'
+    name: 'Everlee Mai',
+    role: 'Events Coordinator of Gamespawn'
   },
   {
     image: '/assets/judges/michael-odea.jpg',
-    name: "Michael O'Dea",
-    role: 'Former IEEE@UCR Chair'
+    name: 'Roy Feng',
+    role: 'Former President of ACM@UCR'
   },
   {
     image: '/assets/judges/neo-marin.jpg',
-    name: 'Neo Marin',
-    role: 'Former IEEE@UCR Program Chair'
+    name: 'Hallie Pham',
+    role: 'Director of Rose Hack'
   },
   {
     image: '/assets/judges/sunny-zeng.jpg',
-    name: 'Sunny Zeng',
-    role: 'Former IEEE@UCR Program Chair'
+    name: 'Gryphon Kumfert',
+    role: 'Infrastructure Lead of Cyber@UCR'
   },
   {
     image: '/assets/judges/alex-chen.jpg',
-    name: 'Alex Chen',
-    role: 'Former IEEE@UCR Webmaster'
-  },
-  {
-    image: '/assets/judges/roy-feng.jpg',
-    name: 'Roy Feng',
-    role: 'Former ACM@UCR President'
-  },
-  {
-    image: '/assets/judges/jino-sirivatanarat.jpg',
     name: 'Jino Sirivatanarat',
-    role: 'Former ACM@UCR Vice President'
+    role: 'Former Vice President of ACM@UCR'
   },
   {
-    image: '/assets/judges/brandon-to.jpg',
-    name: 'Brandon To',
-    role: 'Former ACM@UCR Treasurer'
+    image: '/assets/judges/alex-chen.jpg',
+    name: 'Isean Bhanot',
+    role: 'ACM Membership Chair'
   },
   {
-    image: '/assets/judges/aramis-masarati.jpg',
-    name: 'Aramis Masarati',
-    role: 'Former Cyber@UCR Treasurer'
-  },
-  {
-    image: '/assets/judges/jason-lin.jpg',
-    name: 'Jason Lin',
-    role: 'Former Cyber@UCR Board Member'
+    image: '/assets/judges/alex-chen.jpg',
+    name: 'Vincent Raimondi',
+    role: 'Ratheon Software Engineer'
   }
 ];
 
 /** Grid of judge profiles. */
 export const JudgeGrid = () => (
-  <div className="flex flex-wrap justify-center gap-6 md:gap-12 md:gap-y-12">
+  <div className="flex flex-wrap justify-center mb-10 gap-6 md:gap-12 md:gap-y-12">
     {judges.map(({ image, name, role }) => (
       <JudgeProfile key={name} image={image} name={name} role={role} />
     ))}

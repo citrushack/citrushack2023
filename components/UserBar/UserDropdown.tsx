@@ -15,7 +15,7 @@ import {
   BiCategory
 } from 'react-icons/bi';
 import { FaDiscord } from 'react-icons/fa';
-
+import { BiBarcodeReader } from 'react-icons/bi';
 /** Dropdown for more user actions and info (e.g. app status, group page, etc.). */
 export function UserDropdown() {
   const router = useRouter();
@@ -138,16 +138,15 @@ export function UserDropdown() {
                     </div>
                   </>
                 ))}
-              {/* TODO:uncomment the day before */}
               {status === 'authenticated' &&
                 session.user.uid &&
                 session.user.qualified === 'yeah' &&
                 (!session.user.checkedIn ? (
                   <>
-                    <span className="flex text-center font-semibold text-sub-bright text-sm">
+                    <span className="flex text-white font-semibold text-sm">
                       You Haven&apos;t Checked-In
                       <BiHelpCircle
-                        className="text-sub-highlight hover:text-highlight cursor-pointer"
+                        className="text-sub-highlight hover:text-highlight cursor-pointer hover:text-brown"
                         onClick={() => triggerCheckInInfo()}
                       />
                     </span>
@@ -155,10 +154,15 @@ export function UserDropdown() {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.995 }}
-                        className="w-full py-1.5 rounded-md bg-highlight hover:bg-highlight font-semibold"
+                        className="group flex items-center gap-1.5 w-full rounded-md text-sub-highlight font-semibold bg-transparent"
                         onClick={() => setOpen(!open)}
                       >
-                        Check-In Now!
+                        <div className="p-1.5 group-hover:bg-highlight group-hover:text-brown rounded-md bg-sub text-sub-bright text-2xl">
+                          <BiBarcodeReader />
+                        </div>
+                        <div className="p-1.5 group-hover:text-brown">
+                          Check-In Now!
+                        </div>
                       </motion.button>
                     </Link>
                   </>

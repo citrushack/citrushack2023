@@ -22,6 +22,7 @@ export default function Info({ userData }) {
     // MLHAcknowledgement,
     pickedUpShirt,
     pickedUpCanes,
+    checkedIn,
     InPersonCheckIn
     // ...other
   } = json_obj[0];
@@ -143,26 +144,12 @@ export default function Info({ userData }) {
       {/* only admins can see actions and additional info */}
       {status === 'authenticated' && session.user.admin && (
         <div className="flex flex-col justify-center items-center py-4">
-          {InPersonCheckIn ? (
-            <p className="text-green-500">Checked In!</p>
-          ) : (
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.995 }}
-              className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-purple text-white cursor-pointer"
-              onClick={() => {
-                checkInInperson();
-              }}
-            >
-              Check-In {name.first}
-            </motion.button>
-          )}
-
-          <p>
+          <span className="flex flex-col text-center">
             {name.first} {name.last}
-          </p>
-          <p>{email}</p>
-          <div>
+            <br />
+            {email}
+          </span>
+          <span>
             {applied_after_limit ? (
               <p className="flex">
                 First 200 Hacker:{' '}
@@ -178,7 +165,38 @@ export default function Info({ userData }) {
                 </span>
               </p>
             )}
-          </div>
+          </span>
+          <span className="flex flex-row mb-4">
+            Online Check-In:{' '}
+            {checkedIn ? (
+              <span className="text-green-500 pt-1 pl-1">
+                <FaCheckCircle />
+              </span>
+            ) : (
+              <span className="text-red-500 pt-1 pl-1">
+                <AiFillCloseCircle />
+              </span>
+            )}
+          </span>
+          {InPersonCheckIn ? (
+            <p className="flex">
+              In-Person Check-In:{' '}
+              <span className="text-green-500 pt-1 pl-1">
+                <FaCheckCircle />
+              </span>
+            </p>
+          ) : (
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.995 }}
+              className="flex items-center self-center h-11 px-4 font-semibold text-lg rounded-md bg-purple text-white cursor-pointer"
+              onClick={() => {
+                checkInInperson();
+              }}
+            >
+              Check-In {name.first}
+            </motion.button>
+          )}
           <div className="flex flex-col pb-4 items-center text-center">
             {applied_after_limit ? (
               <span className="text-lg font-semibold text-red-500">
@@ -194,7 +212,7 @@ export default function Info({ userData }) {
                 </p>
               </div>
             ) : (
-              <div className="mt-4 mb-2 flex flex-col justify-center items-center">
+              <div className="mt-4 mb-1 flex flex-col justify-center items-center">
                 <p className="flex">
                   T-Shirt Pickup:
                   <span className="text-red-500 pt-1 pl-1">
@@ -243,8 +261,7 @@ export default function Info({ userData }) {
               </div>
             )}
           </div>
-
-          <p className="flex pb-4">
+          <p className="flex pb-2">
             Qualified:{' '}
             {qualified == '' ? (
               <span className="text-red-500 pt-1 pl-1">
@@ -277,7 +294,7 @@ export default function Info({ userData }) {
                 approveRejectUser(email, name.first, true, uid);
               }}
             >
-              Approve Selected
+              Approve Hacker
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -287,7 +304,7 @@ export default function Info({ userData }) {
                 approveRejectUser(email, name.first, false, uid);
               }}
             >
-              Reject Selected
+              Reject Hacker
             </motion.button>
           </div>
         </div>
