@@ -23,13 +23,13 @@ const eventDesktopDay1 = [
     leftDescription: '',
     leftPlace: '',
     leftEventType: '',
-    rightTime: '7:00 AM',
+    rightTime: '7:30 AM',
     rightDescription: 'Check-In',
     rightPlace: '@ MSE 116',
     rightEventType: ''
   },
   {
-    leftTime: '8:00 AM',
+    leftTime: '8:30 AM',
     leftDescription: 'Opening Ceremony',
     leftPlace: '@ MSE 116',
     leftEventType: '',
@@ -365,12 +365,12 @@ const eventDesktopDay2 = [
 
 const eventsMobileDay1 = [
   {
-    time: '7:00 AM',
+    time: '7:30 AM',
     description: 'Check-In',
     place: '@ MSE 116'
   },
   {
-    time: '8:00 AM',
+    time: '8:30 AM',
     description: 'Opening Ceremony',
     place: '@ MSE 116'
   },
@@ -491,7 +491,7 @@ const eventsMobileDay1 = [
   {
     time: '9:00 PM',
     description: 'Sturdiest Boat',
-    place: '@ WCH Courtyard',
+    place: '@ Bourns A265',
     type: 'Activity'
   },
   {
