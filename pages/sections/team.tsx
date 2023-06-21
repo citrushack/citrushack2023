@@ -1,6 +1,7 @@
 import React from 'react';
 import ProfileWrapper from '@/components/ProfileWrapper';
 import Minsoo from '@/public/team/minsoo.png';
+import Mika from '@/public/team/mika.png';
 import Ashley from '@/public/team/ashley.png';
 import Gab from '@/public/team/gab.png';
 import Jakin from '@/public/team/jakin.jpg';
@@ -47,6 +48,12 @@ const staff = [
     link: 'https://www.linkedin.com/in/minsookime/',
     image: Minsoo,
     name: 'Minsoo Kim',
+    position: 'Software Engineer'
+  },
+  {
+    link: 'https://www.linkedin.com/in/mika-shanela/',
+    image: Mika,
+    name: 'Mika Shanela',
     position: 'Software Engineer'
   },
   {
@@ -112,10 +119,6 @@ const staff = [
 ];
 
 const swe_committee = [
-  {
-    link: 'https://www.linkedin.com/in/mika-shanela/',
-    name: 'Mika Shanela'
-  },
   {
     link: 'https://www.linkedin.com/in/thomasli9/',
     name: 'Thomas Li'

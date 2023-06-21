@@ -21,6 +21,14 @@ Hey I'm Minsoo! I'm a software engineer based in California. I like to weightlif
 
 Hello hello! I'm Paulian. I'm a software engineer based in Southern California. In my free time, I love to boulder and to watch movies. My favorite film has to be "La La Land" at the moment. :) 🎵 Feel free to connect with me on my [LinkedIn](https://www.linkedin.com/in/paulianle/). Cheers!
 
+
+<br/>
+
+### Mika Shanela Carodan
+<img align="left" src="https://github.com/citrushack/citrushack2023/assets/60799725/0eb3d4f0-5a61-401b-b61a-ee1b1724ebdb" alt="mika_round" width="100" height="100">
+
+Hello I'm Mika! I'm a software engineer based in SoCal. I don't do anyhing in my free time. I love "La La Land" though. You can connect with me on [LinkedIn](https://www.linkedin.com/in/mika-shanela/) • [Website](https://mikashanela.vercel.app/) • [E-mail](mailto:mikashanela.dev@gmail.com).
+
 <br/>
 <br/>
 
