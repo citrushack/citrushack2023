@@ -51,15 +51,15 @@ const staff = [
     position: 'Software Engineer'
   },
   {
-    link: 'https://www.linkedin.com/in/paulianle/',
-    image: Paulian,
-    name: 'Paulian Le',
-    position: 'Software Engineer'
-  },
-  {
     link: 'https://www.linkedin.com/in/mika-shanela/',
     image: Mika,
     name: 'Mika Shanela',
+    position: 'Software Engineer'
+  },
+  {
+    link: 'https://www.linkedin.com/in/paulianle/',
+    image: Paulian,
+    name: 'Paulian Le',
     position: 'Software Engineer'
   },
   {
